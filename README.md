@@ -1,7 +1,7 @@
 <div align="center">
 <p>
     <a href="https://moonwell.fi" target="_blank">
-      <img alt="Moonwell Logo" src="static/spaceman.png" width="300" />
+      <img alt="Moonwell Logo" src="media/spaceman.png" width="300" />
     </a>
 </p>
 <p style="font-size: 1.5rem; font-weight: bold">Moonwell.js</p>
@@ -39,4 +39,4 @@ $ npm install --save @moonwell-fi/moonwell.js
 
 # Docs
 
-You can find typedoc docs deployed at 
+You can find the latest typedoc docs deployed at https://moonwell-fi.github.io/moonwell.js/modules.html which holds an overview of the library and examples for usage.

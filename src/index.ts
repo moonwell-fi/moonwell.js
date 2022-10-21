@@ -1,6 +1,6 @@
 /**
- * Moonwell.js is your one stop shop for interacting with the [Moonwell Protocol](https://moonwell.fi).
- *
+ * <div align="center"><img src="media/spaceman.png" width="300" /></div>
+ * 🌕 Moonwell.js is your one stop shop for interacting with the <a target="_blank" href="https://moonwell.fi">Moonwell Protocol</a>.
  * @packageDocumentation
  */
 
@@ -9,14 +9,15 @@ import moonriver from './environments/moonriver'
 import moonbase from './environments/moonbase'
 
 /**
- * A mapping of environment to {@link ContractBundle} for each environment that Moonwell is deployed on.
+ * The {@link Contracts} object is simply a mapping of environment to {@link ContractBundle} for each environment that Moonwell is deployed on.
  *
- * Holds all relevant contract addresses for the respective environment.
+ * Holds all relevant contract addresses and market details (mantissas, underlying digits, etc) for the respective environment.
  *
- * Basic Usage:
+ * ## Usage Example:
  * ```ts
  * import {Contracts, Market} from '@moonwell-fi/moonwell.js'
  *
+ * // Go enumerate all the Moonriver markets
  * console.log("Market token addresses:")
  * Object.entries(Contracts.moonriver.MARKETS).map(([assetName, market] : [string, Market]) => {
  *     console.log("  ", assetName, '-', market.tokenAddress)
