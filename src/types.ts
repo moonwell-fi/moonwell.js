@@ -1,6 +1,6 @@
 import BigNumber from "bignumber.js";
 
-type StringOrNull = string | null
+export type StringOrNull = string | null
 
 export type Market = {
     name: string
