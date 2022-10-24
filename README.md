@@ -40,3 +40,9 @@ $ npm install --save @moonwell-fi/moonwell.js
 # Docs
 
 You can find the latest typedoc docs deployed at https://moonwell-fi.github.io/moonwell.js/modules.html which holds an overview of the library and examples for usage.
+
+# Examples
+
+Examples can be found in `examples/`
+
+- [Query Contract Addresses For Moonriver](examples/query-contracts/index.js)
