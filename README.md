@@ -18,6 +18,7 @@
 🌕 **Moonwell.js** is your one-stop library for interacting with the [Moonwell protocol](https://moonwell.fi).
 
 * 📝 An up-to-date repository of all deployed contracts
+* 📜 (**COMING SOON**) An up-to-date repository of the latest contract code
 * 📊 (**COMING SOON**) A collection of utilities for querying and calculating various things about positions, rewards, etc
 * 👩‍🚀 (**COMING SOON**) A collection of high level functions to do things within the Moonwell protocol (borrow, supply, etc)
 
