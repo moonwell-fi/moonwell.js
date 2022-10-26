@@ -4,9 +4,11 @@
  * @packageDocumentation
  */
 
-import moonbeam from './environments/moonbeam'
-import moonriver from './environments/moonriver'
-import moonbase from './environments/moonbase'
+import { contracts as MoonbeamContracts } from './environments/moonbeam'
+import { contracts as MoonriverContracts } from './environments/moonriver'
+import { contracts as MoonbaseContracts } from './environments/moonbase'
+
+import {Environment} from "./types";
 
 /**
  * The {@link Contracts} object is simply a mapping of environment to {@link ContractBundle} for each environment that Moonwell is deployed on.
@@ -53,9 +55,9 @@ import moonbase from './environments/moonbase'
  *
 */
 export const Contracts = {
-  moonbeam,
-  moonriver,
-  moonbase,
+  [Environment.MOONBEAM]: MoonbeamContracts,
+  [Environment.MOONRIVER]: MoonriverContracts,
+  [Environment.MOONBASE]: MoonbaseContracts,
 }
 
 export * from './types'

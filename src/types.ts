@@ -1,4 +1,5 @@
 import BigNumber from "bignumber.js";
+import {ethers} from "ethers";
 
 export type StringOrNull = string | null
 
@@ -57,4 +58,14 @@ export type ContractBundle = {
     MARKETS: {
         [ticker: string]: Market
     }
+}
+
+export enum Environment {
+    MOONRIVER = "moonriver",
+    MOONBEAM = "moonbeam",
+    MOONBASE = "moonbase",
+}
+
+export type ProtocolOptions = {
+    rpcProvider: ethers.providers.JsonRpcProvider
 }

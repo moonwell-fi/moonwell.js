@@ -2,15 +2,15 @@ import BigNumber from "bignumber.js";
 
 import {ContractBundle} from "../types";
 
-const contracts: ContractBundle = {
+export const contracts: ContractBundle = {
     CLAIMS: '0x8568A675384d761f36eC269D695d6Ce4423cfaB1',
     COMPTROLLER: '0x0b7a0EAA884849c6Af7a129e899536dDDcA4905E',
-    GOVERNOR: null,
+    GOVERNOR: '0x2BE2e230e89c59c8E20E633C524AD2De246e7370',
     GOV_TOKEN: '0xBb8d88bcD9749636BC4D2bE22aaC4Bb3B01A58F1',
     MAXIMILLION: '0x1650C0AD9483158f9e240fd58d0E173807A80CcC',
     ORACLE: '0x892bE716Dcf0A6199677F355f45ba8CC123BAF60',
     SAFETY_MODULE: '0xCd76e63f3AbFA864c53b4B98F57c1aA6539FDa3a',
-    TIMELOCK: null,
+    TIMELOCK: '0x04e6322D196E0E4cCBb2610dd8B8f2871E160bd7',
 
     MARKETS: {
         "USDC.multi": {
@@ -85,5 +85,3 @@ const contracts: ContractBundle = {
         }
     }
 }
-
-export default contracts

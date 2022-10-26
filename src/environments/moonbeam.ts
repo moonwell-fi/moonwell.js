@@ -1,7 +1,7 @@
 import BigNumber from "bignumber.js";
 import {ContractBundle} from "../types";
 
-const contracts: ContractBundle = {
+export const contracts: ContractBundle = {
     CLAIMS: '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
     COMPTROLLER: '0x8E00D5e02E65A19337Cdba98bbA9F84d4186a180',
     GOVERNOR: '0xfc4DFB17101A12C5CEc5eeDd8E92B5b16557666d',
@@ -74,5 +74,3 @@ const contracts: ContractBundle = {
         },
     }
 }
-
-export default contracts
