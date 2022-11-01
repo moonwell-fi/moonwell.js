@@ -8,7 +8,7 @@ import { contracts as MoonbeamContracts } from './environments/moonbeam'
 import { contracts as MoonriverContracts } from './environments/moonriver'
 import { contracts as MoonbaseContracts } from './environments/moonbase'
 
-import {Environment} from "./types";
+import { Environment } from "./types";
 
 /**
  * The {@link Contracts} object is simply a mapping of environment to {@link ContractBundle} for each environment that Moonwell is deployed on.
@@ -61,3 +61,4 @@ export const Contracts = {
 }
 
 export * from './types'
+export * from './helpers'

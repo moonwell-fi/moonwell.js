@@ -1,5 +1,5 @@
 import BigNumber from "bignumber.js";
-import {ContractBundle} from "../types";
+import { ContractBundle } from "../types";
 
 export const contracts: ContractBundle = {
     CLAIMS: '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
@@ -10,6 +10,8 @@ export const contracts: ContractBundle = {
     ORACLE: '0xED301cd3EB27217BDB05C4E9B820a8A3c8B665f9',
     SAFETY_MODULE: '0x8568A675384d761f36eC269D695d6Ce4423cfaB1',
     TIMELOCK: '0x3a9249d70dCb4A4E9ef4f3AF99a3A130452ec19B',
+    INTEREST_RATE_MODEL: '0x1Ce7e4928943d6A4820375eBe737204dc1E73755',
+    MERC_20_IMPL: '0x948CCfff51F894DBA5C250aa2844d58E169f8aD9',
 
     MARKETS: {
         "ETH.mad": {
