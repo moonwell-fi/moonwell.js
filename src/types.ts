@@ -1,5 +1,5 @@
 import BigNumber from "bignumber.js";
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 export type StringOrNull = string | null
 
@@ -54,10 +54,23 @@ export type ContractBundle = {
     /** The environment's Governor Timelock address, null if non-existent */
     TIMELOCK: StringOrNull
 
+    /** The environment's interest model. */
+    INTEREST_RATE_MODEL: string
+
+    /** The contract that is the implementation of MErc20s */
+    MERC_20_IMPL: string
+
     /** An object of all deployed markets in this environment */
     MARKETS: {
         [ticker: string]: Market
     }
+}
+
+export type ProposalData = {
+    targets: string[]
+    values: number[]
+    signatures: string[]
+    callDatas: string[]
 }
 
 export enum Environment {

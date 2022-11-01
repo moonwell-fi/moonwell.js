@@ -1,6 +1,6 @@
 import BigNumber from "bignumber.js";
 
-import {ContractBundle} from "../types";
+import { ContractBundle } from "../types";
 
 export const contracts: ContractBundle = {
     CLAIMS: '0x8568A675384d761f36eC269D695d6Ce4423cfaB1',
@@ -11,6 +11,8 @@ export const contracts: ContractBundle = {
     ORACLE: '0x892bE716Dcf0A6199677F355f45ba8CC123BAF60',
     SAFETY_MODULE: '0xCd76e63f3AbFA864c53b4B98F57c1aA6539FDa3a',
     TIMELOCK: '0x04e6322D196E0E4cCBb2610dd8B8f2871E160bd7',
+    INTEREST_RATE_MODEL: '0xC862A3af64a8d3C146E6c505a18c2B6c6a6601bf',
+    MERC_20_IMPL: '0x45d17FE87e65064b2e85F91A9FF3aD0C7B6Cf75d',
 
     MARKETS: {
         "USDC.multi": {
