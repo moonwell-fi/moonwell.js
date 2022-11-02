@@ -9,7 +9,7 @@ export const getNativeTokenSymbol = (environment: Environment): string => {
       return "DEV"
     case Environment.MOONRIVER:
       return "MOVR"
-    case Environment.MOONBASE:
+    case Environment.MOONBEAM:
       return "GLMR"
     default:
       throw new Error(`Unknown environment: ${environment}`)
@@ -25,7 +25,7 @@ export const getGovernanceTokenSymbol = (environment: Environment): string => {
       return "MFAM"
     case Environment.MOONRIVER:
       return "MFAM"
-    case Environment.MOONBASE:
+    case Environment.MOONBEAM:
       return "WELL"
     default:
       throw new Error(`Unknown environment: ${environment}`)
