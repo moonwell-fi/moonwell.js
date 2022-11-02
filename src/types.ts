@@ -66,11 +66,32 @@ export type ContractBundle = {
     }
 }
 
+/**
+ * Property bag that represents a governance proposal.
+ */
 export type ProposalData = {
+    /** A list of contract addresses. */
     targets: string[]
+
+    /** The amount of the native asset to transfer with each call. */
     values: number[]
+
+    /** Signatures of each method. */    
     signatures: string[]
+
+    /** Calldata to send with each method call. */
     callDatas: string[]
+}
+
+/** Outputs from compiling a contract. */
+export type CompileArtifact = {
+    /** Array of JSON objects  */
+    abi: Record<string, any>[]
+
+    /** Bytecode of the compiled contract, represented as a hexadecimal string. */
+    bytecode: string
+
+    /** NOTE: Other fields exist, but are not used and are therefore not typed. */
 }
 
 export enum Environment {
