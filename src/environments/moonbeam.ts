@@ -7,8 +7,8 @@ export const contracts: ContractBundle = {
         address: '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
         getDeployArtifact: () => require('../deploy-artifacts/Claims.json'),
         getContractInstance: function() { return new ethers.Contract(this.address, this.getDeployArtifact().abi)},
-        getProxyDeployArtifact: function() { throw new Error('this would return the proxy contract abi')},
-        getProxyContractInstance: function() { throw new Error('this would return the proxy contract instance') }
+        getProxyDeployArtifact: () =>  require('../deploy-artifacts/TransparentProxy.json'),
+        getProxyContractInstance: function() { return new ethers.Contract(this.address, this.getProxyDeployArtifact().abi)},
     },
     COMPTROLLER: {
         address: '0x8E00D5e02E65A19337Cdba98bbA9F84d4186a180',
@@ -57,11 +57,6 @@ export const contracts: ContractBundle = {
             mTokenDigits: 8,
             mantissa: new BigNumber(1e18),
             mTokenMantissa: new BigNumber(1e8),
-
-            getDeployArtifact: () => require('../deploy-artifacts/MToken.json'),
-            getContractInstance: function() { return new ethers.Contract(this.address, this.getDeployArtifact().abi)},
-            getProxyDeployArtifact: function() { throw new Error('this would return the proxy contract abi')},
-            getProxyContractInstance: function() { throw new Error('this would return the proxy contract instance') }
         },
         "BTC.mad": {
             name: "Bitcoin",
@@ -96,8 +91,8 @@ export const contracts: ContractBundle = {
 
             getDeployArtifact: () => require('../deploy-artifacts/MToken.json'),
             getContractInstance: function() { return new ethers.Contract(this.address, this.getDeployArtifact().abi)},
-            getProxyDeployArtifact: () => require('../deploy-artifacts/MTokenDelegator.json'),
-            getProxyContractInstance: function() { return new ethers.Contract(this.address, this.getProxyDeployArtifact().abi) }
+            getProxyDeployArtifact: function() { throw new Error('No proxy deploy artifact for native asset')},
+            getProxyContractInstance: function() { throw new Error('No proxy contract for native asset') }
         },
         "xcDOT": {
             name: "Polkadot",
@@ -108,6 +103,11 @@ export const contracts: ContractBundle = {
             mTokenDigits: 8,
             mantissa: new BigNumber(1e10),
             mTokenMantissa: new BigNumber(1e8),
+ 
+            getDeployArtifact: () => require('../deploy-artifacts/MToken.json'),
+            getContractInstance: function() { return new ethers.Contract(this.address, this.getDeployArtifact().abi)},
+            getProxyDeployArtifact: () => require('../deploy-artifacts/MTokenDelegator.json'),
+            getProxyContractInstance: function() { return new ethers.Contract(this.address, this.getProxyDeployArtifact().abi) }
         },
         "FRAX": {
             name: "Frax",
