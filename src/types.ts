@@ -3,6 +3,23 @@ import { ethers } from "ethers";
 
 export type StringOrNull = string | null
 
+export type DeployArtifact = {
+    _format: string
+    contractName: string
+    sourceName: string
+    abi: any[]
+    bytecode: string
+    deployedBytecode: string
+    linkReferences: any
+    deployedLinkReferences: any
+}
+
+export type ContractData = {
+    address: string,
+    getDeployArtifact: () => DeployArtifact
+}
+
+
 export type Market = {
     /** An asset's name (ex. "Polkadot") */
     name: string
@@ -31,34 +48,34 @@ export type Market = {
 
 export type ContractBundle = {
     /** The environment's Claims contract address, null if non-existent */
-    CLAIMS: StringOrNull
+    CLAIMS: ContractData | null
 
     /** The environment's Comptroller contract address */
-    COMPTROLLER: string
+    COMPTROLLER: ContractData
 
     /** The environment's Governor contract address, null if non-existent */
-    GOVERNOR: StringOrNull
+    GOVERNOR: ContractData | null
 
     /** The environment's Gov Token (WELL/MFAM) address */
-    GOV_TOKEN: string
+    GOV_TOKEN: ContractData
 
     /** The environment's Maximillion deployment, which is used for closing positions in the market after accuring a final round of interest */
-    MAXIMILLION: string
+    MAXIMILLION: ContractData
 
     /** The environment's deployed PriceOracle, which brokers lookups to Chainlink */
-    ORACLE: string
+    ORACLE: ContractData
 
     /** The environment's Safety Module */
-    SAFETY_MODULE: string
+    SAFETY_MODULE: ContractData
 
     /** The environment's Governor Timelock address, null if non-existent */
-    TIMELOCK: StringOrNull
+    TIMELOCK: ContractData | null
 
     /** The environment's interest model. */
-    INTEREST_RATE_MODEL: string
+    INTEREST_RATE_MODEL: ContractData
 
     /** The contract that is the implementation of MErc20s */
-    MERC_20_IMPL: string
+    MERC_20_IMPL: ContractData
 
     /** An object of all deployed markets in this environment */
     MARKETS: {

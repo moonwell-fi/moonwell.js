@@ -2,16 +2,46 @@ import BigNumber from "bignumber.js";
 import { ContractBundle } from "../types";
 
 export const contracts: ContractBundle = {
-    CLAIMS: '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
-    COMPTROLLER: '0x8E00D5e02E65A19337Cdba98bbA9F84d4186a180',
-    GOVERNOR: '0xfc4DFB17101A12C5CEc5eeDd8E92B5b16557666d',
-    GOV_TOKEN: '0x511aB53F793683763E5a8829738301368a2411E3',
-    MAXIMILLION: '0xe5Ef9310cC7E3437bAD83466675f24FD62A380c3',
-    ORACLE: '0xED301cd3EB27217BDB05C4E9B820a8A3c8B665f9',
-    SAFETY_MODULE: '0x8568A675384d761f36eC269D695d6Ce4423cfaB1',
-    TIMELOCK: '0x3a9249d70dCb4A4E9ef4f3AF99a3A130452ec19B',
-    INTEREST_RATE_MODEL: '0x1Ce7e4928943d6A4820375eBe737204dc1E73755',
-    MERC_20_IMPL: '0x948CCfff51F894DBA5C250aa2844d58E169f8aD9',
+    CLAIMS: {
+        address: '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
+        getDeployArtifact: () => require('../deploy-artifacts/Claims.json')
+    },
+    COMPTROLLER: {
+        address: '0x8E00D5e02E65A19337Cdba98bbA9F84d4186a180',
+        getDeployArtifact: () => require('../deploy-artifacts/Comptroller.json')
+    },
+    GOVERNOR: {
+        address: '0xfc4DFB17101A12C5CEc5eeDd8E92B5b16557666d',
+        getDeployArtifact: () => require('../deploy-artifacts/MoonwellGovernorArtemis.json')
+    },
+    GOV_TOKEN: {
+        address: '0x511aB53F793683763E5a8829738301368a2411E3',
+        getDeployArtifact: () => require('../deploy-artifacts/Well.json')
+    },
+    MAXIMILLION: {
+        address: '0xe5Ef9310cC7E3437bAD83466675f24FD62A380c3',
+        getDeployArtifact: () => require('../deploy-artifacts/Maximillion.json')
+    },
+    ORACLE: {
+        address: '0xED301cd3EB27217BDB05C4E9B820a8A3c8B665f9',
+        getDeployArtifact: () => require('../deploy-artifacts/ChainlinkOracle.json')
+    },
+    SAFETY_MODULE: {
+        address: '0x8568A675384d761f36eC269D695d6Ce4423cfaB1',
+        getDeployArtifact: () => require('../deploy-artifacts/StakedWell.json')
+    },
+    TIMELOCK: {
+        address: '0x3a9249d70dCb4A4E9ef4f3AF99a3A130452ec19B',
+        getDeployArtifact: () => require('../deploy-artifacts/Timelock.json')
+    },
+    INTEREST_RATE_MODEL: {
+        address: '0x1Ce7e4928943d6A4820375eBe737204dc1E73755',
+        getDeployArtifact: () => require('../deploy-artifacts/InterestRateModel.json')
+    },
+    MERC_20_IMPL: {
+        address: '0x948CCfff51F894DBA5C250aa2844d58E169f8aD9',
+        getDeployArtifact: () => require('../deploy-artifacts/MErc20Delegator.json')
+    },
 
     MARKETS: {
         "ETH.mad": {

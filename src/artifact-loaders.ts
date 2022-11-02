@@ -40,5 +40,5 @@ export const loadArtifact = (contractName: keyof ContractBundle): CompileArtifac
       //    - loadArtifact(GOVERNOR, { environment: MOONBEAM, getProxy: true }) => throw new Error("No proxy on this contract")
     }
 
-  return require(`./abis/${artifactName}`)
+  return require(`./deploy-artifacts/${artifactName}`)
 }
