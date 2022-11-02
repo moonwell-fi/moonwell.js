@@ -76,3 +76,15 @@ export const contracts: ContractBundle = {
         },
     }
 }
+
+export const environment = {
+    networkID: parseInt('0x504'),
+    chainID: parseInt('0x504'),
+    nativeAssetTicker: 'GLMR',
+    govTokenTicker: 'WELL',
+    networkName: 'Moonbeam',
+    networkLink: "https://moonbeam.network/networks/moonbeam/",
+    networkBlockTimeSec: 15,
+    graphQLHost: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonbeam',
+    govPortalURL: 'https://gov.moonwell.fi/artemis',
+}
