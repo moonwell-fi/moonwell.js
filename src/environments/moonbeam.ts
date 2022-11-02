@@ -1,10 +1,14 @@
 import BigNumber from "bignumber.js";
+import { ethers } from "ethers";
 import { ContractBundle } from "../types";
 
 export const contracts: ContractBundle = {
     CLAIMS: {
         address: '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
-        getDeployArtifact: () => require('../deploy-artifacts/Claims.json')
+        getDeployArtifact: () => require('../deploy-artifacts/Claims.json'),
+        getContractInstance: function() { return new ethers.Contract(this.address, this.getDeployArtifact().abi)},
+        getProxyDeployArtifact: function() { throw new Error('this would return the proxy contract abi')},
+        getProxyContractInstance: function() { throw new Error('this would return the proxy contract instance') }
     },
     COMPTROLLER: {
         address: '0x8E00D5e02E65A19337Cdba98bbA9F84d4186a180',
@@ -48,17 +52,22 @@ export const contracts: ContractBundle = {
             name: "Ethereum",
             assetTicker: "ETH",
             tokenAddress: "0x30d2a9f5fdf90ace8c17952cbb4ee48a55d916a7",
-            mTokenAddress: "0xc3090f41Eb54A7f18587FD6651d4D3ab477b07a4",
+            address: "0xc3090f41Eb54A7f18587FD6651d4D3ab477b07a4",
             digits: 18,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e18),
             mTokenMantissa: new BigNumber(1e8),
+
+            getDeployArtifact: () => require('../deploy-artifacts/MToken.json'),
+            getContractInstance: function() { return new ethers.Contract(this.address, this.getDeployArtifact().abi)},
+            getProxyDeployArtifact: function() { throw new Error('this would return the proxy contract abi')},
+            getProxyContractInstance: function() { throw new Error('this would return the proxy contract instance') }
         },
         "BTC.mad": {
             name: "Bitcoin",
             assetTicker: "BTC",
             tokenAddress: '0x1DC78Acda13a8BC4408B207c9E48CDBc096D95e0',
-            mTokenAddress: "0x24A9d8f1f350d59cB0368D3d52A77dB29c833D1D",
+            address: "0x24A9d8f1f350d59cB0368D3d52A77dB29c833D1D",
             digits: 8,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e8),
@@ -68,7 +77,7 @@ export const contracts: ContractBundle = {
             name: "USD Coin",
             assetTicker: "USDC",
             tokenAddress: "0x8f552a71efe5eefc207bf75485b356a0b3f01ec9",
-            mTokenAddress: "0x02e9081DfadD37A852F9a73C4d7d69e615E61334",
+            address: "0x02e9081DfadD37A852F9a73C4d7d69e615E61334",
             digits: 6,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e6),
@@ -78,17 +87,23 @@ export const contracts: ContractBundle = {
             name: "Moonbeam",
             assetTicker: "GLMR",
             tokenAddress: null,
-            mTokenAddress: "0x091608f4e4a15335145be0A279483C0f8E4c7955",
+            address: "0x091608f4e4a15335145be0A279483C0f8E4c7955",
             digits: 18,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e18),
             mTokenMantissa: new BigNumber(1e8),
+
+
+            getDeployArtifact: () => require('../deploy-artifacts/MToken.json'),
+            getContractInstance: function() { return new ethers.Contract(this.address, this.getDeployArtifact().abi)},
+            getProxyDeployArtifact: () => require('../deploy-artifacts/MTokenDelegator.json'),
+            getProxyContractInstance: function() { return new ethers.Contract(this.address, this.getProxyDeployArtifact().abi) }
         },
         "xcDOT": {
             name: "Polkadot",
             assetTicker: "xcDOT",
             tokenAddress: "0xffffffff1fcacbd218edc0eba20fc2308c778080",
-            mTokenAddress: "0xD22Da948c0aB3A27f5570b604f3ADef5F68211C3",
+            address: "0xD22Da948c0aB3A27f5570b604f3ADef5F68211C3",
             digits: 10,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e10),
@@ -98,7 +113,7 @@ export const contracts: ContractBundle = {
             name: "Frax",
             assetTicker: "FRAX",
             tokenAddress: '0x322e86852e492a7ee17f28a78c663da38fb33bfb',
-            mTokenAddress: "0x1C55649f73CDA2f72CEf3DD6C5CA3d49EFcF484C",
+            address: "0x1C55649f73CDA2f72CEf3DD6C5CA3d49EFcF484C",
             digits: 18,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e18),
