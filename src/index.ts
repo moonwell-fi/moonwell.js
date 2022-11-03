@@ -5,10 +5,68 @@
  */
 
 import { contracts as MoonbeamContracts } from './environments/moonbeam'
-import { contracts as MoonriverContracts } from './environments/moonriver'
-import { contracts as MoonbaseContracts } from './environments/moonbase'
+// import { contracts as MoonriverContracts } from './environments/moonriver'
+// import { contracts as MoonbaseContracts } from './environments/moonbase'
 
 import { Environment } from "./types";
+import { ethers } from "ethers";
+
+export class MoonwellContract {
+  constructor(
+      readonly address: string,
+      readonly artifactPath: string,
+      readonly signerOrProvider?: ethers.Signer | ethers.providers.Provider
+  ) {}
+
+  public getContract(signerOrProvider?: ethers.Signer | ethers.providers.Provider) {
+    return new ethers.Contract(
+        this.address,
+        this.getContractArtifact().abi,
+        signerOrProvider || this.signerOrProvider
+    )
+  }
+
+  public getContractArtifact() {
+    return require(this.artifactPath)
+  }
+}
+
+export class MoonwellContractWithProxy extends MoonwellContract {
+  constructor(
+      readonly implementationAddress: string,
+      readonly implementationArtifactPath: string,
+      readonly proxyAddress: string,
+      readonly proxyArtifactPath: string,
+      signerOrProvider?,
+  ) {
+    // Ensure `getContract` will return a proxy target with an implementation ABI
+    super(proxyAddress, implementationArtifactPath, signerOrProvider)
+  }
+
+  // Get instance of the proxy contract with the proxy ABI
+  public getProxyContract(signerOrProvider?: ethers.Signer | ethers.providers.Provider) {
+    return new ethers.Contract(
+        this.proxyAddress,
+        this.getProxyArtifact().abi,
+        signerOrProvider || this.signerOrProvider
+    )
+  }
+  public getProxyArtifact() {
+    return require(this.proxyArtifactPath)
+  }
+
+  // Get instance of the implementation contract with the implementation ABI
+  public getImplementationContract(signerOrProvider?: ethers.Signer | ethers.providers.Provider) {
+    return new ethers.Contract(
+        this.implementationAddress,
+        this.getImplementationArtifact().abi,
+        signerOrProvider || this.signerOrProvider
+    )
+  }
+  public getImplementationArtifact() {
+    return require(this.implementationArtifactPath)
+  }
+}
 
 /**
  * The {@link Contracts} object is simply a mapping of environment to {@link ContractBundle} for each environment that Moonwell is deployed on.
@@ -56,8 +114,8 @@ import { Environment } from "./types";
 */
 export const Contracts = {
   [Environment.MOONBEAM]: MoonbeamContracts,
-  [Environment.MOONRIVER]: MoonriverContracts,
-  [Environment.MOONBASE]: MoonbaseContracts,
+  // [Environment.MOONRIVER]: MoonriverContracts,
+  // [Environment.MOONBASE]: MoonbaseContracts,
 }
 
 export * from './types'

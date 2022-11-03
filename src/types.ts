@@ -1,5 +1,6 @@
 import BigNumber from "bignumber.js";
 import { Contract, ethers } from "ethers";
+import {MoonwellContract, MoonwellContractWithProxy} from "./index";
 
 export type StringOrNull = string | null
 
@@ -16,17 +17,10 @@ export type DeployArtifact = {
 
 export type ContractData = {
     address: string,
-    getDeployArtifact: () => DeployArtifact
-    getContractInstance: () => Contract
-}
-
-export type ContractDataWithProxy = ContractData & {
-    getProxyDeployArtifact: () => DeployArtifact
-    getProxyContractInstance: () => Contract
 }
 
 
-export type Market = ContractDataWithProxy & {
+export type Market = {
     /** An asset's name (ex. "Polkadot") */
     name: string
 
@@ -37,8 +31,7 @@ export type Market = ContractDataWithProxy & {
     tokenAddress: StringOrNull
 
     /** A market's mToken address */
-    // Remove since we've now inherited address
-    // mTokenAddress: string
+    mTokenAddress: string
 
     /** An market's underlying token mantissa */
     digits: number
@@ -55,13 +48,13 @@ export type Market = ContractDataWithProxy & {
 
 export type ContractBundle = {
     /** The environment's Claims contract address, null if non-existent */
-    CLAIMS: ContractDataWithProxy
+    CLAIMS: MoonwellContractWithProxy
 
     /** The environment's Comptroller contract address */
     COMPTROLLER: ContractData
 
     /** The environment's Governor contract address, null if non-existent */
-    GOVERNOR: ContractData
+    GOVERNOR: MoonwellContract
 
     /** The environment's Gov Token (WELL/MFAM) address */
     GOV_TOKEN: ContractData
@@ -73,7 +66,7 @@ export type ContractBundle = {
     ORACLE: ContractData
 
     /** The environment's Safety Module */
-    SAFETY_MODULE: ContractDataWithProxy
+    SAFETY_MODULE: ContractData
 
     /** The environment's Governor Timelock address, null if non-existent */
     TIMELOCK: ContractData

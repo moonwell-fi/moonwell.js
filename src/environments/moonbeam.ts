@@ -1,50 +1,44 @@
 import BigNumber from "bignumber.js";
-import { ethers } from "ethers";
 import { ContractBundle } from "../types";
+import {MoonwellContract, MoonwellContractWithProxy} from "../index";
+import {ethers} from "ethers";
 
 export const contracts: ContractBundle = {
-    CLAIMS: {
-        address: '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
-        getDeployArtifact: () => require('../deploy-artifacts/Claims.json'),
-        getContractInstance: function() { return new ethers.Contract(this.address, this.getDeployArtifact().abi)},
-        getProxyDeployArtifact: () =>  require('../deploy-artifacts/TransparentProxy.json'),
-        getProxyContractInstance: function() { return new ethers.Contract(this.address, this.getProxyDeployArtifact().abi)},
-    },
+    CLAIMS: new MoonwellContractWithProxy(
+        '0x77e43754112add0a2c5840d25a5663b047b65563',
+        '../deploy-artifacts/Claims.json',
+        '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
+        '../deploy-artifacts/TransparentProxy.json',
+    ),
+    GOVERNOR: new MoonwellContract(
+        '0xfc4DFB17101A12C5CEc5eeDd8E92B5b16557666d',
+        '../deploy-artifacts/MoonwellGovernorArtemis.json',
+    ),
+
+    // Ignore below here
     COMPTROLLER: {
         address: '0x8E00D5e02E65A19337Cdba98bbA9F84d4186a180',
-        getDeployArtifact: () => require('../deploy-artifacts/Comptroller.json')
-    },
-    GOVERNOR: {
-        address: '0xfc4DFB17101A12C5CEc5eeDd8E92B5b16557666d',
-        getDeployArtifact: () => require('../deploy-artifacts/MoonwellGovernorArtemis.json')
     },
     GOV_TOKEN: {
         address: '0x511aB53F793683763E5a8829738301368a2411E3',
-        getDeployArtifact: () => require('../deploy-artifacts/Well.json')
     },
     MAXIMILLION: {
         address: '0xe5Ef9310cC7E3437bAD83466675f24FD62A380c3',
-        getDeployArtifact: () => require('../deploy-artifacts/Maximillion.json')
     },
     ORACLE: {
         address: '0xED301cd3EB27217BDB05C4E9B820a8A3c8B665f9',
-        getDeployArtifact: () => require('../deploy-artifacts/ChainlinkOracle.json')
     },
     SAFETY_MODULE: {
         address: '0x8568A675384d761f36eC269D695d6Ce4423cfaB1',
-        getDeployArtifact: () => require('../deploy-artifacts/StakedWell.json')
     },
     TIMELOCK: {
         address: '0x3a9249d70dCb4A4E9ef4f3AF99a3A130452ec19B',
-        getDeployArtifact: () => require('../deploy-artifacts/Timelock.json')
     },
     INTEREST_RATE_MODEL: {
         address: '0x1Ce7e4928943d6A4820375eBe737204dc1E73755',
-        getDeployArtifact: () => require('../deploy-artifacts/InterestRateModel.json')
     },
     MERC_20_IMPL: {
         address: '0x948CCfff51F894DBA5C250aa2844d58E169f8aD9',
-        getDeployArtifact: () => require('../deploy-artifacts/MErc20Delegator.json')
     },
 
     MARKETS: {
@@ -52,7 +46,7 @@ export const contracts: ContractBundle = {
             name: "Ethereum",
             assetTicker: "ETH",
             tokenAddress: "0x30d2a9f5fdf90ace8c17952cbb4ee48a55d916a7",
-            address: "0xc3090f41Eb54A7f18587FD6651d4D3ab477b07a4",
+            mTokenAddress: "0xc3090f41Eb54A7f18587FD6651d4D3ab477b07a4",
             digits: 18,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e18),
@@ -62,7 +56,7 @@ export const contracts: ContractBundle = {
             name: "Bitcoin",
             assetTicker: "BTC",
             tokenAddress: '0x1DC78Acda13a8BC4408B207c9E48CDBc096D95e0',
-            address: "0x24A9d8f1f350d59cB0368D3d52A77dB29c833D1D",
+            mTokenAddress: "0x24A9d8f1f350d59cB0368D3d52A77dB29c833D1D",
             digits: 8,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e8),
@@ -72,7 +66,7 @@ export const contracts: ContractBundle = {
             name: "USD Coin",
             assetTicker: "USDC",
             tokenAddress: "0x8f552a71efe5eefc207bf75485b356a0b3f01ec9",
-            address: "0x02e9081DfadD37A852F9a73C4d7d69e615E61334",
+            mTokenAddress: "0x02e9081DfadD37A852F9a73C4d7d69e615E61334",
             digits: 6,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e6),
@@ -82,38 +76,27 @@ export const contracts: ContractBundle = {
             name: "Moonbeam",
             assetTicker: "GLMR",
             tokenAddress: null,
-            address: "0x091608f4e4a15335145be0A279483C0f8E4c7955",
+            mTokenAddress: "0x091608f4e4a15335145be0A279483C0f8E4c7955",
             digits: 18,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e18),
             mTokenMantissa: new BigNumber(1e8),
-
-
-            getDeployArtifact: () => require('../deploy-artifacts/MToken.json'),
-            getContractInstance: function() { return new ethers.Contract(this.address, this.getDeployArtifact().abi)},
-            getProxyDeployArtifact: function() { throw new Error('No proxy deploy artifact for native asset')},
-            getProxyContractInstance: function() { throw new Error('No proxy contract for native asset') }
         },
         "xcDOT": {
             name: "Polkadot",
             assetTicker: "xcDOT",
             tokenAddress: "0xffffffff1fcacbd218edc0eba20fc2308c778080",
-            address: "0xD22Da948c0aB3A27f5570b604f3ADef5F68211C3",
+            mTokenAddress: "0xD22Da948c0aB3A27f5570b604f3ADef5F68211C3",
             digits: 10,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e10),
             mTokenMantissa: new BigNumber(1e8),
- 
-            getDeployArtifact: () => require('../deploy-artifacts/MToken.json'),
-            getContractInstance: function() { return new ethers.Contract(this.address, this.getDeployArtifact().abi)},
-            getProxyDeployArtifact: () => require('../deploy-artifacts/MTokenDelegator.json'),
-            getProxyContractInstance: function() { return new ethers.Contract(this.address, this.getProxyDeployArtifact().abi) }
         },
         "FRAX": {
             name: "Frax",
             assetTicker: "FRAX",
             tokenAddress: '0x322e86852e492a7ee17f28a78c663da38fb33bfb',
-            address: "0x1C55649f73CDA2f72CEf3DD6C5CA3d49EFcF484C",
+            mTokenAddress: "0x1C55649f73CDA2f72CEf3DD6C5CA3d49EFcF484C",
             digits: 18,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e18),
@@ -121,3 +104,21 @@ export const contracts: ContractBundle = {
         },
     }
 }
+
+// Example usage
+const someSigner = new ethers.providers.JsonRpcProvider()
+
+// Get a ready-to-go claims contract, pointing at the proxy address and implementation ABI
+const claimsContract = contracts.CLAIMS.getContract().connect(someSigner)
+// Or pass in a signer (also possible to pass it in at class construction, will fall back gracefully
+const claimsContractWithSigner = contracts.CLAIMS.getContract(someSigner)
+
+// If you want to get a proxy impl pointing at a proxy address
+const claimsProxy = contracts.CLAIMS.getProxyContract().connect(someSigner)
+// Or pass in a signer as with `getContract`
+const claimsProxyWithSigner = contracts.CLAIMS.getProxyContract(someSigner)
+
+// If you want to get a impl contract pointing at the impl address
+const claimsImpl = contracts.CLAIMS.getImplementationContract().connect(someSigner)
+// Or pass in a signer as with `getContract`
+const claimsImplWithSigner = contracts.CLAIMS.getImplementationContract(someSigner)
