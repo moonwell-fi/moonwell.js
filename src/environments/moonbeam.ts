@@ -1,45 +1,65 @@
 import BigNumber from "bignumber.js";
-import { ContractBundle } from "../types";
-import {MoonwellContract, MoonwellContractWithProxy} from "../index";
+import { ContractBundle, Environment, MoonwellContract, MoonwellContractWithProxy } from "../types";
 import {ethers} from "ethers";
 
+
 export const contracts: ContractBundle = {
+    environment: Environment.MOONBEAM,
+
     CLAIMS: new MoonwellContractWithProxy(
-        '0x77e43754112add0a2c5840d25a5663b047b65563',
-        '../deploy-artifacts/Claims.json',
         '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
-        '../deploy-artifacts/TransparentProxy.json',
+        './deploy-artifacts/TokenSaleDistributor.json',
+        './deploy-artifacts/TokenSaleDistributorProxy.json',
     ),
     GOVERNOR: new MoonwellContract(
         '0xfc4DFB17101A12C5CEc5eeDd8E92B5b16557666d',
-        '../deploy-artifacts/MoonwellGovernorArtemis.json',
+        './deploy-artifacts/MoonwellGovernorArtemis.json',
     ),
 
-    // Ignore below here
-    COMPTROLLER: {
-        address: '0x8E00D5e02E65A19337Cdba98bbA9F84d4186a180',
-    },
-    GOV_TOKEN: {
-        address: '0x511aB53F793683763E5a8829738301368a2411E3',
-    },
-    MAXIMILLION: {
-        address: '0xe5Ef9310cC7E3437bAD83466675f24FD62A380c3',
-    },
-    ORACLE: {
-        address: '0xED301cd3EB27217BDB05C4E9B820a8A3c8B665f9',
-    },
-    SAFETY_MODULE: {
-        address: '0x8568A675384d761f36eC269D695d6Ce4423cfaB1',
-    },
-    TIMELOCK: {
-        address: '0x3a9249d70dCb4A4E9ef4f3AF99a3A130452ec19B',
-    },
-    INTEREST_RATE_MODEL: {
-        address: '0x1Ce7e4928943d6A4820375eBe737204dc1E73755',
-    },
-    MERC_20_IMPL: {
-        address: '0x948CCfff51F894DBA5C250aa2844d58E169f8aD9',
-    },
+    COMPTROLLER: new MoonwellContractWithProxy(
+        '0x8E00D5e02E65A19337Cdba98bbA9F84d4186a180', 
+        './deploy-artifacts/Comptroller.json',
+        './deploy-artifacts/Unitroller.json',
+    ),
+    
+    
+    GOV_TOKEN:  new MoonwellContract(
+        '0x511aB53F793683763E5a8829738301368a2411E3', 
+        './deploy-artifacts/Well.json'
+    ),
+
+
+    MAXIMILLION: new MoonwellContract(
+        '0xe5Ef9310cC7E3437bAD83466675f24FD62A380c3', 
+        './deploy-artifacts/Maximillion.json'
+    ),
+
+    ORACLE: new MoonwellContract(
+        '0xED301cd3EB27217BDB05C4E9B820a8A3c8B665f9', 
+        './deploy-artifacts/ChainlinkOracle.json'
+    ),
+
+
+    SAFETY_MODULE: new MoonwellContractWithProxy(
+        '0x8568A675384d761f36eC269D695d6Ce4423cfaB1', 
+        './deploy-artifacts/StakedWell.json',
+        './deploy-artifacts/TransparentProxy.json',
+    ),
+
+    TIMELOCK: new MoonwellContract(
+        '0x3a9249d70dCb4A4E9ef4f3AF99a3A130452ec19B', 
+        './deploy-artifacts/Timelock.json',
+    ),
+
+    INTEREST_RATE_MODEL: new MoonwellContract(
+        '0x1Ce7e4928943d6A4820375eBe737204dc1E73755', 
+        './deploy-artifacts/StakedWell.json',
+    ),
+
+    MERC_20_IMPL: new MoonwellContract(
+        '0x948CCfff51F894DBA5C250aa2844d58E169f8aD9', 
+        './deploy-artifacts/MErc20Delegator.json',
+    ),
 
     MARKETS: {
         "ETH.mad": {
@@ -102,23 +122,23 @@ export const contracts: ContractBundle = {
             mantissa: new BigNumber(1e18),
             mTokenMantissa: new BigNumber(1e8),
         },
-    }
+    },
 }
 
-// Example usage
-const someSigner = new ethers.providers.JsonRpcProvider()
+// // Example usage
+// const someSigner = new ethers.providers.JsonRpcProvider()
 
-// Get a ready-to-go claims contract, pointing at the proxy address and implementation ABI
-const claimsContract = contracts.CLAIMS.getContract().connect(someSigner)
-// Or pass in a signer (also possible to pass it in at class construction, will fall back gracefully
-const claimsContractWithSigner = contracts.CLAIMS.getContract(someSigner)
+// // Get a ready-to-go claims contract, pointing at the proxy address and implementation ABI
+// const claimsContract = contracts.CLAIMS.getContract().connect(someSigner)
+// // Or pass in a signer (also possible to pass it in at class construction, will fall back gracefully
+// const claimsContractWithSigner = contracts.CLAIMS.getContract(someSigner)
 
-// If you want to get a proxy impl pointing at a proxy address
-const claimsProxy = contracts.CLAIMS.getProxyContract().connect(someSigner)
-// Or pass in a signer as with `getContract`
-const claimsProxyWithSigner = contracts.CLAIMS.getProxyContract(someSigner)
+// // If you want to get a proxy impl pointing at a proxy address
+// const claimsProxy = contracts.CLAIMS.getProxyContract().connect(someSigner)
+// // Or pass in a signer as with `getContract`
+// const claimsProxyWithSigner = contracts.CLAIMS.getProxyContract(someSigner)
 
-// If you want to get a impl contract pointing at the impl address
-const claimsImpl = contracts.CLAIMS.getImplementationContract().connect(someSigner)
-// Or pass in a signer as with `getContract`
-const claimsImplWithSigner = contracts.CLAIMS.getImplementationContract(someSigner)
+// // If you want to get a impl contract pointing at the impl address
+// const claimsImpl = contracts.CLAIMS.getImplementationContract().connect(someSigner)
+// // Or pass in a signer as with `getContract`
+// const claimsImplWithSigner = contracts.CLAIMS.getImplementationContract(someSigner)

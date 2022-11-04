@@ -1,6 +1,5 @@
 import BigNumber from "bignumber.js";
 import { Contract, ethers } from "ethers";
-import {MoonwellContract, MoonwellContractWithProxy} from "./index";
 
 export type StringOrNull = string | null
 
@@ -47,35 +46,37 @@ export type Market = {
 }
 
 export type ContractBundle = {
+    environment: Environment
+
     /** The environment's Claims contract address, null if non-existent */
     CLAIMS: MoonwellContractWithProxy
 
     /** The environment's Comptroller contract address */
-    COMPTROLLER: ContractData
+    COMPTROLLER: MoonwellContract
 
     /** The environment's Governor contract address, null if non-existent */
     GOVERNOR: MoonwellContract
 
     /** The environment's Gov Token (WELL/MFAM) address */
-    GOV_TOKEN: ContractData
+    GOV_TOKEN: MoonwellContract
 
     /** The environment's Maximillion deployment, which is used for closing positions in the market after accuring a final round of interest */
-    MAXIMILLION: ContractData
+    MAXIMILLION: MoonwellContract
 
     /** The environment's deployed PriceOracle, which brokers lookups to Chainlink */
-    ORACLE: ContractData
+    ORACLE: MoonwellContract
 
     /** The environment's Safety Module */
-    SAFETY_MODULE: ContractData
+    SAFETY_MODULE: MoonwellContractWithProxy
 
     /** The environment's Governor Timelock address, null if non-existent */
-    TIMELOCK: ContractData
+    TIMELOCK: MoonwellContract
 
     /** The environment's interest model. */
-    INTEREST_RATE_MODEL: ContractData
+    INTEREST_RATE_MODEL: MoonwellContract
 
     /** The contract that is the implementation of MErc20s */
-    MERC_20_IMPL: ContractData
+    MERC_20_IMPL: MoonwellContract
 
     /** An object of all deployed markets in this environment */
     MARKETS: {
@@ -120,3 +121,59 @@ export enum Environment {
 export type ProtocolOptions = {
     rpcProvider: ethers.providers.JsonRpcProvider
 }
+
+
+export class MoonwellContract {
+    constructor(
+        readonly address: string,
+        readonly artifactPath: string,
+    ) {}
+  
+    public getContract() {
+      if (this.artifactPath === '') { throw new Error('Unimplemented') }
+      return new ethers.Contract(
+          this.address,
+          this.getContractArtifact().abi,
+      )
+    }
+  
+    public getContractArtifact() {
+      if (this.artifactPath === '') { throw new Error('Unimplemented') }
+      return require(this.artifactPath)
+    }
+  }
+  
+  export class MoonwellContractWithProxy extends MoonwellContract {
+    constructor(
+      readonly proxyAddress: string,
+      readonly implementationArtifactPath: string,
+      readonly proxyArtifactPath: string,
+    ) {
+      // Ensure `getContract` will return a proxy target with an implementation ABI
+      super(proxyAddress, implementationArtifactPath)
+    }
+  
+    // Get instance of the proxy contract with the proxy ABI
+    public getProxyContract() {
+      if (this.proxyArtifactPath === '') { throw new Error('Unimplemented') }
+      return new ethers.Contract(
+          this.proxyAddress,
+          this.getProxyArtifact().abi,
+      )
+    }
+    public getProxyArtifact() {
+      if (this.proxyArtifactPath === '') { throw new Error('Unimplemented') }
+      return require(this.proxyArtifactPath)
+    }
+  
+    // // Get instance of the implementation contract with the implementation ABI
+    // public getImplementationContract() {
+    //   return new ethers.Contract(
+    //       this.implementationAddress,
+    //       this.getImplementationArtifact().abi,
+    //   )
+    // }
+    // public getImplementationArtifact() {
+    //   return require(this.implementationArtifactPath)
+    // }
+  }
