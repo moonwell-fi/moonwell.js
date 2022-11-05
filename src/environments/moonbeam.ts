@@ -1,11 +1,10 @@
 import BigNumber from "bignumber.js";
-import { ContractBundle, Environment, MoonwellContract, MoonwellContractWithProxy } from "../types";
+import { ContractBundle, Environment } from "../types";
 import {ethers} from "ethers";
+import { MoonwellContract, MoonwellContractWithProxy } from '../contracts'
 
 
 export const contracts: ContractBundle = {
-    environment: Environment.MOONBEAM,
-
     CLAIMS: new MoonwellContractWithProxy(
         '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
         './deploy-artifacts/TokenSaleDistributor.json',
