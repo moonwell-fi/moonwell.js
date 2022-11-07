@@ -1,4 +1,4 @@
-import { ethers } from 'ethers'
+import { ContractFactory, ethers } from 'ethers'
 import { DeployArtifact } from './types'
 
 /** A contract in the Moonwell ecosystem. */
@@ -72,4 +72,57 @@ export class MoonwellContractWithProxy extends MoonwellContract {
   public getProxyArtifact(): DeployArtifact {
     return require(this.proxyArtifactPath)
   }
+}
+
+/** 
+ * Return a deploy artifact with the given name.
+ *
+ * This is a low level, environment agnostic functions. Users should prefer using the named contracts on an Environment
+ * object whenever possible.
+ * 
+ * @param artifactName The name of the artifact 
+ */
+export const __getDeployArtifact = (artifactName: string): DeployArtifact => {
+  return require(`./deploy-artifacts/${artifactName}.json`)
+}
+
+/** 
+ * Return a contract with the given artifact name.
+ *
+ * This is a low level, environment agnostic functions. Users should prefer using the named contracts on an Environment
+ * object whenever possible.
+ * 
+ * @param artifactName The name of the artifact
+ * @param address The address of the contract. 
+ * @param signerOrProvider An optional signer or provider.
+ */
+ export const __getContract = (
+  artifactName: string, 
+  address: string, 
+  signerOrProvider?: ethers.Signer | ethers.providers.Provider
+): ethers.Contract => {
+  const artifact: DeployArtifact = require(`./deploy-artifacts/${artifactName}.json`)
+  return new ethers.Contract(
+    address,
+    artifact.abi,
+    signerOrProvider
+  )
+}
+
+/**
+ * Return a ContractFactory with the given artifact name.
+ *
+ * This is a low level, environment agnostic functions. Users should prefer using the named contracts on an Environment
+ * object whenever possible.
+ * 
+ * @param artifactName The name of the artifact
+ * @param signer An optional signer.
+ */
+ export const __getContractFactory = (artifactName: string, signer?: ethers.Signer): ethers.ContractFactory => {
+  const artifact: DeployArtifact = require(`./deploy-artifacts/${artifactName}.json`)
+  return new ethers.ContractFactory(
+    artifact.abi,
+    artifact.bytecode,
+    signer
+  )
 }
