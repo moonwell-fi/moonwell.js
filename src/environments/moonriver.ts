@@ -1,18 +1,63 @@
 import BigNumber from "bignumber.js";
 
 import { ContractBundle } from "../types";
+import { MoonwellContract, MoonwellContractWithProxy } from '../contracts'
 
 export const contracts: ContractBundle = {
-    CLAIMS: '0x8568A675384d761f36eC269D695d6Ce4423cfaB1',
-    COMPTROLLER: '0x0b7a0EAA884849c6Af7a129e899536dDDcA4905E',
-    GOVERNOR: '0x2BE2e230e89c59c8E20E633C524AD2De246e7370',
-    GOV_TOKEN: '0xBb8d88bcD9749636BC4D2bE22aaC4Bb3B01A58F1',
-    MAXIMILLION: '0x1650C0AD9483158f9e240fd58d0E173807A80CcC',
-    ORACLE: '0x892bE716Dcf0A6199677F355f45ba8CC123BAF60',
-    SAFETY_MODULE: '0xCd76e63f3AbFA864c53b4B98F57c1aA6539FDa3a',
-    TIMELOCK: '0x04e6322D196E0E4cCBb2610dd8B8f2871E160bd7',
-    INTEREST_RATE_MODEL: '0xC862A3af64a8d3C146E6c505a18c2B6c6a6601bf',
-    MERC_20_IMPL: '0x45d17FE87e65064b2e85F91A9FF3aD0C7B6Cf75d',
+  CLAIMS: new MoonwellContractWithProxy(
+      '0x8568A675384d761f36eC269D695d6Ce4423cfaB1',
+      './deploy-artifacts/TokenSaleDistributor.json',
+      './deploy-artifacts/TokenSaleDistributorProxy.json',
+  ),
+  GOVERNOR: new MoonwellContract(
+      '0x2BE2e230e89c59c8E20E633C524AD2De246e7370',
+      './deploy-artifacts/MoonwellGovernorArtemis.json',
+  ),
+
+  COMPTROLLER: new MoonwellContractWithProxy(
+      '0x0b7a0EAA884849c6Af7a129e899536dDDcA4905E', 
+      './deploy-artifacts/Comptroller.json',
+      './deploy-artifacts/Unitroller.json',
+  ),
+
+
+  GOV_TOKEN:  new MoonwellContract(
+      '0xBb8d88bcD9749636BC4D2bE22aaC4Bb3B01A58F1', 
+      './deploy-artifacts/Well.json'
+  ),
+
+
+  MAXIMILLION: new MoonwellContract(
+      '0x1650C0AD9483158f9e240fd58d0E173807A80CcC', 
+      './deploy-artifacts/Maximillion.json'
+  ),
+
+  ORACLE: new MoonwellContract(
+      '0x892bE716Dcf0A6199677F355f45ba8CC123BAF60', 
+      './deploy-artifacts/ChainlinkOracle.json'
+  ),
+
+
+  SAFETY_MODULE: new MoonwellContractWithProxy(
+      '0xCd76e63f3AbFA864c53b4B98F57c1aA6539FDa3a', 
+      './deploy-artifacts/StakedWell.json',
+      './deploy-artifacts/TransparentProxy.json',
+  ),
+
+  TIMELOCK: new MoonwellContract(
+      '0x04e6322D196E0E4cCBb2610dd8B8f2871E160bd7', 
+      './deploy-artifacts/Timelock.json',
+  ),
+
+  INTEREST_RATE_MODEL: new MoonwellContract(
+      '0xC862A3af64a8d3C146E6c505a18c2B6c6a6601bf', 
+      './deploy-artifacts/StakedWell.json',
+  ),
+
+  MERC_20_IMPL: new MoonwellContract(
+      '0x45d17FE87e65064b2e85F91A9FF3aD0C7B6Cf75d', 
+      './deploy-artifacts/MErc20Delegator.json',
+  ),
 
     MARKETS: {
         "USDC.multi": {
