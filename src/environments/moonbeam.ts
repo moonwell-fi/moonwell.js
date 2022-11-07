@@ -124,20 +124,3 @@ export const contracts: ContractBundle = {
     },
 }
 
-// // Example usage
-// const someSigner = new ethers.providers.JsonRpcProvider()
-
-// // Get a ready-to-go claims contract, pointing at the proxy address and implementation ABI
-// const claimsContract = contracts.CLAIMS.getContract().connect(someSigner)
-// // Or pass in a signer (also possible to pass it in at class construction, will fall back gracefully
-// const claimsContractWithSigner = contracts.CLAIMS.getContract(someSigner)
-
-// // If you want to get a proxy impl pointing at a proxy address
-// const claimsProxy = contracts.CLAIMS.getProxyContract().connect(someSigner)
-// // Or pass in a signer as with `getContract`
-// const claimsProxyWithSigner = contracts.CLAIMS.getProxyContract(someSigner)
-
-// // If you want to get a impl contract pointing at the impl address
-// const claimsImpl = contracts.CLAIMS.getImplementationContract().connect(someSigner)
-// // Or pass in a signer as with `getContract`
-// const claimsImplWithSigner = contracts.CLAIMS.getImplementationContract(someSigner)

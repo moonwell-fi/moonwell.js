@@ -1,4 +1,7 @@
 {
+  "_format": "",
+  "contractName": "",
+  "sourceName": "",
   "abi": [
     {
       "inputs": [
@@ -697,5 +700,9 @@
       "stateMutability": "view",
       "type": "function"
     }
-  ]
+  ],
+  "bytecode": "",
+  "deployedBytecode": "",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
 }

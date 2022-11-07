@@ -43,13 +43,13 @@ export type Market = {
 
 export type ContractBundle = {
     /** The environment's Claims contract address, null if non-existent */
-    CLAIMS: MoonwellContractWithProxy
+    CLAIMS: MoonwellContractWithProxy | null
 
     /** The environment's Comptroller contract address */
     COMPTROLLER: MoonwellContract
 
     /** The environment's Governor contract address, null if non-existent */
-    GOVERNOR: MoonwellContract
+    GOVERNOR: MoonwellContractWithProxy | null
 
     /** The environment's Gov Token (WELL/MFAM) address */
     GOV_TOKEN: MoonwellContract
@@ -64,7 +64,7 @@ export type ContractBundle = {
     SAFETY_MODULE: MoonwellContractWithProxy
 
     /** The environment's Governor Timelock address, null if non-existent */
-    TIMELOCK: MoonwellContract
+    TIMELOCK: MoonwellContractWithProxy | null
 
     /** The environment's interest model. */
     INTEREST_RATE_MODEL: MoonwellContract
