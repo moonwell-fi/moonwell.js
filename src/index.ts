@@ -5,8 +5,8 @@
  */
 
 import { contracts as MoonbeamContracts } from './environments/moonbeam'
-// import { contracts as MoonriverContracts } from './environments/moonriver'
-// import { contracts as MoonbaseContracts } from './environments/moonbase'
+import { contracts as MoonriverContracts } from './environments/moonriver'
+import { contracts as MoonbaseContracts } from './environments/moonbase'
 
 import { Environment } from "./types";
 import { ethers } from "ethers";
@@ -58,8 +58,8 @@ import { ethers } from "ethers";
 */
 export const Contracts = {
   [Environment.MOONBEAM]: MoonbeamContracts,
-  // [Environment.MOONRIVER]: MoonriverContracts,
-  // [Environment.MOONBASE]: MoonbaseContracts,
+  [Environment.MOONRIVER]: MoonriverContracts,
+  [Environment.MOONBASE]: MoonbaseContracts,
 }
 
 export * from './types'

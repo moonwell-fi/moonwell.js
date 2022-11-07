@@ -15,11 +15,6 @@ export type DeployArtifact = {
     deployedLinkReferences: any
 }
 
-export type ContractData = {
-    address: string,
-}
-
-
 export type Market = {
     /** An asset's name (ex. "Polkadot") */
     name: string
