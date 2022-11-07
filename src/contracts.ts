@@ -82,7 +82,7 @@ export class MoonwellContractWithProxy extends MoonwellContract {
  * 
  * @param artifactName The name of the artifact 
  */
-export const __getDeployArtifact = (artifactName: string): DeployArtifact => {
+export const getDeployArtifact = (artifactName: string): DeployArtifact => {
   return require(`./deploy-artifacts/${artifactName}.json`)
 }
 
@@ -96,7 +96,7 @@ export const __getDeployArtifact = (artifactName: string): DeployArtifact => {
  * @param address The address of the contract. 
  * @param signerOrProvider An optional signer or provider.
  */
- export const __getContract = (
+ export const getContract = (
   artifactName: string, 
   address: string, 
   signerOrProvider?: ethers.Signer | ethers.providers.Provider
@@ -118,7 +118,7 @@ export const __getDeployArtifact = (artifactName: string): DeployArtifact => {
  * @param artifactName The name of the artifact
  * @param signer An optional signer.
  */
- export const __getContractFactory = (artifactName: string, signer?: ethers.Signer): ethers.ContractFactory => {
+ export const getContractFactory = (artifactName: string, signer?: ethers.Signer): ethers.ContractFactory => {
   const artifact: DeployArtifact = require(`./deploy-artifacts/${artifactName}.json`)
   return new ethers.ContractFactory(
     artifact.abi,

@@ -49,7 +49,7 @@ export type ContractBundle = {
     COMPTROLLER: MoonwellContract
 
     /** The environment's Governor contract address, null if non-existent */
-    GOVERNOR: MoonwellContractWithProxy | null
+    GOVERNOR: MoonwellContract | null
 
     /** The environment's Gov Token (WELL/MFAM) address */
     GOV_TOKEN: MoonwellContract
@@ -61,10 +61,10 @@ export type ContractBundle = {
     ORACLE: MoonwellContract
 
     /** The environment's Safety Module */
-    SAFETY_MODULE: MoonwellContractWithProxy
+    SAFETY_MODULE: MoonwellContract
 
     /** The environment's Governor Timelock address, null if non-existent */
-    TIMELOCK: MoonwellContractWithProxy | null
+    TIMELOCK: MoonwellContract | null
 
     /** The environment's interest model. */
     INTEREST_RATE_MODEL: MoonwellContract
