@@ -11,7 +11,7 @@ export const contracts: ContractBundle = {
   ),
   GOVERNOR: new MoonwellContract(
       '0x2BE2e230e89c59c8E20E633C524AD2De246e7370',
-      './deploy-artifacts/MoonwellGovernorArtemis.json',
+      './deploy-artifacts/MoonwellGovernorApollo.json',
   ),
 
   COMPTROLLER: new MoonwellContractWithProxy(
