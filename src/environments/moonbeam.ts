@@ -1,8 +1,7 @@
 import BigNumber from "bignumber.js";
-import { ContractBundle, Environment } from "../types";
-import {ethers} from "ethers";
-import { MoonwellContract, MoonwellContractWithProxy } from '../contracts'
 
+import { ContractBundle } from "../types";
+import { MoonwellContract, MoonwellContractWithProxy } from '../contracts'
 
 export const contracts: ContractBundle = {
     CLAIMS: new MoonwellContractWithProxy(
@@ -10,6 +9,7 @@ export const contracts: ContractBundle = {
         './deploy-artifacts/TokenSaleDistributor.json',
         './deploy-artifacts/TokenSaleDistributorProxy.json',
     ),
+
     GOVERNOR: new MoonwellContract(
         '0xfc4DFB17101A12C5CEc5eeDd8E92B5b16557666d',
         './deploy-artifacts/MoonwellGovernorArtemis.json',
@@ -20,13 +20,11 @@ export const contracts: ContractBundle = {
         './deploy-artifacts/Comptroller.json',
         './deploy-artifacts/Unitroller.json',
     ),
-    
-    
+
     GOV_TOKEN:  new MoonwellContract(
         '0x511aB53F793683763E5a8829738301368a2411E3', 
         './deploy-artifacts/Well.json'
     ),
-
 
     MAXIMILLION: new MoonwellContract(
         '0xe5Ef9310cC7E3437bAD83466675f24FD62A380c3', 
@@ -37,7 +35,6 @@ export const contracts: ContractBundle = {
         '0xED301cd3EB27217BDB05C4E9B820a8A3c8B665f9', 
         './deploy-artifacts/ChainlinkOracle.json'
     ),
-
 
     SAFETY_MODULE: new MoonwellContractWithProxy(
         '0x8568A675384d761f36eC269D695d6Ce4423cfaB1', 
@@ -58,6 +55,11 @@ export const contracts: ContractBundle = {
     MERC_20_IMPL: new MoonwellContract(
         '0x948CCfff51F894DBA5C250aa2844d58E169f8aD9', 
         './deploy-artifacts/MErc20Delegator.json',
+    ),
+
+    DEX_REWARDER: new MoonwellContract(
+        '0xcD04D2340c1dD9B3dB2C5c53c8B8bAa57b2654Be',
+        './deploy-artifacts/stellaswapRewarder.json'
     ),
 
     MARKETS: {
