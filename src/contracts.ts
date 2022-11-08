@@ -1,4 +1,4 @@
-import { ContractFactory, ethers } from 'ethers'
+import { ethers } from 'ethers'
 import { DeployArtifact } from './types'
 
 /** A contract in the Moonwell ecosystem. */

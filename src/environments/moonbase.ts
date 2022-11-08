@@ -59,6 +59,11 @@ export const contracts: ContractBundle = {
         './deploy-artifacts/MErc20Delegator.json',
     ),
 
+    DEX_REWARDER: new MoonwellContract(
+        '0xC58Fe6C98076175FEBebdc73485576eA1c3750BF',
+        './deploy-artifacts/solarbeamRewarder.json'
+    ),
+
     MARKETS: {
         "BTC.dev": {
             name: "Bitcoin",

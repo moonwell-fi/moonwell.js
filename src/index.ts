@@ -9,8 +9,6 @@ import { contracts as MoonriverContracts } from './environments/moonriver'
 import { contracts as MoonbaseContracts } from './environments/moonbase'
 
 import { Environment } from "./types";
-import { ethers } from "ethers";
-
 
 /**
  * The {@link Contracts} object is simply a mapping of environment to {@link ContractBundle} for each environment that Moonwell is deployed on.

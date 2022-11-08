@@ -72,6 +72,9 @@ export type ContractBundle = {
     /** The contract that is the implementation of MErc20s */
     MERC_20_IMPL: MoonwellContract
 
+    /** The dex rewarder contract for a given environment */
+    DEX_REWARDER: MoonwellContract
+
     /** An object of all deployed markets in this environment */
     MARKETS: {
         [ticker: string]: Market
