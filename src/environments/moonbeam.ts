@@ -3,63 +3,78 @@ import BigNumber from "bignumber.js";
 import { ContractBundle } from "../types";
 import { MoonwellContract, MoonwellContractWithProxy } from '../contracts'
 
+import TokenSaleDistributor from '../deploy-artifacts/TokenSaleDistributor.json'
+import TokenSaleDistributorProxy from '../deploy-artifacts/TokenSaleDistributorProxy.json'
+import MoonwellGovernorArtemis from '../deploy-artifacts/MoonwellGovernorArtemis.json'
+import Comptroller from '../deploy-artifacts/Comptroller.json'
+import Unitroller from '../deploy-artifacts/Unitroller.json'
+import Well from '../deploy-artifacts/Well.json'
+import Maximillion from '../deploy-artifacts/Maximillion.json'
+import ChainlinkOracle from '../deploy-artifacts/ChainlinkOracle.json'
+import StakedWell from '../deploy-artifacts/StakedWell.json'
+import TransparentProxy from '../deploy-artifacts/TransparentProxy.json'
+import Timelock from '../deploy-artifacts/Timelock.json'
+import InterestRateModel from '../deploy-artifacts/InterestRateModel.json'
+import MErc20Delegator from '../deploy-artifacts/MErc20Delegator.json'
+import StellaswapRewarder from '../deploy-artifacts/stellaswapRewarder.json'
+
 export const contracts: ContractBundle = {
     CLAIMS: new MoonwellContractWithProxy(
         '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
-        './deploy-artifacts/TokenSaleDistributor.json',
-        './deploy-artifacts/TokenSaleDistributorProxy.json',
+        TokenSaleDistributor,
+        TokenSaleDistributorProxy,
     ),
 
     GOVERNOR: new MoonwellContract(
         '0xfc4DFB17101A12C5CEc5eeDd8E92B5b16557666d',
-        './deploy-artifacts/MoonwellGovernorArtemis.json',
+        MoonwellGovernorArtemis,
     ),
 
     COMPTROLLER: new MoonwellContractWithProxy(
         '0x8E00D5e02E65A19337Cdba98bbA9F84d4186a180', 
-        './deploy-artifacts/Comptroller.json',
-        './deploy-artifacts/Unitroller.json',
+        Comptroller,
+        Unitroller,
     ),
 
     GOV_TOKEN:  new MoonwellContract(
-        '0x511aB53F793683763E5a8829738301368a2411E3', 
-        './deploy-artifacts/Well.json'
+        '0x511aB53F793683763E5a8829738301368a2411E3',
+        Well
     ),
 
     MAXIMILLION: new MoonwellContract(
         '0xe5Ef9310cC7E3437bAD83466675f24FD62A380c3', 
-        './deploy-artifacts/Maximillion.json'
+        Maximillion
     ),
 
     ORACLE: new MoonwellContract(
         '0xED301cd3EB27217BDB05C4E9B820a8A3c8B665f9', 
-        './deploy-artifacts/ChainlinkOracle.json'
+        ChainlinkOracle
     ),
 
     SAFETY_MODULE: new MoonwellContractWithProxy(
         '0x8568A675384d761f36eC269D695d6Ce4423cfaB1', 
-        './deploy-artifacts/StakedWell.json',
-        './deploy-artifacts/TransparentProxy.json',
+        StakedWell,
+        TransparentProxy,
     ),
 
     TIMELOCK: new MoonwellContract(
         '0x3a9249d70dCb4A4E9ef4f3AF99a3A130452ec19B', 
-        './deploy-artifacts/Timelock.json',
+        Timelock,
     ),
 
     INTEREST_RATE_MODEL: new MoonwellContract(
         '0x1Ce7e4928943d6A4820375eBe737204dc1E73755', 
-        './deploy-artifacts/StakedWell.json',
+        InterestRateModel,
     ),
 
     MERC_20_IMPL: new MoonwellContract(
         '0x948CCfff51F894DBA5C250aa2844d58E169f8aD9', 
-        './deploy-artifacts/MErc20Delegator.json',
+        MErc20Delegator,
     ),
 
     DEX_REWARDER: new MoonwellContract(
         '0xcD04D2340c1dD9B3dB2C5c53c8B8bAa57b2654Be',
-        './deploy-artifacts/stellaswapRewarder.json'
+        StellaswapRewarder
     ),
 
     MARKETS: {
