@@ -21,11 +21,11 @@ test('environments & contract loading', () => {
     for ([contractName, contractObject] of Object.entries(contracts)){
       if (contractName !== 'MARKETS'){
         // Ensure all contracts load successfully
-        const artifact = contractObject.getContractArtifact()
+        const artifact = contractObject.artifact
         expect(artifact.abi).toBeDefined()
         expect(artifact.abi.length).toBeGreaterThan(0)
 
-        const contract = contractObject.getContract()
+        const contract = contractObject.contract
         expect(contract).toBeInstanceOf(ethers.Contract)
       }
     }

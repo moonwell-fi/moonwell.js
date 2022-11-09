@@ -1,6 +1,6 @@
 {
   "name": "@moonwell-fi/moonwell.js",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "The moonwell.js library is a suite of tools to query and interact with the Moonwell protocol.",
   "main": "dist/index.js",
   "files": [
@@ -8,7 +8,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsc && cp -r src/deploy-artifacts dist/deploy-artifacts",
+    "build": "tsc",
     "test": "jest"
   },
   "author": "",
