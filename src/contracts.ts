@@ -17,8 +17,6 @@ export class MoonwellContract {
   ) {
     this.artifact = artifact
 
-    console.log({artifact})
-
     this.contract = new ethers.Contract(
         this.address,
         this.artifact.abi,
