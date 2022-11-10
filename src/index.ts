@@ -63,3 +63,4 @@ export const Contracts = {
 export * from './types'
 export * from './helpers'
 export * from './contracts'
+export { default as MToken } from './deploy-artifacts/MToken.json'
