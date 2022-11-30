@@ -4,6 +4,9 @@
  * @packageDocumentation
  */
 
+import { ethers } from 'ethers'
+ethers.utils.Logger.setLogLevel(ethers.utils.Logger.levels.ERROR)
+
 import { contracts as MoonbeamContracts } from './environments/moonbeam'
 import { contracts as MoonriverContracts } from './environments/moonriver'
 import { contracts as MoonbaseContracts } from './environments/moonbase'
@@ -63,3 +66,4 @@ export const Contracts = {
 export * from './types'
 export * from './helpers'
 export * from './contracts'
+export { default as MToken } from './deploy-artifacts/MToken.json'
