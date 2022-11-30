@@ -76,7 +76,6 @@ export const contracts: ContractBundle = {
         '0xcD04D2340c1dD9B3dB2C5c53c8B8bAa57b2654Be',
         StellaswapRewarder
     ),
-
     MARKETS: {
         "ETH.mad": {
             name: "Ethereum",
@@ -140,9 +139,9 @@ export const contracts: ContractBundle = {
         },
         "ETH.wh": {
             name: "Ethereum",
-            ticker: "ETH",
-            tokenContract: "0xab3f0245b83feb11d15aaffefd7ad465a59817ed",
-            mToken: "0xb6c94b3A378537300387B57ab1cC0d2083f9AeaC",
+            assetTicker: "ETH",
+            tokenAddress: "0xab3f0245b83feb11d15aaffefd7ad465a59817ed",
+            mTokenAddress: "0xb6c94b3A378537300387B57ab1cC0d2083f9AeaC",
             digits: 18,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e18),
@@ -150,9 +149,9 @@ export const contracts: ContractBundle = {
         },
         'BTC.wh': {
             name: "Bitcoin",
-            ticker: "BTC",
-            tokenContract: '0xe57ebd2d67b462e9926e04a8e33f01cd0d64346d',
-            mToken: "0xaaa20c5a584a9fECdFEDD71E46DA7858B774A9ce",
+            assetTicker: "BTC",
+            tokenAddress: '0xe57ebd2d67b462e9926e04a8e33f01cd0d64346d',
+            mTokenAddress: "0xaaa20c5a584a9fECdFEDD71E46DA7858B774A9ce",
             digits: 8,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e8),
@@ -160,9 +159,9 @@ export const contracts: ContractBundle = {
         },
         'USDC.wh': {
             name: "USD Coin",
-            ticker: "USDC",
-            tokenContract: "0x931715fee2d06333043d11f658c8ce934ac61d0c",
-            mToken: "0x744b1756e7651c6D57f5311767EAFE5E931D615b",
+            assetTicker: "USDC",
+            tokenAddress: "0x931715fee2d06333043d11f658c8ce934ac61d0c",
+            mTokenAddress: "0x744b1756e7651c6D57f5311767EAFE5E931D615b",
             digits: 6,
             mTokenDigits: 8,
             mantissa: new BigNumber(1e6),
