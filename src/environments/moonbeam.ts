@@ -137,7 +137,7 @@ export const contracts: ContractBundle = {
             mantissa: new BigNumber(1e18),
             mTokenMantissa: new BigNumber(1e8),
         },
-        "ETH.wh": {
+        "WETH.wh": {
             name: "Ethereum",
             assetTicker: "ETH",
             tokenAddress: "0xab3f0245b83feb11d15aaffefd7ad465a59817ed",
@@ -147,7 +147,7 @@ export const contracts: ContractBundle = {
             mantissa: new BigNumber(1e18),
             mTokenMantissa: new BigNumber(1e8),
         },
-        'BTC.wh': {
+        'WBTC.wh': {
             name: "Bitcoin",
             assetTicker: "BTC",
             tokenAddress: '0xe57ebd2d67b462e9926e04a8e33f01cd0d64346d',
