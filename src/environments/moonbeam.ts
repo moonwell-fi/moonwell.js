@@ -166,6 +166,16 @@ export const contracts: ContractBundle = {
             mTokenDigits: 8,
             mantissa: new BigNumber(1e6),
             mTokenMantissa: new BigNumber(1e8),
-        }
+        },
+        'BUSD.wh': {
+            name: "BUSD Coin",
+            assetTicker: "BUSD",
+            tokenAddress: "0x692c57641fc054c2ad6551ccc6566eba599de1ba",
+            mTokenAddress: "0x298f2E346b82D69a473BF25f329BDF869e17dEc8",
+            digits: 18,
+            mTokenDigits: 8,
+            mantissa: new BigNumber(1e18),
+            mTokenMantissa: new BigNumber(1e8),
+        },
     },
 }
