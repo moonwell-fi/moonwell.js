@@ -127,6 +127,16 @@ export const contracts: ContractBundle = {
             mantissa: new BigNumber(1e10),
             mTokenMantissa: new BigNumber(1e8),
         },
+        "xcUSDT": {
+            name: "Tether",
+            assetTicker: "xcUSDT",
+            tokenAddress: "0xFFFFFFfFea09FB06d082fd1275CD48b191cbCD1d",
+            mTokenAddress: "0x42A96C0681B74838eC525AdbD13c37f66388f289",
+            digits: 6,
+            mTokenDigits: 8,
+            mantissa: new BigNumber(1e6),
+            mTokenMantissa: new BigNumber(1e8),
+        },
         "FRAX": {
             name: "Frax",
             assetTicker: "FRAX",
