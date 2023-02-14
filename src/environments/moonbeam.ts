@@ -86,6 +86,7 @@ export const contracts: ContractBundle = {
             mTokenDigits: 8,
             mantissa: new BigNumber(1e18),
             mTokenMantissa: new BigNumber(1e8),
+            isDeprecated: true,
         },
         "BTC.mad": {
             name: "Bitcoin",
@@ -96,6 +97,7 @@ export const contracts: ContractBundle = {
             mTokenDigits: 8,
             mantissa: new BigNumber(1e8),
             mTokenMantissa: new BigNumber(1e8),
+            isDeprecated: true,
         },
         "USDC.mad": {
             name: "USD Coin",
@@ -106,6 +108,7 @@ export const contracts: ContractBundle = {
             mTokenDigits: 8,
             mantissa: new BigNumber(1e6),
             mTokenMantissa: new BigNumber(1e8),
+            isDeprecated: true,
         },
         "GLMR": {
             name: "Moonbeam",

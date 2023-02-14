@@ -39,6 +39,9 @@ export type Market = {
 
     /** An market's mToken mantissa as a BigNumber */
     mTokenMantissa: BigNumber,
+
+    /** Whether a market is deprecated */
+    isDeprecated?: boolean
 }
 
 export type ContractBundle = {
