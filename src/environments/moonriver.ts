@@ -107,6 +107,7 @@ export const contracts: ContractBundle = {
             mTokenDigits: 8,
             mantissa: new BigNumber(1e8),
             mTokenMantissa: new BigNumber(1e8),
+            isDeprecated: true,
         },
         "MOVR": {
             name: "Moonriver",
