@@ -16,7 +16,7 @@ import TransparentProxy from '../deploy-artifacts/TransparentProxy.json'
 import Timelock from '../deploy-artifacts/Timelock.json'
 import InterestRateModel from '../deploy-artifacts/InterestRateModel.json'
 import MErc20Delegator from '../deploy-artifacts/MErc20Delegator.json'
-import StellaswapRewarder from '../deploy-artifacts/stellaswapRewarder.json'
+import StellaswapRewarder from '../deploy-artifacts/StellaswapRewarder.json'
 import MToken from '../deploy-artifacts/MToken.json'
 
 import * as types from "../../types/ethers-contracts";
