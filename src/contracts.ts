@@ -2,8 +2,8 @@ import { ethers } from 'ethers'
 import { DeployArtifact } from './types'
 
 /** A contract in the Moonwell ecosystem. */
-export class MoonwellContract {
-  public contract: ethers.Contract
+export class MoonwellContract <ContractInterface> {
+  public contract: ContractInterface
 
   /**
    * @param address The address of the contract.
@@ -21,13 +21,13 @@ export class MoonwellContract {
         this.address,
         this.artifact.abi,
         signerOrProvider || this.signerOrProvider
-    )
+    ) as ContractInterface
   }
 }
 
 /** A contract with a proxy in the Moonwell ecosystem. */
-export class MoonwellContractWithProxy extends MoonwellContract {
-  public proxyContract: ethers.Contract
+export class MoonwellContractWithProxy<ContractInterface, ProxyInterface> extends MoonwellContract<ContractInterface> {
+  public proxyContract: ProxyInterface
 
   /**
    * @param proxyAddress The address of the contract.
@@ -50,7 +50,7 @@ export class MoonwellContractWithProxy extends MoonwellContract {
         this.proxyAddress,
         this.proxyArtifact.abi,
         signerOrProvider || this.signerOrProvider
-    )
+    ) as ProxyInterface
   }
 }
 
