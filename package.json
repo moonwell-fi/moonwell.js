@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "typechain --target ethers-v5 src/deploy-artifacts/*.json"
   },
-  "postinstall": "typechain --target ethers-v5 src/deploy-artifacts/*.json",
   "author": "",
   "license": "ISC",
   "devDependencies": {
