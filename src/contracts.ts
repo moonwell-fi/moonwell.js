@@ -1,5 +1,7 @@
 import { ethers } from 'ethers'
 import { DeployArtifact } from './types'
+import * as types from "../types/ethers-contracts";
+import MToken from "./deploy-artifacts/MToken.json";
 
 /** A contract in the Moonwell ecosystem. */
 export class MoonwellContract <ContractInterface> {
@@ -105,4 +107,29 @@ export const getDeployArtifact = (artifactName: string): DeployArtifact => {
     artifact.bytecode,
     signer
   )
+}
+
+export class MoonwellMarket {
+     // All mTokens are deployed with an 8 digit mantissa
+     public mTokenDigits = 8;
+   constructor(
+       public name: string,
+       public ticker: string,
+       public tokenAddress: string | null,
+       public mTokenAddress: string,
+       public underlyingDecimals: number,
+       public isDeprecated = false,
+   ){}
+
+    get marketContract(){
+        return new MoonwellContract<types.MToken>(
+            this.mTokenAddress,
+            MToken
+        )
+    }
+
+    get isNativeMarket(){
+       return this.tokenAddress === null
+    }
+
 }

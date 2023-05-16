@@ -1,6 +1,6 @@
 import BigNumber from "bignumber.js";
 import { ethers } from "ethers";
-import { MoonwellContract, MoonwellContractWithProxy } from "./contracts";
+import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarket} from "./contracts";
 import {
     MoonwellGovernorArtemis,
     MoonwellGovernorApollo,
@@ -99,7 +99,7 @@ export type ContractBundle = {
 
     /** An object of all deployed markets in this environment */
     MARKETS: {
-        [ticker: string]: Market
+        [ticker: string]: MoonwellMarket
     }
 }
 
@@ -128,4 +128,43 @@ export enum Environment {
 
 export type ProtocolOptions = {
     rpcProvider: ethers.providers.JsonRpcProvider
+}
+
+export type EnvironmentConfig = {
+    // The environment name/identifier
+    environment: Environment,
+    // The contracts for this network specifically
+    contracts: ContractBundle,
+    // The network ID for this environment
+    networkID: number,
+    // The chain ID for this environment
+    chainID: number,
+    // The native asset ticker (i.e. MOVR, GLMR, ETH)
+    nativeAssetTicker: string,
+    // The gov token ticker (i.e. MFAM, WELL, wWELL)
+    protocolAssetTicker: string,
+    // The GraphQL API url for this environment
+    graphQLURL: string,
+    // The RPC API for this config
+    rpcNode: string
+    blockExplorerUrl: string
+
+    // Not sure if in use...
+    // networkBlockTime: number
+    // networkHomePage: string,
+}
+
+export type TMulticall = {[key:string]: [ethers.Contract, string, any[]?]}
+
+export type TMulticallResult = {[key:string]: any}
+
+export type TNestedMulticall = [string, TMulticall]
+export type TNestedMulticallResult = {
+    [key:string]: {
+        [key:string]: any
+    }
+}
+
+export type MulticallTransformations = {
+    [key: string]: Function
 }
