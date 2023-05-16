@@ -1,20 +1,20 @@
-import {ContractBundle, Contracts, Environment, MoonwellContract} from "../src";
+import {ContractBundle, Environments, Environment, MoonwellContract} from "../src";
 import {ethers} from "ethers";
 
 test("contracts", () => {
   // Ensure we have some expected value and it's well formed
-  expect(Contracts.moonbase.COMPTROLLER.address).toMatch(/^0x\w{40}/)
+  expect(Environments.moonbase.contracts.COMPTROLLER.address).toMatch(/^0x\w{40}/)
 
-  expect(Contracts.moonriver.COMPTROLLER.address)
-      .not.toMatch(Contracts.moonbase.COMPTROLLER.address)
+  expect(Environments.moonriver.contracts.COMPTROLLER.address)
+      .not.toMatch(Environments.moonbase.contracts.COMPTROLLER.address)
 
-  expect(Contracts.moonriver.COMPTROLLER.address)
-      .not.toMatch(Contracts.moonbeam.COMPTROLLER.address)
+  expect(Environments.moonriver.contracts.COMPTROLLER.address)
+      .not.toMatch(Environments.moonbeam.contracts.COMPTROLLER.address)
 });
 
 test('environments & contract loading', () => {
   for (const contractEnv of [Environment.MOONBEAM, Environment.MOONRIVER, Environment.MOONBASE]){
-    const contracts: ContractBundle = Contracts[contractEnv.toString()]
+    const contracts: ContractBundle = Environments[contractEnv.toString()].contracts
 
     let contractName: string
     let contractObject: any
