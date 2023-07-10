@@ -55,10 +55,11 @@ export async function multicall(provider: ethers.providers.Provider, calls: TMul
             )
 
             if (returned.length !== 1){
-                throw new Error("Unexpected value.length!")
+                return [key, coerce(returned)]
+            } else {
+                return [key, coerce(returned[0])]
             }
 
-            return [key, coerce(returned[0])]
         })
     )
 }
