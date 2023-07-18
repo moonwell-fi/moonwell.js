@@ -91,14 +91,16 @@ export const environment: EnvironmentConfig = {
                 "BTC",
                 "0x6aB6d61428fde76768D7b45D8BFeec19c6eF91A8",
                 "0x6E745367F4Ad2b3da7339aee65dC85d416614D90",
-                8
+                8,
+                true,
             ),
             "USDC.multi": new MoonwellMarket(
                 "USD Coin",
                 "USDC",
                 "0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D",
                 "0xd0670AEe3698F66e2D4dAf071EB9c690d978BFA8",
-                6
+                6,
+                true,
             ),
             "ETH.multi": new MoonwellMarket(
                 "Ethereum",
@@ -106,6 +108,7 @@ export const environment: EnvironmentConfig = {
                 '0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C',
                 "0x6503D905338e2ebB550c9eC39Ced525b612E77aE",
                 18,
+                true,
             ),
             "MOVR": new MoonwellMarket(
                 "Moonriver",
@@ -113,6 +116,7 @@ export const environment: EnvironmentConfig = {
                 null,
                 "0x6a1A771C7826596652daDC9145fEAaE62b1cd07f",
                 18,
+                false,
             ),
             "xcKSM": new MoonwellMarket(
                 "Kusama",
@@ -120,6 +124,7 @@ export const environment: EnvironmentConfig = {
                 '0xffffffff1fcacbd218edc0eba20fc2308c778080',
                 '0xa0D116513Bd0B8f3F14e6Ea41556c6Ec34688e0f',
                 12,
+                false,
             ),
             "FRAX": new MoonwellMarket(
                 "Frax",
@@ -127,6 +132,7 @@ export const environment: EnvironmentConfig = {
                 '0x1A93B23281CC1CDE4C4741353F3064709A16197d',
                 "0x93Ef8B7c6171BaB1C0A51092B2c9da8dc2ba0e9D",
                 18,
+                false,
             ),
             "USDT.multi": new MoonwellMarket(
                 "Tether",
@@ -134,6 +140,7 @@ export const environment: EnvironmentConfig = {
                 '0xB44a9B6905aF7c801311e8F4E76932ee959c663C',
                 "0x36918B66F9A3eC7a59d0007D8458DB17bDffBF21",
                 6,
+                true,
             )
         }
     }
