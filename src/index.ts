@@ -10,6 +10,7 @@ ethers.utils.Logger.setLogLevel(ethers.utils.Logger.levels.ERROR)
 import { environment as MoonbeamEnvironment } from './environments/moonbeam'
 import { environment as MoonriverEnvironment } from './environments/moonriver'
 import { environment as MoonbaseEnvironment } from './environments/moonbase'
+import { environment as BaseGoerliEnvironment } from './environments/basegoerli'
 
 import { Environment } from "./types";
 
@@ -17,6 +18,7 @@ export const Environments = {
   [Environment.MOONBEAM]: MoonbeamEnvironment,
   [Environment.MOONRIVER]: MoonriverEnvironment,
   [Environment.MOONBASE]: MoonbaseEnvironment,
+  [Environment.BASEGOERLI]: BaseGoerliEnvironment,
 }
 
 export * from './types'
