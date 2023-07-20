@@ -4,32 +4,40 @@ import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarket} from "./con
 import {
     MoonwellGovernorArtemis,
     MoonwellGovernorApollo,
+    TemporalGovernor,
     Comptroller,
+    Comptrollerv2,
     TokenSaleDistributor,
     TokenSaleDistributorProxy,
     Well,
     Maximillion,
     ChainlinkOracle,
+    ChainlinkOraclev2,
     StakedWell,
     TransparentProxy,
     Timelock,
     InterestRateModel,
+    InterestRateModelv2,
     MErc20Delegator,
-    StellaswapRewarder, SolarbeamRewarder, MToken
+    MErc20Delegatorv2,
+    StellaswapRewarder,
+    SolarbeamRewarder,
+    MToken,
+    MTokenv2
 } from "../types/ethers-contracts";
 import * as types from "../types/ethers-contracts";
 
 export type StringOrNull = string | null
 
 export type DeployArtifact = {
-    _format: string
-    contractName: string
-    sourceName: string
+    _format?: string
+    contractName?: string
+    sourceName?: string
     abi: any[]
-    bytecode: string
-    deployedBytecode: string
-    linkReferences: any
-    deployedLinkReferences: any
+    bytecode: any
+    deployedBytecode: any
+    linkReferences?: any
+    deployedLinkReferences?: any
 }
 
 export type Market = {
@@ -60,7 +68,7 @@ export type Market = {
     /** Whether a market is deprecated */
     isDeprecated?: boolean
     
-    marketContract: MoonwellContract<MToken>
+    marketContract: MoonwellContract<MToken | MTokenv2>
 }
 
 export type ContractBundle = {
@@ -68,7 +76,7 @@ export type ContractBundle = {
     CLAIMS: MoonwellContractWithProxy<TokenSaleDistributor, TokenSaleDistributorProxy> | null
 
     /** The environment's Comptroller contract address */
-    COMPTROLLER: MoonwellContract<Comptroller>
+    COMPTROLLER: MoonwellContract<Comptroller | Comptrollerv2 >
 
     /** The environment's Governor contract address, null if non-existent */
     GOVERNOR: MoonwellContract<MoonwellGovernorArtemis | MoonwellGovernorApollo> | null
@@ -76,26 +84,28 @@ export type ContractBundle = {
     /** The environment's Gov Token (WELL/MFAM) address */
     GOV_TOKEN: MoonwellContract<Well>
 
+    TEMPORAL_GOVERNOR: MoonwellContract<TemporalGovernor> | null
+
     /** The environment's Maximillion deployment, which is used for closing positions in the market after accuring a final round of interest */
-    MAXIMILLION: MoonwellContract<Maximillion>
+    MAXIMILLION: MoonwellContract<Maximillion> | null
 
     /** The environment's deployed PriceOracle, which brokers lookups to Chainlink */
-    ORACLE: MoonwellContract<ChainlinkOracle>
+    ORACLE: MoonwellContract<ChainlinkOracle | ChainlinkOraclev2>
 
     /** The environment's Safety Module */
-    SAFETY_MODULE: MoonwellContractWithProxy<StakedWell, TransparentProxy>
+    SAFETY_MODULE: MoonwellContractWithProxy<StakedWell, TransparentProxy> | null
 
     /** The environment's Governor Timelock address, null if non-existent */
     TIMELOCK: MoonwellContract<Timelock> | null
 
     /** The environment's interest model. */
-    INTEREST_RATE_MODEL: MoonwellContract<InterestRateModel>
+    INTEREST_RATE_MODEL: MoonwellContract<InterestRateModel | InterestRateModelv2>
 
     /** The contract that is the implementation of MErc20s */
-    MERC_20_IMPL: MoonwellContract<MErc20Delegator>
+    MERC_20_IMPL: MoonwellContract<MErc20Delegator | MErc20Delegatorv2>
 
     /** The dex rewarder contract for a given environment */
-    DEX_REWARDER: MoonwellContract<StellaswapRewarder | SolarbeamRewarder>
+    DEX_REWARDER: MoonwellContract<StellaswapRewarder | SolarbeamRewarder> | null
 
     /** An object of all deployed markets in this environment */
     MARKETS: {
@@ -124,6 +134,7 @@ export enum Environment {
     MOONRIVER = "moonriver",
     MOONBEAM = "moonbeam",
     MOONBASE = "moonbase",
+    BASEGOERLI = "basegoerli",
 }
 
 export type ProtocolOptions = {

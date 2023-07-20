@@ -39,6 +39,8 @@ export const environment: EnvironmentConfig = {
             MoonwellGovernorArtemis,
         ),
 
+        TEMPORAL_GOVERNOR: null,
+
         COMPTROLLER: new MoonwellContractWithProxy<types.Comptroller, types.Unitroller>(
             '0x8E00D5e02E65A19337Cdba98bbA9F84d4186a180',
             Comptroller,

@@ -2,6 +2,7 @@ import { ethers } from 'ethers'
 import { DeployArtifact } from './types'
 import * as types from "../types/ethers-contracts";
 import MToken from "./deploy-artifacts/MToken.json";
+import MTokenv2 from "./deploy-artifacts/MTokenv2.json";
 
 /** A contract in the Moonwell ecosystem. */
 export class MoonwellContract <ContractInterface> {
@@ -131,5 +132,30 @@ export class MoonwellMarket {
     get isNativeMarket(){
        return this.tokenAddress === null
     }
+
+}
+
+export class MoonwellMarketv2 {
+  // All mTokens are deployed with an 8 digit mantissa
+  public mTokenDigits = 8;
+constructor(
+    public name: string,
+    public ticker: string,
+    public tokenAddress: string | null,
+    public mTokenAddress: string,
+    public underlyingDecimals: number,
+    public isDeprecated = false,
+){}
+
+ get marketContract(){
+     return new MoonwellContract<types.MTokenv2>(
+         this.mTokenAddress,
+         MTokenv2
+     )
+ }
+
+ get isNativeMarket(){
+    return this.tokenAddress === null
+ }
 
 }
