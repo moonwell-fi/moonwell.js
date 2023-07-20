@@ -21,10 +21,6 @@ export const environment: EnvironmentConfig = {
     rpcNode: 'https://goerli.base.org',
     blockExplorerUrl: 'https://goerli.basescan.org/',
     contracts: {
-        CLAIMS: null,
-
-        GOVERNOR: null,
-
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
             '0x36d1CCd52b7DF66b9038728540A1bB558902A364',
             TemporalGovernor,
@@ -37,18 +33,10 @@ export const environment: EnvironmentConfig = {
             Unitrollerv2,
         ),
 
-        GOV_TOKEN: null,
-
-        MAXIMILLION: null,
-
         ORACLE: new MoonwellContract<types.ChainlinkOraclev2>(
             '0xf7E1F609a4EBF0B0e38bBDb1D6a1f637d25679D0',
             ChainlinkOraclev2
         ),
-
-        SAFETY_MODULE: null,
-
-        TIMELOCK: null,
 
         INTEREST_RATE_MODEL: new MoonwellContract<types.InterestRateModelv2>(
             '0x152DEDB508bE6F5c050f44Fb5AefcA150CD7eB34',
@@ -59,8 +47,6 @@ export const environment: EnvironmentConfig = {
             '0x83C5dE4dDc7bE93907Cb599aCFd2db47838e00df',
             MErc20Delegatorv2,
         ),
-
-        DEX_REWARDER: null,
 
         MARKETS: {
             "WBTC.test": new MoonwellMarketv2(

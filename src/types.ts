@@ -73,30 +73,30 @@ export type Market = {
 
 export type ContractBundle = {
     /** The environment's Claims contract address, null if non-existent */
-    CLAIMS: MoonwellContractWithProxy<TokenSaleDistributor, TokenSaleDistributorProxy> | null
+    CLAIMS?: MoonwellContractWithProxy<TokenSaleDistributor, TokenSaleDistributorProxy>
 
     /** The environment's Comptroller contract address */
     COMPTROLLER: MoonwellContract<Comptroller | Comptrollerv2 >
 
     /** The environment's Governor contract address, null if non-existent */
-    GOVERNOR: MoonwellContract<MoonwellGovernorArtemis | MoonwellGovernorApollo> | null
+    GOVERNOR?: MoonwellContract<MoonwellGovernorArtemis | MoonwellGovernorApollo>
 
     /** The environment's Gov Token (WELL/MFAM) address */
-    GOV_TOKEN: MoonwellContract<Well>
+    GOV_TOKEN?: MoonwellContract<Well>
 
-    TEMPORAL_GOVERNOR: MoonwellContract<TemporalGovernor> | null
+    TEMPORAL_GOVERNOR?: MoonwellContract<TemporalGovernor>
 
     /** The environment's Maximillion deployment, which is used for closing positions in the market after accuring a final round of interest */
-    MAXIMILLION: MoonwellContract<Maximillion> | null
+    MAXIMILLION?: MoonwellContract<Maximillion>
 
     /** The environment's deployed PriceOracle, which brokers lookups to Chainlink */
     ORACLE: MoonwellContract<ChainlinkOracle | ChainlinkOraclev2>
 
     /** The environment's Safety Module */
-    SAFETY_MODULE: MoonwellContractWithProxy<StakedWell, TransparentProxy> | null
+    SAFETY_MODULE?: MoonwellContractWithProxy<StakedWell, TransparentProxy>
 
     /** The environment's Governor Timelock address, null if non-existent */
-    TIMELOCK: MoonwellContract<Timelock> | null
+    TIMELOCK?: MoonwellContract<Timelock>
 
     /** The environment's interest model. */
     INTEREST_RATE_MODEL: MoonwellContract<InterestRateModel | InterestRateModelv2>
@@ -105,7 +105,7 @@ export type ContractBundle = {
     MERC_20_IMPL: MoonwellContract<MErc20Delegator | MErc20Delegatorv2>
 
     /** The dex rewarder contract for a given environment */
-    DEX_REWARDER: MoonwellContract<StellaswapRewarder | SolarbeamRewarder> | null
+    DEX_REWARDER?: MoonwellContract<StellaswapRewarder | SolarbeamRewarder>
 
     /** An object of all deployed markets in this environment */
     MARKETS: {
