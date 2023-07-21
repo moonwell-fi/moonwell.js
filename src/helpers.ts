@@ -27,6 +27,8 @@ export const getGovernanceTokenSymbol = (environment: Environment): string => {
       return "MFAM"
     case Environment.MOONBEAM:
       return "WELL"
+    case Environment.BASEGOERLI:
+      return "WELL"
     default:
       throw new Error(`Unknown environment: ${environment}`)
   }

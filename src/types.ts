@@ -7,6 +7,7 @@ import {
     TemporalGovernor,
     Comptroller,
     Comptrollerv2,
+    MultiRewardDistributor,
     TokenSaleDistributor,
     TokenSaleDistributorProxy,
     Well,
@@ -77,6 +78,9 @@ export type ContractBundle = {
 
     /** The environment's Comptroller contract address */
     COMPTROLLER: MoonwellContract<Comptroller | Comptrollerv2 >
+
+    /** The environment's MultiRewardDistributor proxy address */
+    MULTI_REWARD_DISTRIBUTOR?: MoonwellContract<MultiRewardDistributor>
 
     /** The environment's Governor contract address, null if non-existent */
     GOVERNOR?: MoonwellContract<MoonwellGovernorArtemis | MoonwellGovernorApollo>

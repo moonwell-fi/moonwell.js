@@ -3,6 +3,7 @@ import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarketv2} from '../
 
 import TemporalGovernor from "../deploy-artifacts/TemporalGovernor.json";
 import Comptrollerv2 from '../deploy-artifacts/Comptrollerv2.json'
+import MultiRewardDistributor from '../deploy-artifacts/MultiRewardDistributor.json'
 import Unitrollerv2 from '../deploy-artifacts/Unitrollerv2.json'
 import ChainlinkOraclev2 from '../deploy-artifacts/ChainlinkOraclev2.json'
 import InterestRateModelv2 from '../deploy-artifacts/InterestRateModelv2.json'
@@ -32,6 +33,11 @@ export const environment: EnvironmentConfig = {
             '0xE7074819f2418E553a07450eEd3Bb089207aB0a4',
             Comptrollerv2,
             Unitrollerv2,
+        ),
+
+        MULTI_REWARD_DISTRIBUTOR: new MoonwellContract<types.MultiRewardDistributor>(
+            '0xA09c095735c0BaEEfC7F60E198edec34390A615C',
+            MultiRewardDistributor,
         ),
 
         ORACLE: new MoonwellContract<types.ChainlinkOraclev2>(
