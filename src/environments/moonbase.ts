@@ -22,6 +22,7 @@ export const environment: EnvironmentConfig = {
     environment: Environment.MOONRIVER,
     networkID: 1285,
     chainID: 1285,
+    chainName: 'Moonbase (Testnet)',
     nativeAssetTicker: 'MOVR',
     protocolAssetTicker: 'MFAM',
     graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonriver',
