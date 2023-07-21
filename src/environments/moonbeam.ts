@@ -22,6 +22,7 @@ export const environment: EnvironmentConfig = {
     environment: Environment.MOONBEAM,
     networkID: 1284,
     chainID: 1284,
+    chainName: 'Moonbeam',
     nativeAssetTicker: 'GLMR',
     protocolAssetTicker: 'WELL',
     graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonbeam',

@@ -11,10 +11,11 @@ import MErc20Delegatorv2 from '../deploy-artifacts/MErc20Delegatorv2.json'
 import * as types from "../../types/ethers-contracts";
 
 export const environment: EnvironmentConfig = {
-    environment: Environment.MOONRIVER,
+    environment: Environment.BASEGOERLI,
     networkID: 84531,
     chainID: 84531,
-    nativeAssetTicker: 'ETH',
+    chainName: 'Base (Testnet)',
+    nativeAssetTicker: 'USDC',
     protocolAssetTicker: 'WELL',
     // TODO: Update this
     graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonriver',

@@ -150,6 +150,8 @@ export type EnvironmentConfig = {
     networkID: number,
     // The chain ID for this environment
     chainID: number,
+    // The chain name for this environment
+    chainName: string,
     // The native asset ticker (i.e. MOVR, GLMR, ETH)
     nativeAssetTicker: string,
     // The gov token ticker (i.e. MFAM, WELL, wWELL)
