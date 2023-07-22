@@ -116,6 +116,7 @@ export class MoonwellMarket {
    constructor(
        public name: string,
        public ticker: string,
+       public id: string,
        public tokenAddress: string | null,
        public mTokenAddress: string,
        public underlyingDecimals: number,
@@ -141,6 +142,7 @@ export class MoonwellMarketv2 {
 constructor(
     public name: string,
     public ticker: string,
+    public id: string,
     public tokenAddress: string | null,
     public mTokenAddress: string,
     public underlyingDecimals: number,

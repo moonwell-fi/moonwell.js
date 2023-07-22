@@ -59,6 +59,7 @@ export const environment: EnvironmentConfig = {
             "WBTC.test": new MoonwellMarketv2(
                 "Bitcoin",
                 "BTC",
+                "WBTC.test",
                 '0xc4A363d8347818AD672005A64E92141F63878D81',
                 "0x6FaEA4BD6FecaBA689bd0Eb678b34584Fe3C3772",
                 18,
@@ -66,6 +67,7 @@ export const environment: EnvironmentConfig = {
             "USDC.test": new MoonwellMarketv2(
                 "USD Coin",
                 "USDC",
+                "USDC.test",
                 '0xcF66301FfFe00b27C9ed869B431dC06bE63102f0',
                 "0xfd693042E524284796226234c4878F9b790Ef6C2",
                 6,
@@ -73,6 +75,7 @@ export const environment: EnvironmentConfig = {
             "ETH.test": new MoonwellMarketv2(
                 "Ethereum",
                 "ETH",
+                "ETH.test",
                 '0x3e0e24b307388C82781080C4C0a844C707779c37',
                 "0x1376a2d851209cb4EcA0288C8d4e10c3C67526F7",
                 18,
