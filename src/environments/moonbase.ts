@@ -91,6 +91,7 @@ export const environment: EnvironmentConfig = {
             "BTC.dev": new MoonwellMarket(
                 "Bitcoin",
                 "BTC",
+                "BTC.dev",
                 '0x0A996B2f808EF4Cd59a3790c6Bb8bf6E4105e0aA',
                 "0x4b088a4b3250684c362911078A0E945AcC21E236",
                 8,
@@ -98,6 +99,7 @@ export const environment: EnvironmentConfig = {
             "USDC.dev": new MoonwellMarket(
                 "USD Coin",
                 "USDC",
+                "USDC.dev",
                 '0x3799D95Ee109129951c6b31535b2B5AA6dbF108c',
                 "0x18f324E21846F1C21F4fbF8228705B17897eF15A",
                 18,
@@ -105,11 +107,13 @@ export const environment: EnvironmentConfig = {
             "ETH.dev": new MoonwellMarket(
                 "Ethereum",
                 "ETH",
+                "ETH.dev",
                 '0xf7A200a738f807B78c7a60aA315e115612C6c33a',
                 "0xa28C4680058f4A73f6172A6ed23C9E624E443CFB",
                 18,
             ),
             "DEV": new MoonwellMarket(
+                "DEV",
                 "DEV",
                 "DEV",
                 null,
@@ -119,6 +123,7 @@ export const environment: EnvironmentConfig = {
             "FRAX": new MoonwellMarket(
                 "Frax",
                 "FRAX",
+                "FRAX",
                 '0x90384c78892be628DF6C76c3E49714Ef719117f4',
                 "0x241D3210B0706e0c40CE5274bc23a9E494162F5F",
                 18,
@@ -126,6 +131,7 @@ export const environment: EnvironmentConfig = {
             "USDT.dev": new MoonwellMarket(
                 "Tether",
                 "USDT",
+                "USDT.dev",
                 '0xDc67f6725B90B7e623f008028835B00F8c399FE3',
                 "0x1C3132CF5e41Eb3660B403db494711Ac5F383125",
                 18,
