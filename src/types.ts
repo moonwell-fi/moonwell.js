@@ -1,6 +1,6 @@
 import BigNumber from "bignumber.js";
 import { ethers } from "ethers";
-import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarket} from "./contracts";
+import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarket, MoonwellMarketv2} from "./contracts";
 import {
     MoonwellGovernorArtemis,
     MoonwellGovernorApollo,
@@ -113,7 +113,7 @@ export type ContractBundle = {
 
     /** An object of all deployed markets in this environment */
     MARKETS: {
-        [ticker: string]: MoonwellMarket
+        [ticker: string]: MoonwellMarket | MoonwellMarketv2
     }
 }
 
