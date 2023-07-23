@@ -25,6 +25,7 @@ export const environment: EnvironmentConfig = {
     chainName: 'Moonriver',
     nativeAssetTicker: 'MOVR',
     protocolAssetTicker: 'MFAM',
+    safetyModuleTicker: 'stkMFAM',
     graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonriver',
     rpcNode: 'https://rpc.api.moonriver.moonbeam.network',
     blockExplorerUrl: 'https://moonriver.moonscan.io/',

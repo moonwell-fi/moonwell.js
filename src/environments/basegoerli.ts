@@ -18,6 +18,7 @@ export const environment: EnvironmentConfig = {
     chainName: 'Base (Testnet)',
     nativeAssetTicker: 'USDC',
     protocolAssetTicker: 'WELL',
+    safetyModuleTicker: 'stkWELL',
     // TODO: Update this
     graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonriver',
     rpcNode: 'https://goerli.base.org',
