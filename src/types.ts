@@ -160,6 +160,8 @@ export type EnvironmentConfig = {
     nativeAssetTicker: string,
     // The gov token ticker (i.e. MFAM, WELL, wWELL)
     protocolAssetTicker: string,
+    // The safety module ticker (i.e. stkWELL, stkMFAM)
+    safetyModuleTicker: string,
     // The GraphQL API url for this environment
     graphQLURL: string,
     // The RPC API for this config

@@ -25,6 +25,7 @@ export const environment: EnvironmentConfig = {
     chainName: 'Moonbeam',
     nativeAssetTicker: 'GLMR',
     protocolAssetTicker: 'WELL',
+    safetyModuleTicker: 'stkWELL',
     graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonbeam',
     rpcNode: 'https://rpc.api.moonbeam.network',
     blockExplorerUrl: 'https://moonbeam.moonscan.io/',
