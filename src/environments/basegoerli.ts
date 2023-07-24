@@ -20,7 +20,8 @@ export const environment: EnvironmentConfig = {
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
     // TODO: Update this
-    graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonriver',
+    // graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonriver',
+    graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonriver/api',
     rpcNode: 'https://goerli.base.org',
     blockExplorerUrl: 'https://goerli.basescan.org/',
     contracts: {
