@@ -26,7 +26,8 @@ export const environment: EnvironmentConfig = {
     nativeAssetTicker: 'GLMR',
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
-    graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonbeam',
+    // graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonbeam',
+    graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonbeam/api',
     rpcNode: 'https://rpc.api.moonbeam.network',
     blockExplorerUrl: 'https://moonbeam.moonscan.io/',
     contracts: {
