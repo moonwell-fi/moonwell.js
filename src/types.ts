@@ -102,8 +102,15 @@ export type ContractBundle = {
     /** The environment's Governor Timelock address, null if non-existent */
     TIMELOCK?: MoonwellContract<Timelock>
 
-    /** The environment's interest model. */
-    INTEREST_RATE_MODEL: MoonwellContract<InterestRateModel | InterestRateModelv2>
+    /** The environment's interest model. (Optional, use either this, or the markets below) */
+    INTEREST_RATE_MODEL?: MoonwellContract<InterestRateModel | InterestRateModelv2>
+
+    /** In newer environments, we have custom IR models per market (Optional, use either these or above) */
+    INTEREST_RATE_MODEL_USDC?: MoonwellContract<InterestRateModel | InterestRateModelv2>
+    INTEREST_RATE_MODEL_WETH?: MoonwellContract<InterestRateModel | InterestRateModelv2>
+    INTEREST_RATE_MODEL_WBTC?: MoonwellContract<InterestRateModel | InterestRateModelv2>
+    INTEREST_RATE_MODEL_cbETH?: MoonwellContract<InterestRateModel | InterestRateModelv2>
+    INTEREST_RATE_MODEL_wstETH?: MoonwellContract<InterestRateModel | InterestRateModelv2>
 
     /** The contract that is the implementation of MErc20s */
     MERC_20_IMPL: MoonwellContract<MErc20Delegator | MErc20Delegatorv2>
