@@ -21,7 +21,7 @@ export const environment: EnvironmentConfig = {
     safetyModuleTicker: 'stkWELL',
     // TODO: Update this
     // graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonriver',
-    graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonriver/api',
+    graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/basegoerli/api',
     rpcNode: 'https://goerli.base.org',
     blockExplorerUrl: 'https://goerli.basescan.org/',
     contracts: {
