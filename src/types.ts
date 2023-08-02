@@ -115,6 +115,9 @@ export type ContractBundle = {
     /** The contract that is the implementation of MErc20s */
     MERC_20_IMPL: MoonwellContract<MErc20Delegator | MErc20Delegatorv2>
 
+    /** For networks with no native market, the WETH native wrapper/router */
+    WETH_ROUTER?: MoonwellContract<types.WETHRouter>
+
     /** The dex rewarder contract for a given environment */
     DEX_REWARDER?: MoonwellContract<StellaswapRewarder | SolarbeamRewarder>
 
