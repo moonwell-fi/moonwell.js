@@ -8,6 +8,7 @@ import Unitrollerv2 from '../deploy-artifacts/Unitrollerv2.json'
 import ChainlinkOraclev2 from '../deploy-artifacts/ChainlinkOraclev2.json'
 import InterestRateModelv2 from '../deploy-artifacts/InterestRateModelv2.json'
 import MErc20Delegatorv2 from '../deploy-artifacts/MErc20Delegatorv2.json'
+import WETHRouter from '../deploy-artifacts/WETHRouter.json'
 
 import * as types from "../../types/ethers-contracts";
 
@@ -75,6 +76,11 @@ export const environment: EnvironmentConfig = {
         MERC_20_IMPL: new MoonwellContract<types.MErc20Delegatorv2>(
             '0x8DDc78645E18CDb4b6fcE65777642ef4fFdC6115',
             MErc20Delegatorv2,
+        ),
+
+        WETH_ROUTER: new MoonwellContract<types.WETHRouter>(
+            '0x3b995646420BcfE8395bA9F44251415126f7BD7A',
+            WETHRouter,
         ),
 
         MARKETS: {
