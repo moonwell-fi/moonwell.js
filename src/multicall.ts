@@ -121,7 +121,7 @@ export async function applyTransformations(
         }
 
         const newValue = await transformFn(multicallResult[transformKey])
-        console.log(`[${transformKey}] Old value: ${multicallResult[transformKey]} | New value ${newValue}`)
+        // console.log(`[${transformKey}] Old value: ${multicallResult[transformKey]} | New value ${newValue}`)
         multicallResult[transformKey] = newValue
     }
 }
