@@ -149,6 +149,7 @@ export enum Environment {
     MOONBEAM = "moonbeam",
     MOONBASE = "moonbase",
     BASEGOERLI = "basegoerli",
+    BASE = "base",
 }
 
 export type ProtocolOptions = {
