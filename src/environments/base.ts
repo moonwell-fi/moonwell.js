@@ -17,7 +17,7 @@ export const environment: EnvironmentConfig = {
     networkID: 8453,
     chainID: 8453,
     chainName: 'Base',
-    nativeAssetTicker: 'USDC',
+    nativeAssetTicker: 'ETH',
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/base/api',
