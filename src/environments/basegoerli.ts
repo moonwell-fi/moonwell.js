@@ -17,7 +17,7 @@ export const environment: EnvironmentConfig = {
     networkID: 84531,
     chainID: 84531,
     chainName: 'Base (Testnet)',
-    nativeAssetTicker: 'USDC',
+    nativeAssetTicker: 'ETH',
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
     // TODO: Update this
