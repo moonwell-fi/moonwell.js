@@ -79,7 +79,7 @@ export const environment: EnvironmentConfig = {
         ),
 
         WETH_ROUTER: new MoonwellContract<types.WETHRouter>(
-            '0x3b995646420BcfE8395bA9F44251415126f7BD7A',
+            '0xafDc287BfB6CdD12972EE25e8C4c84e9F2bc2345',
             WETHRouter,
         ),
 
