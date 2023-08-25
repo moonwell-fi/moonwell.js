@@ -71,6 +71,11 @@ export const environment: EnvironmentConfig = {
             InterestRateModelv2,
         ), */
 
+        INTEREST_RATE_MODEL_DAI: new MoonwellContract<types.InterestRateModelv2>(
+            '0xbc93DdFAE192926BE036c6A6Dd544a0e250Ab97D',
+            InterestRateModelv2,
+        ),
+
         MERC_20_IMPL: new MoonwellContract<types.MErc20Delegatorv2>(
             '0x1FADFF493529C3Fcc7EE04F1f15D19816ddA45B7',
             MErc20Delegatorv2,
@@ -122,6 +127,14 @@ export const environment: EnvironmentConfig = {
                 '0x1DCc89000AE6EAF18bD855098d3670E820A8d0c4',
                 18,
             ), */
+            "DAI": new MoonwellMarketv2(
+                "DAI Stablecoin",
+                "DAI",
+                "DAI",
+                '0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb',
+                '0x73b06D8d18De422E269645eaCe15400DE7462417',
+                18,
+            ),
         }
     }
 }
