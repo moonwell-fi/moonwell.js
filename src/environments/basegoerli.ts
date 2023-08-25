@@ -73,6 +73,11 @@ export const environment: EnvironmentConfig = {
             InterestRateModelv2,
         ),
 
+        INTEREST_RATE_MODEL_DAI: new MoonwellContract<types.InterestRateModelv2>(
+            '0x1B1340afB59315C648f45E2E8850C79ac71ad530',
+            InterestRateModelv2,
+        ),
+
         MERC_20_IMPL: new MoonwellContract<types.MErc20Delegatorv2>(
             '0x8DDc78645E18CDb4b6fcE65777642ef4fFdC6115',
             MErc20Delegatorv2,
@@ -122,6 +127,14 @@ export const environment: EnvironmentConfig = {
                 "wstETH.test",
                 '0x3A4c72391FA1e474663ffB43bbA5c851014c0065',
                 '0x1DCc89000AE6EAF18bD855098d3670E820A8d0c4',
+                18,
+            ),
+            "DAI.test": new MoonwellMarketv2(
+                "DAI Stablecoin",
+                "DAI",
+                "DAI.test",
+                '0x098d2cF3bc642668a28E5633ED15Ca3166D2802d',
+                '0x1d1e13e0974E8a065C1DE7EbB1E3A1cbE88FC58a',
                 18,
             ),
         }

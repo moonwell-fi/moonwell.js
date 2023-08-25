@@ -52,7 +52,7 @@ export const environment: EnvironmentConfig = {
         ),
 
         INTEREST_RATE_MODEL_WETH: new MoonwellContract<types.InterestRateModelv2>(
-            '0x14994008E5b7547d2dFE9dEcBb47456cEA217176',
+            '0x4393277B02ef3cA293990A772B7160a8c76F2443',
             InterestRateModelv2,
         ),  
 
