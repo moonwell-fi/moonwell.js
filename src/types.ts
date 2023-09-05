@@ -106,7 +106,7 @@ export type ContractBundle = {
     INTEREST_RATE_MODEL?: MoonwellContract<InterestRateModel | InterestRateModelv2>
 
     /** In newer environments, we have custom IR models per market (Optional, use either these or above) */
-    INTEREST_RATE_MODEL_USDC?: MoonwellContract<InterestRateModel | InterestRateModelv2>
+    INTEREST_RATE_MODEL_USDBC?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_WETH?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_WBTC?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_cbETH?: MoonwellContract<InterestRateModel | InterestRateModelv2>
