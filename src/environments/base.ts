@@ -46,7 +46,7 @@ export const environment: EnvironmentConfig = {
             ChainlinkOraclev2
         ),
 
-        INTEREST_RATE_MODEL_USDC: new MoonwellContract<types.InterestRateModelv2>(
+        INTEREST_RATE_MODEL_USDBC: new MoonwellContract<types.InterestRateModelv2>(
             '0x1603178b26C3bc2cd321e9A64644ab62643d138B',
             InterestRateModelv2,
         ),
@@ -87,10 +87,10 @@ export const environment: EnvironmentConfig = {
         ),
 
         MARKETS: {
-            "USDC": new MoonwellMarketv2(
+            "USDbC": new MoonwellMarketv2(
                 "USD Coin",
-                "USDC",
-                "USDC",
+                "USDbC",
+                "USDbC",
                 '0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca',
                 "0x703843C3379b52F9FF486c9f5892218d2a065cC8",
                 6,
