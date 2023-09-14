@@ -76,6 +76,11 @@ export const environment: EnvironmentConfig = {
             InterestRateModelv2,
         ),
 
+        INTEREST_RATE_MODEL_USDC: new MoonwellContract<types.InterestRateModelv2>(
+            '0x93AEE5b2431991eB96869057e98B0a7e9262cDEb',
+            InterestRateModelv2,
+        ),
+
         MERC_20_IMPL: new MoonwellContract<types.MErc20Delegatorv2>(
             '0x1FADFF493529C3Fcc7EE04F1f15D19816ddA45B7',
             MErc20Delegatorv2,
@@ -134,6 +139,14 @@ export const environment: EnvironmentConfig = {
                 '0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb',
                 '0x73b06D8d18De422E269645eaCe15400DE7462417',
                 18,
+            ),
+            "USDC": new MoonwellMarketv2(
+                "USD Coin",
+                "USDC",
+                "USDC",
+                '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',
+                '0xEdc817A28E8B93B03976FBd4a3dDBc9f7D176c22',
+                6,
             ),
         }
     }
