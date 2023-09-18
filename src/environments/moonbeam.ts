@@ -28,6 +28,7 @@ export const environment: EnvironmentConfig = {
     safetyModuleTicker: 'stkWELL',
     // graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonbeam',
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonbeam/api',
+    govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbeam/api',
     rpcNode: 'https://rpc.api.moonbeam.network',
     blockExplorerUrl: 'https://moonbeam.moonscan.io/',
     contracts: {
