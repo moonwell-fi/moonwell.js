@@ -177,6 +177,8 @@ export type EnvironmentConfig = {
     safetyModuleTicker: string,
     // The GraphQL API url for this environment
     graphQLURL: string,
+    // The Governance GraphQL API url for this environment
+    govGraphQLURL: string,
     // The RPC API for this config
     rpcNode: string
     blockExplorerUrl: string

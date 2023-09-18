@@ -23,6 +23,7 @@ export const environment: EnvironmentConfig = {
     // TODO: Update this
     // graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonriver',
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/basegoerli/api',
+    govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbase/api',
     rpcNode: 'https://goerli.base.org',
     blockExplorerUrl: 'https://goerli.basescan.org/',
     contracts: {

@@ -21,6 +21,7 @@ export const environment: EnvironmentConfig = {
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/base/api',
+    govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbeam/api',
     rpcNode: 'https://mainnet.base.org',
     blockExplorerUrl: 'https://basescan.org/',
     contracts: {
