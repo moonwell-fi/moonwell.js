@@ -23,7 +23,7 @@ export const environment: EnvironmentConfig = {
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/base/api',
     govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbeam/api',
     // rpcNode: 'https://mainnet.base.org',
-    rpcNode: 'https://base-mainnet.public.blastapi.io',
+    rpcNode: 'https://base-mainnet.g.alchemy.com/v2/sTC_2N1UZj-sDCdsZcItpYsFodWYSyna',
     blockExplorerUrl: 'https://basescan.org/',
     contracts: {
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
