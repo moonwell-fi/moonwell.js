@@ -29,7 +29,8 @@ export const environment: EnvironmentConfig = {
     // graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonbeam',
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonbeam/api',
     govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbeam/api',
-    rpcNode: 'https://rpc.api.moonbeam.network',
+    // rpcNode: 'https://rpc.api.moonbeam.network',
+    rpcNode: 'https://moonbeam.api.onfinality.io/rpc?apikey=a8ec7703-fa38-4a3f-b34c-cf91e0619f0c',
     blockExplorerUrl: 'https://moonbeam.moonscan.io/',
     contracts: {
         CLAIMS: new MoonwellContractWithProxy<types.TokenSaleDistributor, types.TokenSaleDistributorProxy>(
