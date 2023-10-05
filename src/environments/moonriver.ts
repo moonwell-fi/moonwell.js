@@ -30,7 +30,7 @@ export const environment: EnvironmentConfig = {
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonriver/api',
     govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonriver/api',
     // rpcNode: 'https://rpc.api.moonriver.moonbeam.network',
-    rpcNode: 'https://moonriver.api.onfinality.io/rpc?apikey=ad9c3564-f46a-4244-b093-e7fda91a7af9',
+    rpcNode: 'https://moonriver.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     blockExplorerUrl: 'https://moonriver.moonscan.io/',
     contracts: {
         CLAIMS: new MoonwellContractWithProxy<types.TokenSaleDistributor, types.TokenSaleDistributorProxy>(
