@@ -190,6 +190,15 @@ export const environment: EnvironmentConfig = {
                 6,
                 false,
             ),
+            'xcUSDC': new MoonwellMarket(
+                "USD Coin",
+                "xcUSDC",
+                "xcUSDC",
+                "0xFFfffffF7D2B0B761Af01Ca8e25242976ac0aD7D",
+                "0x22b1a40e3178fe7C7109eFCc247C5bB2B34ABe32",
+                6,
+                false,
+            ),
         },
     }
 }
