@@ -238,5 +238,19 @@ export const contracts: ContractBundle = {
                 MToken
             )
         },
+        'xcUSDC': {
+            name: "USD Coin",
+            assetTicker: "xcUSDC",
+            tokenAddress: "0xffffffff7d2b0b761af01ca8e25242976ac0ad7d",
+            mTokenAddress: "0x22b1a40e3178fe7c7109efcc247c5bb2b34abe32",
+            digits: 6,
+            mTokenDigits: 8,
+            mantissa: new BigNumber(1e6),
+            mTokenMantissa: new BigNumber(1e8),
+            marketContract: new MoonwellContract<types.MToken>(
+                '0x22b1a40e3178fe7c7109efcc247c5bb2b34abe32',
+                MToken
+            )
+        },
     },
 }
