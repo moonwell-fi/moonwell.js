@@ -126,14 +126,14 @@ export const environment: EnvironmentConfig = {
                 '0x3bf93770f2d4a794c3d9EBEfBAeBAE2a8f09A5E5',
                 18,
             ),
-            /* "wstETH": new MoonwellMarketv2(
+            "wstETH": new MoonwellMarketv2(
                 "Lido Staked Ethereum",
                 "wstETH",
                 "wstETH",
-                '0x3A4c72391FA1e474663ffB43bbA5c851014c0065',
-                '0x1DCc89000AE6EAF18bD855098d3670E820A8d0c4',
+                '0xc1CBa3fCea344f92D9239c08C0568f6F2F0ee452',
+                '0x627Fe393Bc6EdDA28e99AE648fD6fF362514304b',
                 18,
-            ), */
+            ),
             "DAI": new MoonwellMarketv2(
                 "DAI Stablecoin",
                 "DAI",
