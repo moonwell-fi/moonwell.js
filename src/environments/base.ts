@@ -68,10 +68,10 @@ export const environment: EnvironmentConfig = {
             InterestRateModelv2,
         ),
 
-        /* INTEREST_RATE_MODEL_wstETH: new MoonwellContract<types.InterestRateModelv2>(
-            '0xf96cB4716EC5012c3Ea8c8b71eD79c1be68a8f44',
+        INTEREST_RATE_MODEL_wstETH: new MoonwellContract<types.InterestRateModelv2>(
+            '0x1007100Ffc1aC1e63813Fb983bb3D3a8DF1CC193',
             InterestRateModelv2,
-        ), */
+        ),
 
         INTEREST_RATE_MODEL_DAI: new MoonwellContract<types.InterestRateModelv2>(
             '0xbc93DdFAE192926BE036c6A6Dd544a0e250Ab97D',
