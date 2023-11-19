@@ -73,6 +73,11 @@ export const environment: EnvironmentConfig = {
             InterestRateModelv2,
         ),
 
+        INTEREST_RATE_MODEL_rETH: new MoonwellContract<types.InterestRateModelv2>(
+            '0x36BD01e31834A1ea271F0A135e92517a6320B511',
+            InterestRateModelv2,
+        ),
+
         INTEREST_RATE_MODEL_DAI: new MoonwellContract<types.InterestRateModelv2>(
             '0xbc93DdFAE192926BE036c6A6Dd544a0e250Ab97D',
             InterestRateModelv2,
@@ -132,6 +137,14 @@ export const environment: EnvironmentConfig = {
                 "wstETH",
                 '0xc1CBa3fCea344f92D9239c08C0568f6F2F0ee452',
                 '0x627Fe393Bc6EdDA28e99AE648fD6fF362514304b',
+                18,
+            ),
+            "rETH": new MoonwellMarketv2(
+                "Rocket Pool Staked Ethereum",
+                "rETH",
+                "rETH",
+                '0xB6fe221Fe9EeF5aBa221c348bA20A1Bf5e73624c',
+                '0xCB1DaCd30638ae38F2B94eA64F066045B7D45f44',
                 18,
             ),
             "DAI": new MoonwellMarketv2(
