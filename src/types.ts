@@ -182,6 +182,10 @@ export type EnvironmentConfig = {
     govGraphQLURL: string,
     // The RPC API for this config
     rpcNode: string
+    // The public RPC API for this config
+    publicRpcNode: string
+    // The WSS API for this config
+    wssNode: string
     blockExplorerUrl: string
 
     // Not sure if in use...
