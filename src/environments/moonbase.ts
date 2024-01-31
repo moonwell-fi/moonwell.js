@@ -30,6 +30,8 @@ export const environment: EnvironmentConfig = {
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonbase/api',
     govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbase/api',
     rpcNode: 'https://rpc.api.moonriver.moonbeam.network',
+    publicRpcNode: 'https://rpc.api.moonriver.moonbeam.network',
+    wssNode: 'wss://rpc.api.moonriver.moonbeam.network',
     blockExplorerUrl: 'https://moonriver.moonscan.io/',
     contracts: {
         CLAIMS: new MoonwellContractWithProxy<types.TokenSaleDistributor, types.TokenSaleDistributorProxy>(
