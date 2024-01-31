@@ -20,12 +20,13 @@ export const environment: EnvironmentConfig = {
     nativeAssetTicker: 'ETH',
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
-    graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/base/api',
-    // graphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/moonwell-base/prod/gn',
+    // graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/base/api',
+    graphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/moonwell-base/prod/gn',
     govGraphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/governance-moonbeam/prod/gn',
     // govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbeam/api',
-    // rpcNode: 'https://mainnet.base.org',
     rpcNode: 'https://base-mainnet.g.alchemy.com/v2/sTC_2N1UZj-sDCdsZcItpYsFodWYSyna',
+    publicRpcNode: 'https://mainnet.base.org',
+    wssNode: 'wss://base-mainnet.g.alchemy.com/v2/sTC_2N1UZj-sDCdsZcItpYsFodWYSyna',
     blockExplorerUrl: 'https://basescan.org/',
     contracts: {
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
