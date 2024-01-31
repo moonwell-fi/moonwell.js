@@ -25,6 +25,8 @@ export const environment: EnvironmentConfig = {
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/basegoerli/api',
     govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbase/api',
     rpcNode: 'https://goerli.base.org',
+    publicRpcNode: 'https://goerli.base.org',
+    wssNode: 'wss://goerli.base.org',
     blockExplorerUrl: 'https://goerli.basescan.org/',
     contracts: {
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
