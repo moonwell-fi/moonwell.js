@@ -102,12 +102,12 @@ export const environment: EnvironmentConfig = {
         ),
 
         MARKETS: {
-            "USDbC": new MoonwellMarketv2(
+            "USDC": new MoonwellMarketv2(
                 "USD Coin",
-                "USDbC",
-                "USDbC",
-                '0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca',
-                "0x703843C3379b52F9FF486c9f5892218d2a065cC8",
+                "USDC",
+                "USDC",
+                '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',
+                '0xEdc817A28E8B93B03976FBd4a3dDBc9f7D176c22',
                 6,
             ),
             "ETH": new MoonwellMarketv2(
@@ -118,14 +118,6 @@ export const environment: EnvironmentConfig = {
                 "0x628ff693426583D9a7FB391E54366292F509D457",
                 18,
             ),
-            /* "WBTC": new MoonwellMarketv2(
-                "Wrapped Bitcoin",
-                "WBTC",
-                "WBTC",
-                '0xde1a381cAa4189D39c363985d9969D7D206970Bd',
-                "0xe94362a857df3Fc87E80A8b26e16e3C97C861a98",
-                8,
-            ), */
             "cbETH": new MoonwellMarketv2(
                 "Coinbase Staked Ethereum",
                 "cbETH",
@@ -150,6 +142,14 @@ export const environment: EnvironmentConfig = {
                 '0xCB1DaCd30638ae38F2B94eA64F066045B7D45f44',
                 18,
             ),
+            /* "WBTC": new MoonwellMarketv2(
+                "Wrapped Bitcoin",
+                "WBTC",
+                "WBTC",
+                '0xde1a381cAa4189D39c363985d9969D7D206970Bd',
+                "0xe94362a857df3Fc87E80A8b26e16e3C97C861a98",
+                8,
+            ), */
             "DAI": new MoonwellMarketv2(
                 "DAI Stablecoin",
                 "DAI",
@@ -158,12 +158,12 @@ export const environment: EnvironmentConfig = {
                 '0x73b06D8d18De422E269645eaCe15400DE7462417',
                 18,
             ),
-            "USDC": new MoonwellMarketv2(
+            "USDbC": new MoonwellMarketv2(
                 "USD Coin",
-                "USDC",
-                "USDC",
-                '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',
-                '0xEdc817A28E8B93B03976FBd4a3dDBc9f7D176c22',
+                "USDbC",
+                "USDbC",
+                '0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca',
+                "0x703843C3379b52F9FF486c9f5892218d2a065cC8",
                 6,
             ),
         }
