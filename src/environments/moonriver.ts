@@ -4,6 +4,7 @@ import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarket} from '../co
 import TokenSaleDistributor from '../deploy-artifacts/TokenSaleDistributor.json'
 import TokenSaleDistributorProxy from '../deploy-artifacts/TokenSaleDistributorProxy.json'
 import MoonwellGovernorApollo from '../deploy-artifacts/MoonwellGovernorApollo.json'
+import MoonwellViewsV1 from '../deploy-artifacts/MoonwellViewsV1.json'
 import Comptroller from '../deploy-artifacts/Comptroller.json'
 import Unitroller from '../deploy-artifacts/Unitroller.json'
 import Well from '../deploy-artifacts/Well.json'
@@ -20,6 +21,7 @@ import * as types from "../../types/ethers-contracts";
 
 export const environment: EnvironmentConfig = {
     environment: Environment.MOONRIVER,
+    governanceEnvironment: Environment.MOONRIVER,
     networkID: 1285,
     chainID: 1285,
     chainName: 'Moonriver',
@@ -33,6 +35,11 @@ export const environment: EnvironmentConfig = {
     rpcNode: 'https://moonriver.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     blockExplorerUrl: 'https://moonriver.moonscan.io/',
     contracts: {
+        VIEWS: new MoonwellContract<types.MoonwellViewsV1>(
+            '0xb4104C02BBf4E9be85AAa41a62974E4e28D59A33',
+            MoonwellViewsV1,
+        ),
+
         CLAIMS: new MoonwellContractWithProxy<types.TokenSaleDistributor, types.TokenSaleDistributorProxy>(
             '0x8568A675384d761f36eC269D695d6Ce4423cfaB1',
             TokenSaleDistributor,

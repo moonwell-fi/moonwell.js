@@ -9,11 +9,13 @@ import ChainlinkOraclev2 from '../deploy-artifacts/ChainlinkOraclev2.json'
 import InterestRateModelv2 from '../deploy-artifacts/InterestRateModelv2.json'
 import MErc20Delegatorv2 from '../deploy-artifacts/MErc20Delegatorv2.json'
 import WETHRouter from '../deploy-artifacts/WETHRouter.json'
+import MoonwellViewsV2 from '../deploy-artifacts/MoonwellViewsV2.json'
 
 import * as types from "../../types/ethers-contracts";
 
 export const environment: EnvironmentConfig = {
     environment: Environment.BASE,
+    governanceEnvironment: Environment.MOONBEAM,
     networkID: 8453,
     chainID: 8453,
     chainName: 'Base',
@@ -22,10 +24,16 @@ export const environment: EnvironmentConfig = {
     safetyModuleTicker: 'stkWELL',
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/base/api',
     govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbeam/api',
-    // rpcNode: 'https://mainnet.base.org',
-    rpcNode: 'https://base-mainnet.g.alchemy.com/v2/sTC_2N1UZj-sDCdsZcItpYsFodWYSyna',
+    rpcNode: 'https://mainnet.base.org',
+    // rpcNode: 'https://base-mainnet.g.alchemy.com/v2/sTC_2N1UZj-sDCdsZcItpYsFodWYSyna',
     blockExplorerUrl: 'https://basescan.org/',
     contracts: {
+
+        VIEWS: new MoonwellContract<types.MoonwellViewsV2>(
+            '0x6834770ABA6c2028f448E3259DDEE4BCB879d459',
+            MoonwellViewsV2,
+        ),
+
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
             '0x8b621804a7637b781e2BbD58e256a591F2dF7d51',
             TemporalGovernor,

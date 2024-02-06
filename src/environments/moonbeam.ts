@@ -15,11 +15,13 @@ import Timelock from '../deploy-artifacts/Timelock.json'
 import InterestRateModel from '../deploy-artifacts/InterestRateModel.json'
 import MErc20Delegator from '../deploy-artifacts/MErc20Delegator.json'
 import StellaswapRewarder from '../deploy-artifacts/StellaswapRewarder.json'
+import MoonwellViewsV1 from '../deploy-artifacts/MoonwellViewsV1.json'
 
 import * as types from "../../types/ethers-contracts";
 
 export const environment: EnvironmentConfig = {
     environment: Environment.MOONBEAM,
+    governanceEnvironment: Environment.MOONBEAM,
     networkID: 1284,
     chainID: 1284,
     chainName: 'Moonbeam',
@@ -29,10 +31,15 @@ export const environment: EnvironmentConfig = {
     // graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonbeam',
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonbeam/api',
     govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbeam/api',
-    // rpcNode: 'https://rpc.api.moonbeam.network',
-    rpcNode: 'https://moonbeam.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
+    rpcNode: 'https://rpc.api.moonbeam.network',
+    // rpcNode: 'https://moonbeam.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     blockExplorerUrl: 'https://moonbeam.moonscan.io/',
     contracts: {
+        VIEWS: new MoonwellContract<types.MoonwellViewsV1>(
+            '0xe76C8B8706faC85a8Fbdcac3C42e3E7823c73994',
+            MoonwellViewsV1,
+        ),
+
         CLAIMS: new MoonwellContractWithProxy<types.TokenSaleDistributor, types.TokenSaleDistributorProxy>(
             '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
             TokenSaleDistributor,

@@ -1,6 +1,6 @@
 import BigNumber from "bignumber.js";
 import { ethers } from "ethers";
-import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarket, MoonwellMarketv2} from "./contracts";
+import { MoonwellContract, MoonwellContractWithProxy, MoonwellMarket, MoonwellMarketv2 } from "./contracts";
 import {
     MoonwellGovernorArtemis,
     MoonwellGovernorApollo,
@@ -27,6 +27,7 @@ import {
     MTokenv2
 } from "../types/ethers-contracts";
 import * as types from "../types/ethers-contracts";
+import { DAYS_PER_YEAR, SECONDS_PER_DAY } from ".";
 
 export type StringOrNull = string | null
 
@@ -68,7 +69,7 @@ export type Market = {
 
     /** Whether a market is deprecated */
     isDeprecated?: boolean
-    
+
     marketContract: MoonwellContract<MToken | MTokenv2>
 }
 
@@ -77,7 +78,7 @@ export type ContractBundle = {
     CLAIMS?: MoonwellContractWithProxy<TokenSaleDistributor, TokenSaleDistributorProxy>
 
     /** The environment's Comptroller contract address */
-    COMPTROLLER: MoonwellContract<Comptroller | Comptrollerv2 >
+    COMPTROLLER: MoonwellContract<Comptroller | Comptrollerv2>
 
     /** The environment's MultiRewardDistributor proxy address */
     MULTI_REWARD_DISTRIBUTOR?: MoonwellContract<MultiRewardDistributor>
@@ -128,6 +129,8 @@ export type ContractBundle = {
     MARKETS: {
         [ticker: string]: MoonwellMarket | MoonwellMarketv2
     }
+
+    VIEWS: MoonwellContract<types.MoonwellViewsV1 | types.MoonwellViewsV2>
 }
 
 /**
@@ -140,7 +143,7 @@ export type ProposalData = {
     /** The amount of the native asset to transfer with each call. */
     values: number[]
 
-    /** Signatures of each method. */    
+    /** Signatures of each method. */
     signatures: string[]
 
     /** Calldata to send with each method call. */
@@ -184,22 +187,85 @@ export type EnvironmentConfig = {
     rpcNode: string
     blockExplorerUrl: string
 
+    governanceEnvironment: Environment
+
     // Not sure if in use...
     // networkBlockTime: number
     // networkHomePage: string,
 }
 
-export type TMulticall = {[key:string]: [ethers.Contract, string, any[]?]}
+export type TMulticall = { [key: string]: [ethers.Contract, string, any[]?] }
 
-export type TMulticallResult = {[key:string]: any}
+export type TMulticallResult = { [key: string]: any }
 
 export type TNestedMulticall = [string, TMulticall]
 export type TNestedMulticallResult = {
-    [key:string]: {
-        [key:string]: any
+    [key: string]: {
+        [key: string]: any
     }
 }
 
 export type MulticallTransformations = {
     [key: string]: Function
+}
+
+
+export class BN {
+
+    rawValue: BigNumber
+    value: number
+
+    constructor(
+        shiftedBy?: number,
+        rawValue?: BigNumber | string
+    ) {
+        this.rawValue = new BigNumber(rawValue?.toString() || '0')
+        if (this.rawValue.isZero() || !shiftedBy) { this.value = this.rawValue.toNumber() }
+        else this.value = this.rawValue.shiftedBy(shiftedBy).toNumber()
+    }
+}
+
+export class StakingInfo {
+
+    cooldown: BN
+    unstakeWindow: BN
+    distributionEnd: BN
+    totalSupply: BN
+    emissionPerSecond: BN
+    apr: BN
+
+    constructor(cooldown: BigNumber,
+        unstakeWindow: BigNumber,
+        distributionEnd: BigNumber,
+        totalSupply: BigNumber,
+        emissionPerSecond: BigNumber
+    ) {
+        this.cooldown = new BN(0, cooldown);
+        this.unstakeWindow = new BN(0, unstakeWindow);
+        this.distributionEnd = new BN(0, distributionEnd);
+        this.totalSupply = new BN(-18, totalSupply);
+        this.emissionPerSecond = new BN(0, emissionPerSecond);
+        this.apr = new BN(
+            0,
+            this.emissionPerSecond.rawValue
+                .times(SECONDS_PER_DAY)
+                .times(DAYS_PER_YEAR)
+                .plus(this.totalSupply.rawValue)
+                .div(this.totalSupply.rawValue)
+                .minus(1)
+                .times(100)
+        )
+
+
+    }
+}
+
+export class ProtocolInfo {
+    seizeGuardianPaused: boolean
+    transferGuardianPaused: boolean
+
+    constructor(seizePaused: boolean, transferPaused: boolean) {
+        this.seizeGuardianPaused = seizePaused;
+        this.transferGuardianPaused = transferPaused;
+    }
 }

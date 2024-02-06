@@ -9,11 +9,13 @@ import ChainlinkOraclev2 from '../deploy-artifacts/ChainlinkOraclev2.json'
 import InterestRateModelv2 from '../deploy-artifacts/InterestRateModelv2.json'
 import MErc20Delegatorv2 from '../deploy-artifacts/MErc20Delegatorv2.json'
 import WETHRouter from '../deploy-artifacts/WETHRouter.json'
+import MoonwellViewsV2 from '../deploy-artifacts/MoonwellViewsV2.json'
 
 import * as types from "../../types/ethers-contracts";
 
 export const environment: EnvironmentConfig = {
     environment: Environment.BASEGOERLI,
+    governanceEnvironment: Environment.MOONBEAM,
     networkID: 84531,
     chainID: 84531,
     chainName: 'Base (Testnet)',
@@ -27,6 +29,11 @@ export const environment: EnvironmentConfig = {
     rpcNode: 'https://goerli.base.org',
     blockExplorerUrl: 'https://goerli.basescan.org/',
     contracts: {
+        VIEWS: new MoonwellContract<types.MoonwellViewsV2>(
+            '0xFf0731337F615aC5403cb243623283BC04cDe121',
+            MoonwellViewsV2,
+        ),
+
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
             '0xBaA4916ACD2d3Db77278A377f1b49A6E1127d6e6',
             TemporalGovernor,

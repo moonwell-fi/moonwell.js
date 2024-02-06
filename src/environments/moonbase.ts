@@ -15,11 +15,13 @@ import Timelock from '../deploy-artifacts/Timelock.json'
 import InterestRateModel from '../deploy-artifacts/InterestRateModel.json'
 import MErc20Delegator from '../deploy-artifacts/MErc20Delegator.json'
 import SolarbeamRewarder from '../deploy-artifacts/SolarbeamRewarder.json'
+import MoonwellViewsV1 from '../deploy-artifacts/MoonwellViewsV1.json'
 
 import * as types from "../../types/ethers-contracts";
 
 export const environment: EnvironmentConfig = {
     environment: Environment.MOONRIVER,
+    governanceEnvironment: Environment.MOONRIVER,
     networkID: 1285,
     chainID: 1285,
     chainName: 'Moonbase (Testnet)',
@@ -32,6 +34,10 @@ export const environment: EnvironmentConfig = {
     rpcNode: 'https://rpc.api.moonriver.moonbeam.network',
     blockExplorerUrl: 'https://moonriver.moonscan.io/',
     contracts: {
+        VIEWS: new MoonwellContract<types.MoonwellViewsV1>(
+            '0xe76C8B8706faC85a8Fbdcac3C42e3E7823c73994',
+            MoonwellViewsV1,
+        ),
         CLAIMS: new MoonwellContractWithProxy<types.TokenSaleDistributor, types.TokenSaleDistributorProxy>(
             '0xe7e6cdb90797f053229c0a81c3de9dc8110188b5',
             TokenSaleDistributor,

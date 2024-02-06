@@ -27,4 +27,8 @@ export * from './types'
 export * from './helpers'
 export * from './contracts'
 export * from './multicall'
+export * from './views'
 export { default as MToken } from './deploy-artifacts/MToken.json'
+
+export const SECONDS_PER_DAY = 86400
+export const DAYS_PER_YEAR = 365
