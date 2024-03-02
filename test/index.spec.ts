@@ -13,7 +13,7 @@ test("contracts", () => {
 });
 
 test('environments & contract loading', () => {
-  for (const contractEnv of [Environment.MOONBEAM, Environment.MOONRIVER, Environment.MOONBASE, Environment.BASEGOERLI]){
+  for (const contractEnv of [Environment.MOONBEAM, Environment.MOONRIVER, Environment.MOONBASE, Environment.BASESEPOLIA]){
     const contracts: ContractBundle = Environments[contractEnv.toString()].contracts
 
     let contractName: string
