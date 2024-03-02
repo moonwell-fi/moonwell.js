@@ -13,81 +13,64 @@ import WETHRouter from '../deploy-artifacts/WETHRouter.json'
 import * as types from "../../types/ethers-contracts";
 
 export const environment: EnvironmentConfig = {
-    environment: Environment.BASEGOERLI,
-    networkID: 84531,
-    chainID: 84531,
+    environment: Environment.BASESEPOLIA,
+    networkID: 84532,
+    chainID: 84532,
     chainName: 'Base (Testnet)',
     nativeAssetTicker: 'ETH',
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
-    // TODO: Update this
-    // graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonriver',
-    graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/basegoerli/api',
+    graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/basesepolia/api',
     govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbase/api',
-    rpcNode: 'https://goerli.base.org',
-    publicRpcNode: 'https://goerli.base.org',
-    wssNode: 'wss://goerli.base.org',
-    blockExplorerUrl: 'https://goerli.basescan.org/',
+    rpcNode: 'https://sepolia.base.org',
+    publicRpcNode: 'https://sepolia.base.org',
+    wssNode: 'wss://sepolia.base.org',
+    blockExplorerUrl: 'https://sepolia.basescan.org/',
     contracts: {
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
-            '0xBaA4916ACD2d3Db77278A377f1b49A6E1127d6e6',
+            '0xc01EA381A64F8BE3bDBb01A7c34D809f80783662',
             TemporalGovernor,
         ),
             
 
         COMPTROLLER: new MoonwellContractWithProxy<types.Comptrollerv2, types.Unitrollerv2>(
-            '0xD73f191a50D4BFb5301AE0dF27F5164332df4618',
+            '0xC72ba45f2Ae134F21DAEb2b7B5fd5De0064Ee9bB',
             Comptrollerv2,
             Unitrollerv2,
         ),
 
         MULTI_REWARD_DISTRIBUTOR: new MoonwellContract<types.MultiRewardDistributor>(
-            '0x92ad0cEf7E4f89480ab65b9B9F666327E175702f',
+            '0xcdC49088c040f1209F1aa548b2Ae40d8E24B53A5',
             MultiRewardDistributor,
         ),
 
         ORACLE: new MoonwellContract<types.ChainlinkOraclev2>(
-            '0x037fd3c408086E900c71Ca33abF67eC33288eA8c',
+            '0x1AbEA09b07276669de5BC3a11F820fdC4ba529d1',
             ChainlinkOraclev2
         ),
 
         INTEREST_RATE_MODEL_USDBC: new MoonwellContract<types.InterestRateModelv2>(
-            '0x4696f537Ad80ef53D314624AD502f9d82397357e',
+            '0x7073814cfF6c183010df4D2BEC895a04bdB7f8cd',
             InterestRateModelv2,
         ),
 
         INTEREST_RATE_MODEL_WETH: new MoonwellContract<types.InterestRateModelv2>(
-            '0xd14ab729d48E92C25AC6D18F8D8182d850f485be',
+            '0x2fdF038b9D09F7fA5E775cEF6787cdf0C780961c',
             InterestRateModelv2,
         ),  
 
-        INTEREST_RATE_MODEL_WBTC: new MoonwellContract<types.InterestRateModelv2>(
-            '0x9B9929848845269C08160873346f490e6F45e2C7',
-            InterestRateModelv2,
-        ),
-
         INTEREST_RATE_MODEL_cbETH: new MoonwellContract<types.InterestRateModelv2>(
-            '0xd86078e8802098A744F7c27D36304d905A1C2F02',
-            InterestRateModelv2,
-        ),
-
-        INTEREST_RATE_MODEL_wstETH: new MoonwellContract<types.InterestRateModelv2>(
-            '0xf96cB4716EC5012c3Ea8c8b71eD79c1be68a8f44',
-            InterestRateModelv2,
-        ),
-
-        INTEREST_RATE_MODEL_DAI: new MoonwellContract<types.InterestRateModelv2>(
-            '0x1B1340afB59315C648f45E2E8850C79ac71ad530',
+            '0x38D292Adf50f0cceb12e06e1303d875F553D9b29',
             InterestRateModelv2,
         ),
 
         MERC_20_IMPL: new MoonwellContract<types.MErc20Delegatorv2>(
-            '0x8DDc78645E18CDb4b6fcE65777642ef4fFdC6115',
+            '0x1c7b1689809F9f572e3DF9c1e063473549bdf37c',
             MErc20Delegatorv2,
         ),
 
         WETH_ROUTER: new MoonwellContract<types.WETHRouter>(
-            '0x0396D41A53a75be8f296353D1ffE72538bE646f5',
+            '0xB7eAfB1B503c189CA4E5f19bCe272029cD98Cf1F',
             WETHRouter,
         ),
 
@@ -96,8 +79,8 @@ export const environment: EnvironmentConfig = {
                 "USD Coin",
                 "USDbC",
                 "USDbC.test",
-                '0x64487F97E95266a291514574fFe640A4AC45Bcce',
-                "0x765741AB1937d85D4758e004Ef906A5E18839EFe",
+                '0x4616975f7E6045FD9737e95bC527e9e14c727BD2',
+                "0x876852425331a113d8E432eFFB3aC5BEf38f033a",
                 6,
             ),
             "ETH.test": new MoonwellMarketv2(
@@ -105,39 +88,15 @@ export const environment: EnvironmentConfig = {
                 "ETH",
                 "ETH.test",
                 '0x4200000000000000000000000000000000000006',
-                "0xdd702A5B463adB3b8AfddDB77B88DFaca8B2D3Ca",
+                "0x2F39a349A79492a70E152760ce7123A1933eCf28",
                 18,
-            ),
-            "WBTC.test": new MoonwellMarketv2(
-                "Wrapped Bitcoin",
-                "WBTC",
-                "WBTC.test",
-                '0xde1a381cAa4189D39c363985d9969D7D206970Bd',
-                "0xe94362a857df3Fc87E80A8b26e16e3C97C861a98",
-                8,
             ),
             "cbETH.test": new MoonwellMarketv2(
                 "Coinbase Staked Ethereum",
                 "cbETH",
                 "cbETH.test",
-                '0x74a9f643b2DeA9829b5f2194A7f8d3440D8932F0',
-                '0x5E31c5753598A6618A4D1bb2d35f63fBa757c9e3',
-                18,
-            ),
-            "wstETH.test": new MoonwellMarketv2(
-                "Lido Staked Ethereum",
-                "wstETH",
-                "wstETH.test",
-                '0x3A4c72391FA1e474663ffB43bbA5c851014c0065',
-                '0x1DCc89000AE6EAF18bD855098d3670E820A8d0c4',
-                18,
-            ),
-            "DAI.test": new MoonwellMarketv2(
-                "DAI Stablecoin",
-                "DAI",
-                "DAI.test",
-                '0x098d2cF3bc642668a28E5633ED15Ca3166D2802d',
-                '0x1d1e13e0974E8a065C1DE7EbB1E3A1cbE88FC58a',
+                '0xdbc885569E711262926803184eC9Ff73816fc953',
+                '0x5302EbD8BC32435C823c2e22B04Cd6c45f593e89',
                 18,
             ),
         }

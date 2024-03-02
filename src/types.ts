@@ -151,7 +151,7 @@ export enum Environment {
     MOONRIVER = "moonriver",
     MOONBEAM = "moonbeam",
     MOONBASE = "moonbase",
-    BASEGOERLI = "basegoerli",
+    BASESEPOLIA = "basesepolia",
     BASE = "base",
 }
 
