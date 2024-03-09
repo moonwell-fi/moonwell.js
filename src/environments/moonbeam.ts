@@ -1,5 +1,5 @@
-import {Environment, EnvironmentConfig} from "../types";
-import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarket} from '../contracts'
+import { Environment, EnvironmentConfig } from "../types";
+import { MoonwellContract, MoonwellContractWithProxy, MoonwellMarket } from '../contracts'
 
 import TokenSaleDistributor from '../deploy-artifacts/TokenSaleDistributor.json'
 import TokenSaleDistributorProxy from '../deploy-artifacts/TokenSaleDistributorProxy.json'
@@ -15,6 +15,7 @@ import Timelock from '../deploy-artifacts/Timelock.json'
 import InterestRateModel from '../deploy-artifacts/InterestRateModel.json'
 import MErc20Delegator from '../deploy-artifacts/MErc20Delegator.json'
 import StellaswapRewarder from '../deploy-artifacts/StellaswapRewarder.json'
+import BaseMoonwellViews from "../deploy-artifacts/BaseMoonwellViews.json";
 
 import * as types from "../../types/ethers-contracts";
 
@@ -36,6 +37,13 @@ export const environment: EnvironmentConfig = {
     wssNode: 'wss://moonbeam.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     blockExplorerUrl: 'https://moonbeam.moonscan.io/',
     contracts: {
+
+        VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
+            '0xe76C8B8706faC85a8Fbdcac3C42e3E7823c73994',
+            BaseMoonwellViews,
+            TransparentProxy,
+        ),
+
         CLAIMS: new MoonwellContractWithProxy<types.TokenSaleDistributor, types.TokenSaleDistributorProxy>(
             '0x933fCDf708481c57E9FD82f6BAA084f42e98B60e',
             TokenSaleDistributor,

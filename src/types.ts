@@ -1,6 +1,6 @@
 import BigNumber from "bignumber.js";
 import { ethers } from "ethers";
-import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarket, MoonwellMarketv2} from "./contracts";
+import { MoonwellContract, MoonwellContractWithProxy, MoonwellMarket, MoonwellMarketv2 } from "./contracts";
 import {
     MoonwellGovernorArtemis,
     MoonwellGovernorApollo,
@@ -24,7 +24,11 @@ import {
     StellaswapRewarder,
     SolarbeamRewarder,
     MToken,
-    MTokenv2
+    MTokenv2,
+    MoonwellViewsV1,
+    MoonwellViewsV2,
+    MoonwellViewsV3,
+    BaseMoonwellViews,
 } from "../types/ethers-contracts";
 import * as types from "../types/ethers-contracts";
 
@@ -68,7 +72,7 @@ export type Market = {
 
     /** Whether a market is deprecated */
     isDeprecated?: boolean
-    
+
     marketContract: MoonwellContract<MToken | MTokenv2>
 }
 
@@ -77,7 +81,10 @@ export type ContractBundle = {
     CLAIMS?: MoonwellContractWithProxy<TokenSaleDistributor, TokenSaleDistributorProxy>
 
     /** The environment's Comptroller contract address */
-    COMPTROLLER: MoonwellContract<Comptroller | Comptrollerv2 >
+    COMPTROLLER: MoonwellContract<Comptroller | Comptrollerv2>
+
+    /** The environment's MoonwellViews contract address */
+    VIEWS:  MoonwellContractWithProxy<BaseMoonwellViews, TransparentProxy>
 
     /** The environment's MultiRewardDistributor proxy address */
     MULTI_REWARD_DISTRIBUTOR?: MoonwellContract<MultiRewardDistributor>
@@ -140,7 +147,7 @@ export type ProposalData = {
     /** The amount of the native asset to transfer with each call. */
     values: number[]
 
-    /** Signatures of each method. */    
+    /** Signatures of each method. */
     signatures: string[]
 
     /** Calldata to send with each method call. */
@@ -193,14 +200,14 @@ export type EnvironmentConfig = {
     // networkHomePage: string,
 }
 
-export type TMulticall = {[key:string]: [ethers.Contract, string, any[]?]}
+export type TMulticall = { [key: string]: [ethers.Contract, string, any[]?] }
 
-export type TMulticallResult = {[key:string]: any}
+export type TMulticallResult = { [key: string]: any }
 
 export type TNestedMulticall = [string, TMulticall]
 export type TNestedMulticallResult = {
-    [key:string]: {
-        [key:string]: any
+    [key: string]: {
+        [key: string]: any
     }
 }
 

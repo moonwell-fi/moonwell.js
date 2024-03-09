@@ -1,5 +1,5 @@
-import {Environment, EnvironmentConfig} from "../types";
-import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarket} from '../contracts'
+import { Environment, EnvironmentConfig } from "../types";
+import { MoonwellContract, MoonwellContractWithProxy, MoonwellMarket } from '../contracts'
 
 import TokenSaleDistributor from '../deploy-artifacts/TokenSaleDistributor.json'
 import TokenSaleDistributorProxy from '../deploy-artifacts/TokenSaleDistributorProxy.json'
@@ -15,25 +15,34 @@ import Timelock from '../deploy-artifacts/Timelock.json'
 import InterestRateModel from '../deploy-artifacts/InterestRateModel.json'
 import MErc20Delegator from '../deploy-artifacts/MErc20Delegator.json'
 import SolarbeamRewarder from '../deploy-artifacts/SolarbeamRewarder.json'
+import TemporalGovernor from "../deploy-artifacts/TemporalGovernor.json";
+import BaseMoonwellViews from "../deploy-artifacts/BaseMoonwellViews.json";
 
 import * as types from "../../types/ethers-contracts";
 
 export const environment: EnvironmentConfig = {
-    environment: Environment.MOONRIVER,
-    networkID: 1285,
-    chainID: 1285,
+    environment: Environment.MOONBASE,
+    networkID: 1287,
+    chainID: 1287,
     chainName: 'Moonbase (Testnet)',
-    nativeAssetTicker: 'MOVR',
+    nativeAssetTicker: 'DEV',
     protocolAssetTicker: 'MFAM',
     safetyModuleTicker: 'stkMFAM',
-    // graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonriver',
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonbase/api',
     govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbase/api',
-    rpcNode: 'https://rpc.api.moonriver.moonbeam.network',
-    publicRpcNode: 'https://rpc.api.moonriver.moonbeam.network',
-    wssNode: 'wss://rpc.api.moonriver.moonbeam.network',
-    blockExplorerUrl: 'https://moonriver.moonscan.io/',
+    rpcNode: 'https://rpc.testnet.moonbeam.network',
+    publicRpcNode: 'https://rpc.testnet.moonbeam.network',
+    wssNode: 'wss://rpc.api.testnet.moonbeam.network',
+    blockExplorerUrl: 'https://moonbase.moonscan.io/',
     contracts: {
+
+
+        VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
+            '0xe76C8B8706faC85a8Fbdcac3C42e3E7823c73994',
+            BaseMoonwellViews,
+            TransparentProxy,
+        ),
+
         CLAIMS: new MoonwellContractWithProxy<types.TokenSaleDistributor, types.TokenSaleDistributorProxy>(
             '0xe7e6cdb90797f053229c0a81c3de9dc8110188b5',
             TokenSaleDistributor,
@@ -67,7 +76,7 @@ export const environment: EnvironmentConfig = {
         ),
 
         SAFETY_MODULE: new MoonwellContractWithProxy<types.StakedWell, types.TransparentProxy>(
-            '0x11fD9c97B0B8F50f6EB0e68342e3de8F76dd45fc',
+            '0x679f6F96016dE47C85a0C8Be53056846E4301B3e',
             StakedWell,
             TransparentProxy
         ),
@@ -90,6 +99,11 @@ export const environment: EnvironmentConfig = {
         DEX_REWARDER: new MoonwellContract<types.SolarbeamRewarder>(
             '0xC58Fe6C98076175FEBebdc73485576eA1c3750BF',
             SolarbeamRewarder
+        ),
+
+        TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
+            '0x5f4b20B6d7D609948A8849f7D89eb620586A1F60',
+            TemporalGovernor,
         ),
 
         MARKETS: {

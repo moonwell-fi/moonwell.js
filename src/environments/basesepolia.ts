@@ -1,5 +1,5 @@
-import {Environment, EnvironmentConfig} from "../types";
-import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarketv2} from '../contracts'
+import { Environment, EnvironmentConfig } from "../types";
+import { MoonwellContract, MoonwellContractWithProxy, MoonwellMarketv2 } from '../contracts'
 
 import TemporalGovernor from "../deploy-artifacts/TemporalGovernor.json";
 import Comptrollerv2 from '../deploy-artifacts/Comptrollerv2.json'
@@ -9,6 +9,10 @@ import ChainlinkOraclev2 from '../deploy-artifacts/ChainlinkOraclev2.json'
 import InterestRateModelv2 from '../deploy-artifacts/InterestRateModelv2.json'
 import MErc20Delegatorv2 from '../deploy-artifacts/MErc20Delegatorv2.json'
 import WETHRouter from '../deploy-artifacts/WETHRouter.json'
+import StakedWell from '../deploy-artifacts/StakedWell.json'
+import TransparentProxy from '../deploy-artifacts/TransparentProxy.json'
+import BaseMoonwellViews from "../deploy-artifacts/BaseMoonwellViews.json";
+
 
 import * as types from "../../types/ethers-contracts";
 
@@ -27,11 +31,19 @@ export const environment: EnvironmentConfig = {
     wssNode: 'wss://sepolia.base.org',
     blockExplorerUrl: 'https://sepolia.basescan.org/',
     contracts: {
+
+        VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
+            '0x50F2E10171D8856338a925bD795cE7D055218428',
+            BaseMoonwellViews,
+            TransparentProxy,
+        ),
+
+
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
             '0xc01EA381A64F8BE3bDBb01A7c34D809f80783662',
             TemporalGovernor,
         ),
-            
+
 
         COMPTROLLER: new MoonwellContractWithProxy<types.Comptrollerv2, types.Unitrollerv2>(
             '0xC72ba45f2Ae134F21DAEb2b7B5fd5De0064Ee9bB',
@@ -57,7 +69,7 @@ export const environment: EnvironmentConfig = {
         INTEREST_RATE_MODEL_WETH: new MoonwellContract<types.InterestRateModelv2>(
             '0x2fdF038b9D09F7fA5E775cEF6787cdf0C780961c',
             InterestRateModelv2,
-        ),  
+        ),
 
         INTEREST_RATE_MODEL_cbETH: new MoonwellContract<types.InterestRateModelv2>(
             '0x38D292Adf50f0cceb12e06e1303d875F553D9b29',
@@ -72,6 +84,12 @@ export const environment: EnvironmentConfig = {
         WETH_ROUTER: new MoonwellContract<types.WETHRouter>(
             '0xB7eAfB1B503c189CA4E5f19bCe272029cD98Cf1F',
             WETHRouter,
+        ),
+
+        SAFETY_MODULE: new MoonwellContractWithProxy<types.StakedWell, types.TransparentProxy>(
+            '0x9374e4Ff60bBB28310C598695fC671A3c4c07E77',
+            StakedWell,
+            TransparentProxy,
         ),
 
         MARKETS: {
