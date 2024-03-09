@@ -1,5 +1,5 @@
-import {Environment, EnvironmentConfig} from "../types";
-import {MoonwellContract, MoonwellContractWithProxy, MoonwellMarketv2} from '../contracts'
+import { Environment, EnvironmentConfig } from "../types";
+import { MoonwellContract, MoonwellContractWithProxy, MoonwellMarketv2 } from '../contracts'
 
 import TemporalGovernor from "../deploy-artifacts/TemporalGovernor.json";
 import Comptrollerv2 from '../deploy-artifacts/Comptrollerv2.json'
@@ -9,6 +9,8 @@ import ChainlinkOraclev2 from '../deploy-artifacts/ChainlinkOraclev2.json'
 import InterestRateModelv2 from '../deploy-artifacts/InterestRateModelv2.json'
 import MErc20Delegatorv2 from '../deploy-artifacts/MErc20Delegatorv2.json'
 import WETHRouter from '../deploy-artifacts/WETHRouter.json'
+import BaseMoonwellViews from "../deploy-artifacts/BaseMoonwellViews.json";
+import TransparentProxy from '../deploy-artifacts/TransparentProxy.json'
 
 import * as types from "../../types/ethers-contracts";
 
@@ -20,20 +22,25 @@ export const environment: EnvironmentConfig = {
     nativeAssetTicker: 'ETH',
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
-    // graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/base/api',
     graphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/moonwell-base/prod/gn',
     govGraphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/governance-moonbeam/prod/gn',
-    // govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbeam/api',
     rpcNode: 'https://base-mainnet.g.alchemy.com/v2/sTC_2N1UZj-sDCdsZcItpYsFodWYSyna',
     publicRpcNode: 'https://mainnet.base.org',
     wssNode: 'wss://base-mainnet.g.alchemy.com/v2/sTC_2N1UZj-sDCdsZcItpYsFodWYSyna',
     blockExplorerUrl: 'https://basescan.org/',
     contracts: {
+
+        VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
+            '0x6834770ABA6c2028f448E3259DDEE4BCB879d459',
+            BaseMoonwellViews,
+            TransparentProxy,
+        ),
+
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
             '0x8b621804a7637b781e2BbD58e256a591F2dF7d51',
             TemporalGovernor,
         ),
-            
+
 
         COMPTROLLER: new MoonwellContractWithProxy<types.Comptrollerv2, types.Unitrollerv2>(
             '0xfBb21d0380beE3312B33c4353c8936a0F13EF26C',
@@ -59,7 +66,7 @@ export const environment: EnvironmentConfig = {
         INTEREST_RATE_MODEL_WETH: new MoonwellContract<types.InterestRateModelv2>(
             '0x4393277B02ef3cA293990A772B7160a8c76F2443',
             InterestRateModelv2,
-        ),  
+        ),
 
         /* INTEREST_RATE_MODEL_WBTC: new MoonwellContract<types.InterestRateModelv2>(
             '0x9B9929848845269C08160873346f490e6F45e2C7',
