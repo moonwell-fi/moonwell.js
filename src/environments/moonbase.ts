@@ -50,28 +50,28 @@ export const environment: EnvironmentConfig = {
         ),
 
         GOVERNOR: new MoonwellContract<types.MoonwellGovernorArtemis>(
-            '0x1eA239b116b911374BA144EFb5cA077d3A224fE9',
+            '0x5713DD9A2B2ce515CF9232F48B457aebFb04b292',
             MoonwellGovernorArtemis,
         ),
 
         COMPTROLLER: new MoonwellContractWithProxy<types.Comptroller, types.Unitroller>(
-            '0x4524e0Dfa042188B1F9f804642456277dbDBE253',
+            '0x1a14f9af09648F6550c339A71D3e449e31B8E0Ae',
             Comptroller,
             Unitroller,
         ),
 
         GOV_TOKEN: new MoonwellContract<types.Well>(
-            '0x6efCf8fB404AC6DE593cE461877A634d067C942E',
+            '0x96d50c8b4072A1246d40c4455D7b6D748f7D4BD3',
             Well
         ),
 
         MAXIMILLION: new MoonwellContract<types.Maximillion>(
-            '0xa2A09f11208327e69Ede9c2C6eE95282a13527AF',
+            '0x0EcD6826203B89f960633931A58b51916e985fA0',
             Maximillion
         ),
 
         ORACLE: new MoonwellContract<types.ChainlinkOracle>(
-            '0x0A3F1AA8bc5C51bbD313e63644f2297aA170FF87',
+            '0xd5448A26b31ff94F62C8301577f7A3980CFdcd2d',
             ChainlinkOracle
         ),
 
@@ -82,17 +82,17 @@ export const environment: EnvironmentConfig = {
         ),
 
         TIMELOCK: new MoonwellContract<types.Timelock>(
-            '0xE2270EEf667A66AF330f8411C17E79BdA2FC3595',
+            '0x43A720C2690B00Ae0a0F9E4b79ED24184D9e8F0A',
             Timelock
         ),
 
         INTEREST_RATE_MODEL: new MoonwellContract<types.InterestRateModel>(
-            '0x4BABE1d4f89CbDdA49f0402B2C39d0c1923BF4A7',
+            '0x9347F66FFCfaBc2ed22F3BDa4184f61E135C9481',
             InterestRateModel,
         ),
 
         MERC_20_IMPL: new MoonwellContract<types.MErc20Delegator>(
-            '0x83C5dE4dDc7bE93907Cb599aCFd2db47838e00df',
+            '0xd6AF44F2bf079CF2e0C342B1BdD7dc7CA85eF444',
             MErc20Delegator,
         ),
 
@@ -102,7 +102,7 @@ export const environment: EnvironmentConfig = {
         ),
 
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
-            '0x5f4b20B6d7D609948A8849f7D89eb620586A1F60',
+            '0xc01EA381A64F8BE3bDBb01A7c34D809f80783662',
             TemporalGovernor,
         ),
 
@@ -111,24 +111,24 @@ export const environment: EnvironmentConfig = {
                 "Bitcoin",
                 "BTC",
                 "BTC.dev",
-                '0x0A996B2f808EF4Cd59a3790c6Bb8bf6E4105e0aA',
-                "0x4b088a4b3250684c362911078A0E945AcC21E236",
+                '0xDe71A6CFD13dE924c84C3a11f6c96Ef083df017d',
+                "0xF43Cd9e03d925Dd9c660b46AE86eA350b2C299D2",
                 8,
             ),
             "USDC.dev": new MoonwellMarket(
                 "USD Coin",
                 "USDC",
                 "USDC.dev",
-                '0x3799D95Ee109129951c6b31535b2B5AA6dbF108c',
-                "0x18f324E21846F1C21F4fbF8228705B17897eF15A",
+                '0x1AC96f01B9d2c6AdD1cEEBDEeA0B6B48Db6C0827',
+                "0xbd17C45DB7C9782B34A5e6b22Be9755f62545009",
                 18,
             ),
             "ETH.dev": new MoonwellMarket(
                 "Ethereum",
                 "ETH",
                 "ETH.dev",
-                '0xf7A200a738f807B78c7a60aA315e115612C6c33a',
-                "0xa28C4680058f4A73f6172A6ed23C9E624E443CFB",
+                '0x460dCc00F0D24e56D6C8a4B5dDFf6333403aCdB3',
+                "0xBaeEd251E950D6C7c7Ec92FfAfC571da8e85f50B",
                 18,
             ),
             "DEV": new MoonwellMarket(
@@ -136,23 +136,23 @@ export const environment: EnvironmentConfig = {
                 "DEV",
                 "DEV",
                 null,
-                "0x827Bb1E617B862d4BC81a6a7995a34dF6EE78a63",
+                "0xC409e77229B6eCA42EA19E7AcF2d6b99Ebc02626",
                 18,
             ),
             "FRAX": new MoonwellMarket(
                 "Frax",
                 "FRAX",
                 "FRAX",
-                '0x90384c78892be628DF6C76c3E49714Ef719117f4',
-                "0x241D3210B0706e0c40CE5274bc23a9E494162F5F",
+                '0x224506760E75bCF6Ed3A80880e86F159189cE04f',
+                "0x07bca43B75AbEd7496561130ab42CE7d9D08E978",
                 18,
             ),
             "USDT.dev": new MoonwellMarket(
                 "Tether",
                 "USDT",
                 "USDT.dev",
-                '0xDc67f6725B90B7e623f008028835B00F8c399FE3',
-                "0x1C3132CF5e41Eb3660B403db494711Ac5F383125",
+                '0xef388dA299f5E75b4e935B7eC9602097aA89b76f',
+                "0x1dcCaE91438EA28A7e2e9178D9ADAd7096F47beF",
                 18,
             )
         }
