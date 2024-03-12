@@ -38,7 +38,7 @@ export const environment: EnvironmentConfig = {
 
 
         VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
-            '0xDE83c8Afa9F643a529D2432C21Dd10873317AE47',
+            '0x4e8ccc67e97DcA08Da5ec0dc57911Af9e20bA0da',
             BaseMoonwellViews,
             TransparentProxy,
         ),
