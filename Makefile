@@ -3,6 +3,13 @@ TAG := moonwelljs
 build-docker:
 	docker build -t $(TAG) .
 
+install:
+	docker run --rm -it \
+		-v $$(pwd):$$(pwd) \
+		--workdir $$(pwd) \
+		$(TAG) \
+		npm install
+
 build:
 	docker run --rm -it \
 		-v $$(pwd):$$(pwd) \
