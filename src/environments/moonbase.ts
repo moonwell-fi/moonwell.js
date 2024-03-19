@@ -24,19 +24,17 @@ export const environment: EnvironmentConfig = {
     environment: Environment.MOONBASE,
     networkID: 1287,
     chainID: 1287,
-    chainName: 'Moonbase (Testnet)',
+    chainName: 'Moonbase',
     nativeAssetTicker: 'DEV',
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonbase/api',
     govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbase/api',
-    rpcNode: 'https://rpc.testnet.moonbeam.network',
+    rpcNode: 'https://moonbase-alpha.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     publicRpcNode: 'https://rpc.testnet.moonbeam.network',
-    wssNode: 'wss://rpc.api.testnet.moonbeam.network',
+    wssNode: 'wss://moonbase-alpha.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     blockExplorerUrl: 'https://moonbase.moonscan.io/',
     contracts: {
-
-
         VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
             '0x4e8ccc67e97DcA08Da5ec0dc57911Af9e20bA0da',
             BaseMoonwellViews,
