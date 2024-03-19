@@ -36,7 +36,7 @@ export const environment: EnvironmentConfig = {
     blockExplorerUrl: 'https://moonbase.moonscan.io/',
     contracts: {
         VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
-            '0x4e8ccc67e97DcA08Da5ec0dc57911Af9e20bA0da',
+            "0xb9B091b56e43C7d1CECbA855aa1549CB37Cb2cb7",
             BaseMoonwellViews,
             TransparentProxy,
         ),
