@@ -25,7 +25,7 @@ export const environment: EnvironmentConfig = {
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
     graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/basesepolia/api',
-    govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-moonbase/api',
+    govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-base-sepolia/api',
     rpcNode: 'https://sepolia.base.org',
     publicRpcNode: 'https://sepolia.base.org',
     wssNode: 'wss://sepolia.base.org',
