@@ -29,6 +29,10 @@ import {
     MoonwellViewsV2,
     MoonwellViewsV3,
     BaseMoonwellViews,
+    XWELL,
+    MultichainGovernor,
+    VoteCollector,
+    XWELLLockbox,
 } from "../types/ethers-contracts";
 import * as types from "../types/ethers-contracts";
 
@@ -85,6 +89,18 @@ export type ContractBundle = {
 
     /** The environment's MoonwellViews contract address */
     VIEWS:  MoonwellContractWithProxy<BaseMoonwellViews, TransparentProxy>
+
+    /** The environment's Vote Collector contract address */
+    VOTE_COLLECTOR?: MoonwellContract<VoteCollector>
+
+    /** The environment's XWELL contract address */
+    XWELL?: MoonwellContract<XWELL>
+
+    /** The environment's XWELL Lockbox contract address */
+    XWELL_LOCKBOX?: MoonwellContract<XWELLLockbox>
+
+    /** The environment's Multichain Governor contract address */
+    MULTICHAIN_GOVERNOR?: MoonwellContract<MultichainGovernor>
 
     /** The environment's MultiRewardDistributor proxy address */
     MULTI_REWARD_DISTRIBUTOR?: MoonwellContract<MultiRewardDistributor>

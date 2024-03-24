@@ -17,6 +17,9 @@ import MErc20Delegator from '../deploy-artifacts/MErc20Delegator.json'
 import SolarbeamRewarder from '../deploy-artifacts/SolarbeamRewarder.json'
 import TemporalGovernor from "../deploy-artifacts/TemporalGovernor.json";
 import BaseMoonwellViews from "../deploy-artifacts/BaseMoonwellViews.json";
+import MultichainGovernor from "../deploy-artifacts/MultichainGovernor.json";
+import XWELL from '../deploy-artifacts/XWELL.json'
+import XWELLLockbox from '../deploy-artifacts/XWELLLockbox.json'
 
 import * as types from "../../types/ethers-contracts";
 
@@ -50,6 +53,22 @@ export const environment: EnvironmentConfig = {
         GOVERNOR: new MoonwellContract<types.MoonwellGovernorArtemis>(
             '0x5713DD9A2B2ce515CF9232F48B457aebFb04b292',
             MoonwellGovernorArtemis,
+        ),
+
+        MULTICHAIN_GOVERNOR: new MoonwellContractWithProxy<types.MultichainGovernor, types.TransparentProxy>(
+            '0xf152d75fe4cBB11AE224B94110c31F0bdDb55850',
+            MultichainGovernor,
+            TransparentProxy,
+        ),
+
+        XWELL: new MoonwellContract<types.XWELL>(
+            '0xE8F339C51cb2700113ec6ef552eE1D6cCA3BfB95',
+            XWELL,
+        ),
+
+        XWELL_LOCKBOX: new MoonwellContract<types.XWELLLockbox>(
+            '0x751E27d340EFe99e35C4E68f9c3dF94BB4BE2aEA',
+            XWELLLockbox,
         ),
 
         COMPTROLLER: new MoonwellContractWithProxy<types.Comptroller, types.Unitroller>(
