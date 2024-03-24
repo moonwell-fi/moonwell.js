@@ -11,6 +11,8 @@ import MErc20Delegatorv2 from '../deploy-artifacts/MErc20Delegatorv2.json'
 import WETHRouter from '../deploy-artifacts/WETHRouter.json'
 import BaseMoonwellViews from "../deploy-artifacts/BaseMoonwellViews.json";
 import TransparentProxy from '../deploy-artifacts/TransparentProxy.json'
+import VoteCollector from '../deploy-artifacts/VoteCollector.json'
+import XWELL from '../deploy-artifacts/XWELL.json'
 
 import * as types from "../../types/ethers-contracts";
 
@@ -41,6 +43,15 @@ export const environment: EnvironmentConfig = {
             TemporalGovernor,
         ),
 
+        VOTE_COLLECTOR: new MoonwellContract<types.VoteCollector>(
+            '0xe0278B32c627FF6fFbbe7de6A18Ade145603e949',
+            VoteCollector,
+        ),
+
+        XWELL: new MoonwellContract<types.XWELL>(
+            '0xA88594D404727625A9437C3f886C7643872296AE',
+            XWELL,
+        ),
 
         COMPTROLLER: new MoonwellContractWithProxy<types.Comptrollerv2, types.Unitrollerv2>(
             '0xfBb21d0380beE3312B33c4353c8936a0F13EF26C',
