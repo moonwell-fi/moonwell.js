@@ -13,6 +13,7 @@ import BaseMoonwellViews from "../deploy-artifacts/BaseMoonwellViews.json";
 import TransparentProxy from '../deploy-artifacts/TransparentProxy.json'
 import VoteCollector from '../deploy-artifacts/VoteCollector.json'
 import XWELL from '../deploy-artifacts/XWELL.json'
+import StakedWell from '../deploy-artifacts/StakedWell.json'
 
 import * as types from "../../types/ethers-contracts";
 
@@ -33,10 +34,17 @@ export const environment: EnvironmentConfig = {
     contracts: {
 
         VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
-            '0x6834770ABA6c2028f448E3259DDEE4BCB879d459',
+            '0x821Ff3a967b39bcbE8A018a9b1563EAf878bad39',
             BaseMoonwellViews,
             TransparentProxy,
         ),
+
+        SAFETY_MODULE: new MoonwellContractWithProxy<types.StakedWell, types.TransparentProxy>(
+            '0xe66E3A37C3274Ac24FE8590f7D84A2427194DC17',
+            StakedWell,
+            TransparentProxy,
+        ),
+
 
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
             '0x8b621804a7637b781e2BbD58e256a591F2dF7d51',

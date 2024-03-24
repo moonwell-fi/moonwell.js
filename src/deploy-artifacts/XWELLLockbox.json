@@ -1,144 +1,520 @@
-[
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "xerc20",
-        "type": "address"
+{
+  "abi": [
+    {
+      "type": "constructor",
+      "inputs": [
+        {
+          "name": "xerc20",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "erc20",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "ERC20",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "contract IERC20"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "XERC20",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "contract IXERC20"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "deposit",
+      "inputs": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "depositTo",
+      "inputs": [
+        {
+          "name": "to",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "withdraw",
+      "inputs": [
+        {
+          "name": "amount",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "withdrawTo",
+      "inputs": [
+        {
+          "name": "to",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "event",
+      "name": "Deposit",
+      "inputs": [
+        {
+          "name": "_sender",
+          "type": "address",
+          "indexed": false,
+          "internalType": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "indexed": false,
+          "internalType": "uint256"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "Withdraw",
+      "inputs": [
+        {
+          "name": "_sender",
+          "type": "address",
+          "indexed": false,
+          "internalType": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256",
+          "indexed": false,
+          "internalType": "uint256"
+        }
+      ],
+      "anonymous": false
+    }
+  ],
+  "bytecode": {
+    "object": "0x60c060405234801561001057600080fd5b5060405161084b38038061084b83398101604081905261002f91610062565b6001600160a01b039182166080521660a052610095565b80516001600160a01b038116811461005d57600080fd5b919050565b6000806040838503121561007557600080fd5b61007e83610046565b915061008c60208401610046565b90509250929050565b60805160a0516107776100d46000396000818160ea0152818161021d01526102530152600081816094015281816101ac01526102a101526107776000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c8063205c2878146100675780632e1a7d4d1461007c578063b20a0fb91461008f578063b6b55f25146100d2578063cc4aa204146100e5578063ffaad6a51461010c575b600080fd5b61007a610075366004610654565b61011f565b005b61007a61008a36600461068c565b61012d565b6100b67f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b03909116815260200160405180910390f35b61007a6100e036600461068c565b61013a565b6100b67f000000000000000000000000000000000000000000000000000000000000000081565b61007a61011a366004610654565b610144565b610129828261014e565b5050565b610137338261014e565b50565b6101373382610246565b6101298282610246565b604080516001600160a01b0384168152602081018390527f884edad9ce6fa2440d8a54cc123490eb96d2768479d49ff9c7366125a9424364910160405180910390a1604051632770a7eb60e21b8152336004820152602481018290527f00000000000000000000000000000000000000000000000000000000000000006001600160a01b031690639dc29fac90604401600060405180830381600087803b1580156101f857600080fd5b505af115801561020c573d6000803e3d6000fd5b506101299250506001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001690508383610344565b61027b6001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000163330846103ac565b6040516340c10f1960e01b81526001600160a01b038381166004830152602482018390527f000000000000000000000000000000000000000000000000000000000000000016906340c10f1990604401600060405180830381600087803b1580156102e557600080fd5b505af11580156102f9573d6000803e3d6000fd5b5050604080516001600160a01b0386168152602081018590527fe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c935001905060405180910390a15050565b6040516001600160a01b0383166024820152604481018290526103a790849063a9059cbb60e01b906064015b60408051601f198184030181529190526020810180516001600160e01b03166001600160e01b0319909316929092179091526103ea565b505050565b6040516001600160a01b03808516602483015283166044820152606481018290526103e49085906323b872dd60e01b90608401610370565b50505050565b600061043f826040518060400160405280602081526020017f5361666545524332303a206c6f772d6c6576656c2063616c6c206661696c6564815250856001600160a01b03166104c49092919063ffffffff16565b905080516000148061046057508080602001905181019061046091906106a5565b6103a75760405162461bcd60e51b815260206004820152602a60248201527f5361666545524332303a204552433230206f7065726174696f6e20646964206e6044820152691bdd081cdd58d8d9595960b21b60648201526084015b60405180910390fd5b60606104d384846000856104db565b949350505050565b60608247101561053c5760405162461bcd60e51b815260206004820152602660248201527f416464726573733a20696e73756666696369656e742062616c616e636520666f6044820152651c8818d85b1b60d21b60648201526084016104bb565b600080866001600160a01b0316858760405161055891906106f2565b60006040518083038185875af1925050503d8060008114610595576040519150601f19603f3d011682016040523d82523d6000602084013e61059a565b606091505b50915091506105ab878383876105b6565b979650505050505050565b6060831561062557825160000361061e576001600160a01b0385163b61061e5760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a2063616c6c20746f206e6f6e2d636f6e747261637400000060448201526064016104bb565b50816104d3565b6104d3838381511561063a5781518083602001fd5b8060405162461bcd60e51b81526004016104bb919061070e565b6000806040838503121561066757600080fd5b82356001600160a01b038116811461067e57600080fd5b946020939093013593505050565b60006020828403121561069e57600080fd5b5035919050565b6000602082840312156106b757600080fd5b815180151581146106c757600080fd5b9392505050565b60005b838110156106e95781810151838201526020016106d1565b50506000910152565b600082516107048184602087016106ce565b9190910192915050565b602081526000825180602084015261072d8160408501602087016106ce565b601f01601f1916919091016040019291505056fea264697066735822122031f5f3c87c351bd72cd032fc04e773968c24e9ada5e5c4fa49f3e83822e56c4064736f6c63430008130033",
+    "sourceMap": "513:2111:196:-:0;;;878:115;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;931:24:196;;;;;965:21;;;513:2111;;14:177:277;93:13;;-1:-1:-1;;;;;135:31:277;;125:42;;115:70;;181:1;178;171:12;115:70;14:177;;;:::o;196:293::-;275:6;283;336:2;324:9;315:7;311:23;307:32;304:52;;;352:1;349;342:12;304:52;375:40;405:9;375:40;:::i;:::-;365:50;;434:49;479:2;468:9;464:18;434:49;:::i;:::-;424:59;;196:293;;;;;:::o;:::-;513:2111:196;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c8063205c2878146100675780632e1a7d4d1461007c578063b20a0fb91461008f578063b6b55f25146100d2578063cc4aa204146100e5578063ffaad6a51461010c575b600080fd5b61007a610075366004610654565b61011f565b005b61007a61008a36600461068c565b61012d565b6100b67f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b03909116815260200160405180910390f35b61007a6100e036600461068c565b61013a565b6100b67f000000000000000000000000000000000000000000000000000000000000000081565b61007a61011a366004610654565b610144565b610129828261014e565b5050565b610137338261014e565b50565b6101373382610246565b6101298282610246565b604080516001600160a01b0384168152602081018390527f884edad9ce6fa2440d8a54cc123490eb96d2768479d49ff9c7366125a9424364910160405180910390a1604051632770a7eb60e21b8152336004820152602481018290527f00000000000000000000000000000000000000000000000000000000000000006001600160a01b031690639dc29fac90604401600060405180830381600087803b1580156101f857600080fd5b505af115801561020c573d6000803e3d6000fd5b506101299250506001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001690508383610344565b61027b6001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000163330846103ac565b6040516340c10f1960e01b81526001600160a01b038381166004830152602482018390527f000000000000000000000000000000000000000000000000000000000000000016906340c10f1990604401600060405180830381600087803b1580156102e557600080fd5b505af11580156102f9573d6000803e3d6000fd5b5050604080516001600160a01b0386168152602081018590527fe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c935001905060405180910390a15050565b6040516001600160a01b0383166024820152604481018290526103a790849063a9059cbb60e01b906064015b60408051601f198184030181529190526020810180516001600160e01b03166001600160e01b0319909316929092179091526103ea565b505050565b6040516001600160a01b03808516602483015283166044820152606481018290526103e49085906323b872dd60e01b90608401610370565b50505050565b600061043f826040518060400160405280602081526020017f5361666545524332303a206c6f772d6c6576656c2063616c6c206661696c6564815250856001600160a01b03166104c49092919063ffffffff16565b905080516000148061046057508080602001905181019061046091906106a5565b6103a75760405162461bcd60e51b815260206004820152602a60248201527f5361666545524332303a204552433230206f7065726174696f6e20646964206e6044820152691bdd081cdd58d8d9595960b21b60648201526084015b60405180910390fd5b60606104d384846000856104db565b949350505050565b60608247101561053c5760405162461bcd60e51b815260206004820152602660248201527f416464726573733a20696e73756666696369656e742062616c616e636520666f6044820152651c8818d85b1b60d21b60648201526084016104bb565b600080866001600160a01b0316858760405161055891906106f2565b60006040518083038185875af1925050503d8060008114610595576040519150601f19603f3d011682016040523d82523d6000602084013e61059a565b606091505b50915091506105ab878383876105b6565b979650505050505050565b6060831561062557825160000361061e576001600160a01b0385163b61061e5760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a2063616c6c20746f206e6f6e2d636f6e747261637400000060448201526064016104bb565b50816104d3565b6104d3838381511561063a5781518083602001fd5b8060405162461bcd60e51b81526004016104bb919061070e565b6000806040838503121561066757600080fd5b82356001600160a01b038116811461067e57600080fd5b946020939093013593505050565b60006020828403121561069e57600080fd5b5035919050565b6000602082840312156106b757600080fd5b815180151581146106c757600080fd5b9392505050565b60005b838110156106e95781810151838201526020016106d1565b50506000910152565b600082516107048184602087016106ce565b9190910192915050565b602081526000825180602084015261072d8160408501602087016106ce565b601f01601f1916919091016040019291505056fea264697066735822122031f5f3c87c351bd72cd032fc04e773968c24e9ada5e5c4fa49f3e83822e56c4064736f6c63430008130033",
+    "sourceMap": "513:2111:196:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1838:95;;;;;;:::i;:::-;;:::i;:::-;;1597:89;;;;;;:::i;:::-;;:::i;643:31::-;;;;;;;;-1:-1:-1;;;;;740:32:277;;;722:51;;710:2;695:18;643:31:196;;;;;;;1107:87;;;;;;:::i;:::-;;:::i;730:29::-;;;;;1388:93;;;;;;:::i;:::-;;:::i;1838:95::-;1905:21;1915:2;1919:6;1905:9;:21::i;:::-;1838:95;;:::o;1597:89::-;1650:29;1660:10;1672:6;1650:9;:29::i;:::-;1597:89;:::o;1107:87::-;1159:28;1168:10;1180:6;1159:8;:28::i;1388:93::-;1454:20;1463:2;1467:6;1454:8;:20::i;2085:180::-;2156:20;;;-1:-1:-1;;;;;1200:32:277;;1182:51;;1264:2;1249:18;;1242:34;;;2156:20:196;;1155:18:277;2156:20:196;;;;;;;2187:31;;-1:-1:-1;;;2187:31:196;;2199:10;2187:31;;;1182:51:277;1249:18;;;1242:34;;;2187:6:196;-1:-1:-1;;;;;2187:11:196;;;;1155:18:277;;2187:31:196;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2228:30:196;;-1:-1:-1;;;;;;;2228:5:196;:18;;-1:-1:-1;2247:2:196;2251:6;2228:18;:30::i;2425:197::-;2490:57;-1:-1:-1;;;;;2490:5:196;:22;2513:10;2533:4;2540:6;2490:22;:57::i;:::-;2558:23;;-1:-1:-1;;;2558:23:196;;-1:-1:-1;;;;;1200:32:277;;;2558:23:196;;;1182:51:277;1249:18;;;1242:34;;;2558:6:196;:11;;;;1155:18:277;;2558:23:196;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;2596:19:196;;;-1:-1:-1;;;;;1200:32:277;;1182:51;;1264:2;1249:18;;1242:34;;;2596:19:196;;-1:-1:-1;1155:18:277;;-1:-1:-1;2596:19:196;;;;;;;2425:197;;:::o;941:175:62:-;1050:58;;-1:-1:-1;;;;;1200:32:277;;1050:58:62;;;1182:51:277;1249:18;;;1242:34;;;1023:86:62;;1043:5;;-1:-1:-1;;;1073:23:62;1155:18:277;;1050:58:62;;;;-1:-1:-1;;1050:58:62;;;;;;;;;;;;;;-1:-1:-1;;;;;1050:58:62;-1:-1:-1;;;;;;1050:58:62;;;;;;;;;;1023:19;:86::i;:::-;941:175;;;:::o;1355:203::-;1482:68;;-1:-1:-1;;;;;1545:15:277;;;1482:68:62;;;1527:34:277;1597:15;;1577:18;;;1570:43;1629:18;;;1622:34;;;1455:96:62;;1475:5;;-1:-1:-1;;;1505:27:62;1462:18:277;;1482:68:62;1287:375:277;1455:96:62;1355:203;;;;:::o;5173:642::-;5592:23;5618:69;5646:4;5618:69;;;;;;;;;;;;;;;;;5626:5;-1:-1:-1;;;;;5618:27:62;;;:69;;;;;:::i;:::-;5592:95;;5705:10;:17;5726:1;5705:22;:56;;;;5742:10;5731:30;;;;;;;;;;;;:::i;:::-;5697:111;;;;-1:-1:-1;;;5697:111:62;;2151:2:277;5697:111:62;;;2133:21:277;2190:2;2170:18;;;2163:30;2229:34;2209:18;;;2202:62;-1:-1:-1;;;2280:18:277;;;2273:40;2330:19;;5697:111:62;;;;;;;;4108:223:63;4241:12;4272:52;4294:6;4302:4;4308:1;4311:12;4272:21;:52::i;:::-;4265:59;4108:223;-1:-1:-1;;;;4108:223:63:o;5165:446::-;5330:12;5387:5;5362:21;:30;;5354:81;;;;-1:-1:-1;;;5354:81:63;;2562:2:277;5354:81:63;;;2544:21:277;2601:2;2581:18;;;2574:30;2640:34;2620:18;;;2613:62;-1:-1:-1;;;2691:18:277;;;2684:36;2737:19;;5354:81:63;2360:402:277;5354:81:63;5446:12;5460:23;5487:6;-1:-1:-1;;;;;5487:11:63;5506:5;5513:4;5487:31;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5445:73;;;;5535:69;5562:6;5570:7;5579:10;5591:12;5535:26;:69::i;:::-;5528:76;5165:446;-1:-1:-1;;;;;;;5165:446:63:o;7671:628::-;7851:12;7879:7;7875:418;;;7906:10;:17;7927:1;7906:22;7902:286;;-1:-1:-1;;;;;1702:19:63;;;8113:60;;;;-1:-1:-1;;;8113:60:63;;3516:2:277;8113:60:63;;;3498:21:277;3555:2;3535:18;;;3528:30;3594:31;3574:18;;;3567:59;3643:18;;8113:60:63;3314:353:277;8113:60:63;-1:-1:-1;8208:10:63;8201:17;;7875:418;8249:33;8257:10;8269:12;8980:17;;:21;8976:379;;9208:10;9202:17;9264:15;9251:10;9247:2;9243:19;9236:44;8976:379;9331:12;9324:20;;-1:-1:-1;;;9324:20:63;;;;;;;;:::i;14:354:277:-;82:6;90;143:2;131:9;122:7;118:23;114:32;111:52;;;159:1;156;149:12;111:52;185:23;;-1:-1:-1;;;;;237:31:277;;227:42;;217:70;;283:1;280;273:12;217:70;306:5;358:2;343:18;;;;330:32;;-1:-1:-1;;;14:354:277:o;373:180::-;432:6;485:2;473:9;464:7;460:23;456:32;453:52;;;501:1;498;491:12;453:52;-1:-1:-1;524:23:277;;373:180;-1:-1:-1;373:180:277:o;1667:277::-;1734:6;1787:2;1775:9;1766:7;1762:23;1758:32;1755:52;;;1803:1;1800;1793:12;1755:52;1835:9;1829:16;1888:5;1881:13;1874:21;1867:5;1864:32;1854:60;;1910:1;1907;1900:12;1854:60;1933:5;1667:277;-1:-1:-1;;;1667:277:277:o;2767:250::-;2852:1;2862:113;2876:6;2873:1;2870:13;2862:113;;;2952:11;;;2946:18;2933:11;;;2926:39;2898:2;2891:10;2862:113;;;-1:-1:-1;;3009:1:277;2991:16;;2984:27;2767:250::o;3022:287::-;3151:3;3189:6;3183:13;3205:66;3264:6;3259:3;3252:4;3244:6;3240:17;3205:66;:::i;:::-;3287:16;;;;;3022:287;-1:-1:-1;;3022:287:277:o;3672:396::-;3821:2;3810:9;3803:21;3784:4;3853:6;3847:13;3896:6;3891:2;3880:9;3876:18;3869:34;3912:79;3984:6;3979:2;3968:9;3964:18;3959:2;3951:6;3947:15;3912:79;:::i;:::-;4052:2;4031:15;-1:-1:-1;;4027:29:277;4012:45;;;;4059:2;4008:54;;3672:396;-1:-1:-1;;3672:396:277:o",
+    "linkReferences": {},
+    "immutableReferences": {
+      "130195": [
+        {
+          "start": 148,
+          "length": 32
+        },
+        {
+          "start": 428,
+          "length": 32
+        },
+        {
+          "start": 673,
+          "length": 32
+        }
+      ],
+      "130199": [
+        {
+          "start": 234,
+          "length": 32
+        },
+        {
+          "start": 541,
+          "length": 32
+        },
+        {
+          "start": 595,
+          "length": 32
+        }
+      ]
+    }
+  },
+  "methodIdentifiers": {
+    "ERC20()": "cc4aa204",
+    "XERC20()": "b20a0fb9",
+    "deposit(uint256)": "b6b55f25",
+    "depositTo(address,uint256)": "ffaad6a5",
+    "withdraw(uint256)": "2e1a7d4d",
+    "withdrawTo(address,uint256)": "205c2878"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"xerc20\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"erc20\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Deposit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Withdraw\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"ERC20\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"XERC20\",\"outputs\":[{\"internalType\":\"contract IXERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"depositTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdrawTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"erc20\":\"The address of the ERC20 contract\",\"xerc20\":\"The address of the XERC20 contract\"}},\"deposit(uint256)\":{\"params\":{\"amount\":\"The amount of tokens to deposit\"}},\"depositTo(address,uint256)\":{\"params\":{\"amount\":\"The amount of tokens to deposit\",\"to\":\"The user to send the XERC20 to\"}},\"withdraw(uint256)\":{\"params\":{\"amount\":\"The amount of tokens to withdraw\"}},\"withdrawTo(address,uint256)\":{\"params\":{\"amount\":\"The amount of tokens to withdraw\",\"to\":\"The user to withdraw to\"}}},\"version\":1},\"userdoc\":{\"events\":{\"Deposit(address,uint256)\":{\"notice\":\"Emitted when tokens are deposited into the lockbox\"},\"Withdraw(address,uint256)\":{\"notice\":\"Emitted when tokens are withdrawn from the lockbox\"}},\"kind\":\"user\",\"methods\":{\"ERC20()\":{\"notice\":\"The ERC20 token of this contract\"},\"XERC20()\":{\"notice\":\"The XERC20 token of this contract\"},\"deposit(uint256)\":{\"notice\":\"Deposit ERC20 tokens into the lockbox\"},\"depositTo(address,uint256)\":{\"notice\":\"Deposit ERC20 tokens into the lockbox, and send the XERC20 to a user\"},\"withdraw(uint256)\":{\"notice\":\"Withdraw ERC20 tokens from the lockbox\"},\"withdrawTo(address,uint256)\":{\"notice\":\"Withdraw tokens from the lockbox\"}},\"notice\":\"Invariants:   xERC20 token can only have total supply of max 5b tokens   xERC20 token can only have total supply lte WELL ERC20 token balance of this contract\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/xWELL/XERC20Lockbox.sol\":\"XERC20Lockbox\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@forge-std/=lib/forge-std/src/\",\":@openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":@proposals/=src/proposals/\",\":@protocol/=src/\",\":@test/=test/\",\":@utils/=utils/\",\":@zelt-src/=lib/zelt/src/\",\":@zelt-test/=lib/zelt/test/\",\":@zelt/=lib/zelt/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":solmate/=lib/solmate/src/\",\":zelt/=lib/zelt/src/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xa56ca923f70c1748830700250b19c61b70db9a683516dc5e216694a50445d99c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cac938788bc4be12101e59d45588b4e059579f4e61062e1cda8d6b06c0191b15\",\"dweb:/ipfs/QmV2JKCyjTVH3rkWNrfdJRhAT7tZ3usAN2XcnD4h53Mvih\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5\",\"dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd\",\"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0xec63854014a5b4f2b3290ab9103a21bdf902a508d0f41a8573fea49e98bf571a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bc5b5dc12fbc4002f282eaa7a5f06d8310ed62c1c77c5770f6283e058454c39a\",\"dweb:/ipfs/Qme9rE2wS3yBuyJq9GgbmzbsBQsW2M2sVFqYYLw7bosGrv\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x909d608c2db6eb165ca178c81289a07ed2e118e444d0025b2a85c97d0b44a4fa\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://656cda26512ddd7373c2d5551c8fae759fc30f05b10f0fc2e738e9274199dbd4\",\"dweb:/ipfs/QmTSArSzQRFbQmHgq7U1PZXnsDFhvDZhKVu9CzMG4yo6Lx\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0x006dd67219697fe68d7fbfdea512e7c4cb64a43565ed86171d67e844982da6fa\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2455248c8ddd9cc6a7af76a13973cddf222072427e7b0e2a7d1aff345145e931\",\"dweb:/ipfs/QmfYjnjRbWqYpuxurqveE6HtzsY1Xx323J428AKQgtBJZm\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"src/xWELL/XERC20Lockbox.sol\":{\"keccak256\":\"0x396461ef3f18e9cb5542445c20b754bda3f2fa6d99d5fa5f0f6f15e536d16a08\",\"urls\":[\"bzz-raw://6d88c91122953587a740ed03a9bf29ba06f3a578c0840568916d49cd10ce0bc5\",\"dweb:/ipfs/QmYtxgRpdP4u9LTYFJTUk7wDqksqSBFsXqtse9etEt549r\"]},\"src/xWELL/interfaces/IXERC20.sol\":{\"keccak256\":\"0x264c812ffc16dc28741465937e28abc5085bcc8ea1a41b87e1d222f855161551\",\"urls\":[\"bzz-raw://08f5e76a56a34252d008eb67643d367806de6c7d1d77ccb084038b5245db325b\",\"dweb:/ipfs/QmRT8GeE9aJdzkRPd8CzMo4phjdnbLLUqtEEG9vfGERyCE\"]},\"src/xWELL/interfaces/IXERC20Lockbox.sol\":{\"keccak256\":\"0x8c8ffd1ea82c9009e13fccc883d5ee03483aaad39c735099089b3d7ad2782d4c\",\"urls\":[\"bzz-raw://2c98715486581901b27314640e86cf1c66c70abbf49d87550025e8f642b504de\",\"dweb:/ipfs/QmQ43L3aHACCrZEwCoCKhV7QyDesHip1iTQbfCGDva1NyH\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.19+commit.7dd6d404"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "xerc20",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "erc20",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_sender",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Deposit",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_sender",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Withdraw",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "ERC20",
+          "outputs": [
+            {
+              "internalType": "contract IERC20",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "XERC20",
+          "outputs": [
+            {
+              "internalType": "contract IXERC20",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "deposit"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "depositTo"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "withdraw"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "withdrawTo"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "constructor": {
+            "params": {
+              "erc20": "The address of the ERC20 contract",
+              "xerc20": "The address of the XERC20 contract"
+            }
+          },
+          "deposit(uint256)": {
+            "params": {
+              "amount": "The amount of tokens to deposit"
+            }
+          },
+          "depositTo(address,uint256)": {
+            "params": {
+              "amount": "The amount of tokens to deposit",
+              "to": "The user to send the XERC20 to"
+            }
+          },
+          "withdraw(uint256)": {
+            "params": {
+              "amount": "The amount of tokens to withdraw"
+            }
+          },
+          "withdrawTo(address,uint256)": {
+            "params": {
+              "amount": "The amount of tokens to withdraw",
+              "to": "The user to withdraw to"
+            }
+          }
+        },
+        "version": 1
       },
-      {
-        "internalType": "address",
-        "name": "erc20",
-        "type": "address"
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "ERC20()": {
+            "notice": "The ERC20 token of this contract"
+          },
+          "XERC20()": {
+            "notice": "The XERC20 token of this contract"
+          },
+          "deposit(uint256)": {
+            "notice": "Deposit ERC20 tokens into the lockbox"
+          },
+          "depositTo(address,uint256)": {
+            "notice": "Deposit ERC20 tokens into the lockbox, and send the XERC20 to a user"
+          },
+          "withdraw(uint256)": {
+            "notice": "Withdraw ERC20 tokens from the lockbox"
+          },
+          "withdrawTo(address,uint256)": {
+            "notice": "Withdraw tokens from the lockbox"
+          }
+        },
+        "version": 1
       }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "_sender",
-        "type": "address"
+    },
+    "settings": {
+      "remappings": [
+        "@forge-std/=lib/forge-std/src/",
+        "@openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "@proposals/=src/proposals/",
+        "@protocol/=src/",
+        "@test/=test/",
+        "@utils/=utils/",
+        "@zelt-src/=lib/zelt/src/",
+        "@zelt-test/=lib/zelt/test/",
+        "@zelt/=lib/zelt/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "solmate/=lib/solmate/src/",
+        "zelt/=lib/zelt/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
       },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "Deposit",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "_sender",
-        "type": "address"
+      "metadata": {
+        "bytecodeHash": "ipfs"
       },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "Withdraw",
-    "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "ERC20",
-    "outputs": [
-      {
-        "internalType": "contract IERC20",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "XERC20",
-    "outputs": [
-      {
-        "internalType": "contract IXERC20",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "deposit",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "to",
-        "type": "address"
+      "compilationTarget": {
+        "src/xWELL/XERC20Lockbox.sol": "XERC20Lockbox"
       },
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "depositTo",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "withdraw",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "to",
-        "type": "address"
+      "evmVersion": "paris",
+      "libraries": {}
+    },
+    "sources": {
+      "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol": {
+        "keccak256": "0xa56ca923f70c1748830700250b19c61b70db9a683516dc5e216694a50445d99c",
+        "urls": [
+          "bzz-raw://cac938788bc4be12101e59d45588b4e059579f4e61062e1cda8d6b06c0191b15",
+          "dweb:/ipfs/QmV2JKCyjTVH3rkWNrfdJRhAT7tZ3usAN2XcnD4h53Mvih"
+        ],
+        "license": "MIT"
       },
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
+      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305",
+        "urls": [
+          "bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5",
+          "dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+        "keccak256": "0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca",
+        "urls": [
+          "bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd",
+          "dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+        "keccak256": "0xec63854014a5b4f2b3290ab9103a21bdf902a508d0f41a8573fea49e98bf571a",
+        "urls": [
+          "bzz-raw://bc5b5dc12fbc4002f282eaa7a5f06d8310ed62c1c77c5770f6283e058454c39a",
+          "dweb:/ipfs/Qme9rE2wS3yBuyJq9GgbmzbsBQsW2M2sVFqYYLw7bosGrv"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol": {
+        "keccak256": "0x909d608c2db6eb165ca178c81289a07ed2e118e444d0025b2a85c97d0b44a4fa",
+        "urls": [
+          "bzz-raw://656cda26512ddd7373c2d5551c8fae759fc30f05b10f0fc2e738e9274199dbd4",
+          "dweb:/ipfs/QmTSArSzQRFbQmHgq7U1PZXnsDFhvDZhKVu9CzMG4yo6Lx"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/Address.sol": {
+        "keccak256": "0x006dd67219697fe68d7fbfdea512e7c4cb64a43565ed86171d67e844982da6fa",
+        "urls": [
+          "bzz-raw://2455248c8ddd9cc6a7af76a13973cddf222072427e7b0e2a7d1aff345145e931",
+          "dweb:/ipfs/QmfYjnjRbWqYpuxurqveE6HtzsY1Xx323J428AKQgtBJZm"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+        "keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+        "urls": [
+          "bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+          "dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+        ],
+        "license": "MIT"
+      },
+      "src/xWELL/XERC20Lockbox.sol": {
+        "keccak256": "0x396461ef3f18e9cb5542445c20b754bda3f2fa6d99d5fa5f0f6f15e536d16a08",
+        "urls": [
+          "bzz-raw://6d88c91122953587a740ed03a9bf29ba06f3a578c0840568916d49cd10ce0bc5",
+          "dweb:/ipfs/QmYtxgRpdP4u9LTYFJTUk7wDqksqSBFsXqtse9etEt549r"
+        ],
+        "license": null
+      },
+      "src/xWELL/interfaces/IXERC20.sol": {
+        "keccak256": "0x264c812ffc16dc28741465937e28abc5085bcc8ea1a41b87e1d222f855161551",
+        "urls": [
+          "bzz-raw://08f5e76a56a34252d008eb67643d367806de6c7d1d77ccb084038b5245db325b",
+          "dweb:/ipfs/QmRT8GeE9aJdzkRPd8CzMo4phjdnbLLUqtEEG9vfGERyCE"
+        ],
+        "license": null
+      },
+      "src/xWELL/interfaces/IXERC20Lockbox.sol": {
+        "keccak256": "0x8c8ffd1ea82c9009e13fccc883d5ee03483aaad39c735099089b3d7ad2782d4c",
+        "urls": [
+          "bzz-raw://2c98715486581901b27314640e86cf1c66c70abbf49d87550025e8f642b504de",
+          "dweb:/ipfs/QmQ43L3aHACCrZEwCoCKhV7QyDesHip1iTQbfCGDva1NyH"
+        ],
+        "license": null
       }
-    ],
-    "name": "withdrawTo",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }
-]
+    },
+    "version": 1
+  },
+  "id": 196
+}

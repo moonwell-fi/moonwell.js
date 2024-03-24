@@ -55,9 +55,10 @@ export const environment: EnvironmentConfig = {
             MoonwellGovernorArtemis,
         ),
 
-        MULTICHAIN_GOVERNOR: new MoonwellContract<types.MultichainGovernor>(
+        MULTICHAIN_GOVERNOR: new MoonwellContractWithProxy<types.MultichainGovernor, types.TransparentProxy>(
             '0xf152d75fe4cBB11AE224B94110c31F0bdDb55850',
             MultichainGovernor,
+            TransparentProxy,
         ),
 
         XWELL: new MoonwellContract<types.XWELL>(
