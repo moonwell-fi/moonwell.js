@@ -29,9 +29,11 @@ export const environment: EnvironmentConfig = {
     graphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/moonwell-basesepolia/prod/gn',
     // govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-base-sepolia/api',
     govGraphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/governance-base-sepolia/prod/gn',
-    rpcNode: 'https://api.developer.coinbase.com/rpc/v1/base-sepolia/JYfv6ozmwoiWJsIVQaTmrMuJYnpJgJBy',
+    // rpcNode: 'https://api.developer.coinbase.com/rpc/v1/base-sepolia/JYfv6ozmwoiWJsIVQaTmrMuJYnpJgJBy',
+    rpcNode: 'https://base-sepolia.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     publicRpcNode: 'https://sepolia.base.org',
-    wssNode: 'wss://sepolia.base.org',
+    // wssNode: 'wss://sepolia.base.org',
+    wssNode: 'wss://base-sepolia.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     blockExplorerUrl: 'https://sepolia.basescan.org/',
     contracts: {
 
