@@ -30,10 +30,12 @@ export const environment: EnvironmentConfig = {
     // govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-base/api',
     govGraphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/governance-base/prod/gn',
     // rpcNode: 'https://base-mainnet.g.alchemy.com/v2/sTC_2N1UZj-sDCdsZcItpYsFodWYSyna',
-    rpcNode: 'https://api.developer.coinbase.com/rpc/v1/base/JYfv6ozmwoiWJsIVQaTmrMuJYnpJgJBy',
+    // rpcNode: 'https://api.developer.coinbase.com/rpc/v1/base/JYfv6ozmwoiWJsIVQaTmrMuJYnpJgJBy',
+    rpcNode: 'https://base-mainnet.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     // rpcNode: 'https://mainnet.base.org',
     publicRpcNode: 'https://mainnet.base.org',
-    wssNode: 'wss://base-mainnet.g.alchemy.com/v2/sTC_2N1UZj-sDCdsZcItpYsFodWYSyna',
+    // wssNode: 'wss://base-mainnet.g.alchemy.com/v2/sTC_2N1UZj-sDCdsZcItpYsFodWYSyna',
+    wssNode: 'wss://base-mainnet.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     blockExplorerUrl: 'https://basescan.org/',
     contracts: {
 
