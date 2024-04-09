@@ -76,7 +76,7 @@ export const contracts: ContractBundle = {
     ),
 
     DEX_REWARDER: new MoonwellContract<types.StellaswapRewarder>(
-        '0xcD04D2340c1dD9B3dB2C5c53c8B8bAa57b2654Be',
+        '0xE907f95c46659c6eF24d84cFDb9f8FF9Cf57c723',
         StellaswapRewarder
     ),
     MARKETS: {
