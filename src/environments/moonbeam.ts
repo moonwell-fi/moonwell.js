@@ -101,7 +101,7 @@ export const environment: EnvironmentConfig = {
         ),
 
         TIMELOCK: new MoonwellContract<types.Timelock>(
-            '0x3a9249d70dCb4A4E9ef4f3AF99a3A130452ec19B',
+            '0x9A8464C4C11CeA17e191653Deb7CdC1bE30F1Af4', // Note: same as MultichainGovernor
             Timelock,
         ),
 
