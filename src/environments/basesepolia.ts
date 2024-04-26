@@ -25,6 +25,7 @@ export const environment: EnvironmentConfig = {
     nativeAssetTicker: 'ETH',
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
+    ponderURL: 'https://ponder-staging.moonwell.fi',
     // graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/basesepolia/api',
     graphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/moonwell-basesepolia/prod/gn',
     // govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-base-sepolia/api',

@@ -30,6 +30,7 @@ export const environment: EnvironmentConfig = {
     nativeAssetTicker: 'GLMR',
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
+    ponderURL: 'https://ponder.moonwell.fi',
     // graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonbeam',
     // graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonbeam/api',
     graphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/moonwell-moonbeam/prod/gn',

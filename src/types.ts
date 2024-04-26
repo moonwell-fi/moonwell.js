@@ -199,6 +199,8 @@ export type EnvironmentConfig = {
     protocolAssetTicker: string,
     // The safety module ticker (i.e. stkWELL, stkMFAM)
     safetyModuleTicker: string,
+    // The Ponder URL for this environment
+    ponderURL: string,
     // The GraphQL API url for this environment
     graphQLURL: string,
     // The Governance GraphQL API url for this environment

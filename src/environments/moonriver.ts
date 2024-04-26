@@ -26,6 +26,7 @@ export const environment: EnvironmentConfig = {
     nativeAssetTicker: 'MOVR',
     protocolAssetTicker: 'MFAM',
     safetyModuleTicker: 'stkMFAM',
+    ponderURL: 'https://ponder.moonwell.fi',
     // graphQLURL: 'https://api.thegraph.com/subgraphs/name/moonwell-fi/moonwell-moonriver',
     // graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/moonriver/api',
     graphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/moonwell-moonriver/prod/gn',
