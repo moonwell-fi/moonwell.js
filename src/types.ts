@@ -137,6 +137,7 @@ export type ContractBundle = {
     INTEREST_RATE_MODEL_rETH?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_DAI?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_USDC?: MoonwellContract<InterestRateModel | InterestRateModelv2>
+    INTEREST_RATE_MODEL_AERO?: MoonwellContract<InterestRateModel | InterestRateModelv2>
 
     /** The contract that is the implementation of MErc20s */
     MERC_20_IMPL: MoonwellContract<MErc20Delegator | MErc20Delegatorv2>

@@ -124,6 +124,11 @@ export const environment: EnvironmentConfig = {
             InterestRateModelv2,
         ),
 
+        INTEREST_RATE_MODEL_AERO: new MoonwellContract<types.InterestRateModelv2>(
+            '0x96e03a0F2DCAC38C86B5069d018341077f48Cb1c',
+            InterestRateModelv2,
+        ),
+
         MERC_20_IMPL: new MoonwellContract<types.MErc20Delegatorv2>(
             '0x1FADFF493529C3Fcc7EE04F1f15D19816ddA45B7',
             MErc20Delegatorv2,
@@ -173,6 +178,14 @@ export const environment: EnvironmentConfig = {
                 "rETH",
                 '0xB6fe221Fe9EeF5aBa221c348bA20A1Bf5e73624c',
                 '0xCB1DaCd30638ae38F2B94eA64F066045B7D45f44',
+                18,
+            ),
+            "AERO": new MoonwellMarketv2(
+                "Aerodrome Finance",
+                "AERO",
+                "AERO",
+                '0x940181a94A35A4569E4529A3CDfB74e38FD98631',
+                '0x73902f619CEB9B31FD8EFecf435CbDf89E369Ba6',
                 18,
             ),
             /* "WBTC": new MoonwellMarketv2(
