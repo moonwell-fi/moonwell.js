@@ -181,6 +181,7 @@ export enum Environment {
     BASESEPOLIA = "basesepolia",
     BASE = "base",
     OPTIMISM = "optimism",
+    OPTIMISMSEPOLIA = "optimismsepolia",
 }
 
 export type ProtocolOptions = {
