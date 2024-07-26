@@ -138,6 +138,9 @@ export type ContractBundle = {
     INTEREST_RATE_MODEL_DAI?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_USDC?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_AERO?: MoonwellContract<InterestRateModel | InterestRateModelv2>
+    INTEREST_RATE_MODEL_VELO?: MoonwellContract<InterestRateModel | InterestRateModelv2>
+    INTEREST_RATE_MODEL_USDT?: MoonwellContract<InterestRateModel | InterestRateModelv2>
+    INTEREST_RATE_MODEL_OP?: MoonwellContract<InterestRateModel | InterestRateModelv2>
 
     /** The contract that is the implementation of MErc20s */
     MERC_20_IMPL: MoonwellContract<MErc20Delegator | MErc20Delegatorv2>
@@ -177,6 +180,8 @@ export enum Environment {
     MOONBASE = "moonbase",
     BASESEPOLIA = "basesepolia",
     BASE = "base",
+    OPTIMISM = "optimism",
+    OPTIMISMSEPOLIA = "optimismsepolia",
 }
 
 export type ProtocolOptions = {
@@ -202,10 +207,10 @@ export type EnvironmentConfig = {
     safetyModuleTicker: string,
     // The Ponder URL for this environment
     ponderURL: string,
-    // The GraphQL API url for this environment
-    graphQLURL: string,
-    // The Governance GraphQL API url for this environment
-    govGraphQLURL: string,
+    // The GraphQL API url for this environment (deprecated due to migrating to Ponder)
+    // graphQLURL: string,
+    // The Governance GraphQL API url for this environment (deprecated due to migrating to Ponder)
+    // govGraphQLURL: string,
     // The RPC API for this config
     rpcNode: string
     // The public RPC API for this config

@@ -18,102 +18,96 @@ import XWELL from '../deploy-artifacts/XWELL.json'
 import * as types from "../../types/ethers-contracts";
 
 export const environment: EnvironmentConfig = {
-    environment: Environment.BASESEPOLIA,
-    networkID: 84532,
-    chainID: 84532,
-    chainName: 'Base (Testnet)',
+    environment: Environment.OPTIMISMSEPOLIA,
+    networkID: 11155420,
+    chainID: 11155420,
+    chainName: 'Optimism (Testnet)',
     nativeAssetTicker: 'ETH',
     protocolAssetTicker: 'WELL',
     safetyModuleTicker: 'stkWELL',
     ponderURL: 'https://ponder-staging.moonwell.fi',
-    // graphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/basesepolia/api',
-    // graphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/moonwell-basesepolia/prod/gn',
-    // govGraphQLURL: 'https://subgraph.satsuma-prod.com/dd48bfe50148/moonwell/governance-base-sepolia/api',
-    // govGraphQLURL: 'https://api.goldsky.com/api/public/project_clrkxxojt6qut01x1a4143b4c/subgraphs/governance-base-sepolia/prod/gn',
-    // rpcNode: 'https://api.developer.coinbase.com/rpc/v1/base-sepolia/JYfv6ozmwoiWJsIVQaTmrMuJYnpJgJBy',
-    rpcNode: 'https://base-sepolia.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
-    publicRpcNode: 'https://sepolia.base.org',
-    // wssNode: 'wss://sepolia.base.org',
-    wssNode: 'wss://base-sepolia.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
-    blockExplorerUrl: 'https://sepolia.basescan.org/',
+    rpcNode: 'https://optimism-sepolia.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
+    publicRpcNode: 'https://sepolia.optimism.io/',
+    wssNode: 'wss://optimism-sepolia.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
+    blockExplorerUrl: 'https://sepolia-optimistic.etherscan.io/',
     contracts: {
 
         VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
-            '0x50F2E10171D8856338a925bD795cE7D055218428',
+            '0x821Ff3a967b39bcbE8A018a9b1563EAf878bad39',
             BaseMoonwellViews,
             TransparentProxy,
         ),
 
 
         TEMPORAL_GOVERNOR: new MoonwellContract<types.TemporalGovernor>(
-            '0xc01EA381A64F8BE3bDBb01A7c34D809f80783662',
+            '0xBeD75989b06a286e6E81c7aB1129003Fe49813eD',
             TemporalGovernor,
         ),
 
         VOTE_COLLECTOR: new MoonwellContract<types.VoteCollector>(
-            '0xBdD86164da753C1a25e72603d266Dc1CC32e8acf',
+            '', // TODO: Add Optimism Sepolia
             VoteCollector,
         ),
 
         XWELL: new MoonwellContract<types.XWELL>(
-            '0xE8F339C51cb2700113ec6ef552eE1D6cCA3BfB95',
+            '', // TODO: Add Optimism Sepolia
             XWELL,
         ),
 
         COMPTROLLER: new MoonwellContractWithProxy<types.Comptrollerv2, types.Unitrollerv2>(
-            '0xC72ba45f2Ae134F21DAEb2b7B5fd5De0064Ee9bB',
+            '0xb6479f6FA1F1FBCe20C63d240fD9cC3dD55C90a1',
             Comptrollerv2,
             Unitrollerv2,
         ),
 
         MULTI_REWARD_DISTRIBUTOR: new MoonwellContract<types.MultiRewardDistributor>(
-            '0xcdC49088c040f1209F1aa548b2Ae40d8E24B53A5',
+            '0x10D78210afB247Dbd18c6733cf3EAd861440A5b9',
             MultiRewardDistributor,
         ),
 
         ORACLE: new MoonwellContract<types.ChainlinkOraclev2>(
-            '0x1AbEA09b07276669de5BC3a11F820fdC4ba529d1',
+            '0x8D895dc2f91A611ee55462cDf594975e052Bd687',
             ChainlinkOraclev2
         ),
 
-        INTEREST_RATE_MODEL_USDBC: new MoonwellContract<types.InterestRateModelv2>(
-            '0x7073814cfF6c183010df4D2BEC895a04bdB7f8cd',
+        INTEREST_RATE_MODEL_USDC: new MoonwellContract<types.InterestRateModelv2>(
+            '0x85851253F64591d69105cEf970474a7006b0264b',
             InterestRateModelv2,
         ),
 
         INTEREST_RATE_MODEL_WETH: new MoonwellContract<types.InterestRateModelv2>(
-            '0x2fdF038b9D09F7fA5E775cEF6787cdf0C780961c',
+            '0x13a27ca850c085BAE1E53F9939E4694098F6d4c0',
             InterestRateModelv2,
         ),
 
-        INTEREST_RATE_MODEL_cbETH: new MoonwellContract<types.InterestRateModelv2>(
-            '0x38D292Adf50f0cceb12e06e1303d875F553D9b29',
+        INTEREST_RATE_MODEL_wstETH: new MoonwellContract<types.InterestRateModelv2>(
+            '0xfb6f9c0fBdB91d72745b0A5f3E4209Bea087d2bA',
             InterestRateModelv2,
         ),
 
         MERC_20_IMPL: new MoonwellContract<types.MErc20Delegatorv2>(
-            '0x1c7b1689809F9f572e3DF9c1e063473549bdf37c',
+            '0xb58bd15aDC944b547806dDcaA80cd7C462b9Af19',
             MErc20Delegatorv2,
         ),
 
         WETH_ROUTER: new MoonwellContract<types.WETHRouter>(
-            '0xB7eAfB1B503c189CA4E5f19bCe272029cD98Cf1F',
+            '0x454cA8988986d4B0C3CE074be7C94a599393631a',
             WETHRouter,
         ),
 
         SAFETY_MODULE: new MoonwellContractWithProxy<types.StakedWell, types.TransparentProxy>(
-            '0x9374e4Ff60bBB28310C598695fC671A3c4c07E77',
+            '', // TODO: Add Optimism Sepolia
             StakedWell,
             TransparentProxy,
         ),
 
         MARKETS: {
-            "USDbC.test": new MoonwellMarketv2(
+            "USDC.test": new MoonwellMarketv2(
                 "USD Coin",
-                "USDbC",
-                "USDbC.test",
-                '0x4616975f7E6045FD9737e95bC527e9e14c727BD2',
-                "0x876852425331a113d8E432eFFB3aC5BEf38f033a",
+                "USDC",
+                "USDC.test",
+                '0x1A28908DD5357C611D12608212CBEF9626750E41',
+                '0xEc5DF73AaC57BFb41b12AC7732240C5E60FC3865',
                 6,
             ),
             "ETH.test": new MoonwellMarketv2(
@@ -121,15 +115,15 @@ export const environment: EnvironmentConfig = {
                 "ETH",
                 "ETH.test",
                 '0x4200000000000000000000000000000000000006',
-                "0x2F39a349A79492a70E152760ce7123A1933eCf28",
+                '0xc72A31fA38935E2e2d82FcE6506Cc4baff2DBC28',
                 18,
             ),
-            "cbETH.test": new MoonwellMarketv2(
-                "Coinbase Staked Ethereum",
-                "cbETH",
-                "cbETH.test",
-                '0xdbc885569E711262926803184eC9Ff73816fc953',
-                '0x5302EbD8BC32435C823c2e22B04Cd6c45f593e89',
+            "wstETH.test": new MoonwellMarketv2(
+                "Lido Staked Ethereum",
+                "wstETH",
+                "wstETH.test",
+                '0x930e03A7dD7352870B70D13F122956c7740C1797',
+                '0x2bdA97A1571eBd4C0E985f57fb0F229c4D664f2A',
                 18,
             ),
         }
