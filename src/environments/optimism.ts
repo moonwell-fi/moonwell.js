@@ -190,7 +190,7 @@ export const environment: EnvironmentConfig = {
                 "USDT",
                 "USDT",
                 '0x94b008aA00579c1307B0EF2c499aD98a8ce58e58',
-                '0x8E08617b0d66359D73Aa11E11017834C29155525',
+                '0xa3A53899EE8f9f6E963437C5B3f805FEc538BF84',
                 6,
             ),
             "VELO": new MoonwellMarketv2(
