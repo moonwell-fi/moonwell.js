@@ -45,12 +45,14 @@ export const environment: EnvironmentConfig = {
         ),
 
         VOTE_COLLECTOR: new MoonwellContract<types.VoteCollector>(
-            '', // TODO: Add Optimism Sepolia
+            '0x0000000000000000000000000000000000000000', // TODO: Add Optimism Sepolia
+            //temporarily added 0x to enable Optimism Sepolia
             VoteCollector,
         ),
 
         XWELL: new MoonwellContract<types.XWELL>(
-            '', // TODO: Add Optimism Sepolia
+            '0x0000000000000000000000000000000000000000', // TODO: Add Optimism Sepolia
+            //temporarily added 0x to enable Optimism Sepolia
             XWELL,
         ),
 
@@ -96,7 +98,8 @@ export const environment: EnvironmentConfig = {
         ),
 
         SAFETY_MODULE: new MoonwellContractWithProxy<types.StakedWell, types.TransparentProxy>(
-            '', // TODO: Add Optimism Sepolia
+            '0x0000000000000000000000000000000000000000', // TODO: Add Optimism Sepolia
+            //temporarily added 0x to enable Optimism Sepolia
             StakedWell,
             TransparentProxy,
         ),
