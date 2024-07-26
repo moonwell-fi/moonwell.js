@@ -33,7 +33,7 @@ export const environment: EnvironmentConfig = {
     contracts: {
 
         VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
-            '', // TODO: Add views address
+            '0x821Ff3a967b39bcbE8A018a9b1563EAf878bad39', // TODO: Add views address
             BaseMoonwellViews,
             TransparentProxy,
         ),
