@@ -39,7 +39,7 @@ export const environment: EnvironmentConfig = {
         ),
 
         SAFETY_MODULE: new MoonwellContractWithProxy<types.StakedWell, types.TransparentProxy>(
-            '0x8dBa75e83DA73cc766A7e5a0ee71F656BAb470d6',
+            '0xfB26A4947A38cb53e2D083c6490060CCCE7438c5',
             StakedWell,
             TransparentProxy,
         ),
