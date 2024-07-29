@@ -200,6 +200,7 @@ export const environment: EnvironmentConfig = {
                 '0x3c8B650257cFb5f272f799F5e2b4e65093a11a05',
                 '0x21d851585840942B0eF9f20d842C00C5f3735eaF',
                 18,
+                true
             ),
             "DAI": new MoonwellMarketv2(
                 "DAI Stablecoin",
