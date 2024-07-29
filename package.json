@@ -1,6 +1,6 @@
 {
   "name": "@moonwell-fi/moonwell.js",
-  "version": "0.5.55",
+  "version": "0.5.56",
   "description": "The moonwell.js library is a suite of tools to query and interact with the Moonwell protocol.",
   "main": "dist/src/index.js",
   "files": [
