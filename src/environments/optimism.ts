@@ -31,15 +31,15 @@ export const environment: EnvironmentConfig = {
     wssNode: 'wss://optimism-mainnet.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     blockExplorerUrl: 'https://optimistic.etherscan.io/',
     contracts: {
-
+        
         VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
-            '0x821Ff3a967b39bcbE8A018a9b1563EAf878bad39',
+            '0xD6C66868f937f00604d0FB860241970D6CC2CBfE',
             BaseMoonwellViews,
             TransparentProxy,
         ),
 
         SAFETY_MODULE: new MoonwellContractWithProxy<types.StakedWell, types.TransparentProxy>(
-            '0x8dBa75e83DA73cc766A7e5a0ee71F656BAb470d6',
+            '0xfB26A4947A38cb53e2D083c6490060CCCE7438c5',
             StakedWell,
             TransparentProxy,
         ),
