@@ -193,7 +193,7 @@ export const environment: EnvironmentConfig = {
                 '0xa3A53899EE8f9f6E963437C5B3f805FEc538BF84',
                 6,
             ),
-            "VELO": new MoonwellMarketv2(
+            "VELOV1": new MoonwellMarketv2(
                 "Velodrome Finance",
                 "VELO",
                 "VELO",
