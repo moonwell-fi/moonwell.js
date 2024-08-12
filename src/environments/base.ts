@@ -129,6 +129,11 @@ export const environment: EnvironmentConfig = {
             InterestRateModelv2,
         ),
 
+        INTEREST_RATE_MODEL_weETH: new MoonwellContract<types.InterestRateModelv2>(
+            '0x6ac79dF84FA8A704711a2fb8c3763e48Ed2c0Ed6',
+            InterestRateModelv2,
+        ),
+
         MERC_20_IMPL: new MoonwellContract<types.MErc20Delegatorv2>(
             '0x1FADFF493529C3Fcc7EE04F1f15D19816ddA45B7',
             MErc20Delegatorv2,
@@ -178,6 +183,14 @@ export const environment: EnvironmentConfig = {
                 "rETH",
                 '0xB6fe221Fe9EeF5aBa221c348bA20A1Bf5e73624c',
                 '0xCB1DaCd30638ae38F2B94eA64F066045B7D45f44',
+                18,
+            ),
+            "weETH": new MoonwellMarketv2(
+                "EtherFi eETH (Restaked Ethereum)",
+                "weETH",
+                "weETH",
+                '0x04c0599ae5a44757c0af6f9ec3b93da8976c150a',
+                '0xb8051464C8c92209C92F3a4CD9C73746C4c3CFb3',
                 18,
             ),
             "AERO": new MoonwellMarketv2(
