@@ -101,6 +101,11 @@ export const environment: EnvironmentConfig = {
             InterestRateModelv2,
         ),
 
+        INTEREST_RATE_MODEL_weETH: new MoonwellContract<types.InterestRateModelv2>(
+            '0x6ac79dF84FA8A704711a2fb8c3763e48Ed2c0Ed6',
+            InterestRateModelv2,
+        ),
+
         INTEREST_RATE_MODEL_DAI: new MoonwellContract<types.InterestRateModelv2>(
             '0x04e6322D196E0E4cCBb2610dd8B8f2871E160bd7',
             InterestRateModelv2,
@@ -113,6 +118,11 @@ export const environment: EnvironmentConfig = {
 
         INTEREST_RATE_MODEL_USDT: new MoonwellContract<types.InterestRateModelv2>(
             '0xdAdA7DB2cC9a5D3d3C12509B71964E82d4AE76D6',
+            InterestRateModelv2,
+        ),
+
+        INTEREST_RATE_MODEL_VELOV1: new MoonwellContract<types.InterestRateModelv2>(
+            '0x7b2FaBffa53F59203aE5db1dd8E0e9A4D50c744e',
             InterestRateModelv2,
         ),
 
@@ -177,6 +187,14 @@ export const environment: EnvironmentConfig = {
                 '0x4c2E35E3eC4A0C82849637BC04A4609Dbe53d321',
                 18,
             ),
+            "weETH": new MoonwellMarketv2(
+                "EtherFi eETH (Restaked Ethereum)",
+                "weETH",
+                "weETH",
+                '0x5A7fACB970D094B6C7FF1df0eA68D99E6e73CBFF',
+                '0xb8051464C8c92209C92F3a4CD9C73746C4c3CFb3',
+                18,
+            ),
             "WBTC": new MoonwellMarketv2(
                 "Wrapped Bitcoin",
                 "WBTC",
@@ -201,6 +219,14 @@ export const environment: EnvironmentConfig = {
                 '0x21d851585840942B0eF9f20d842C00C5f3735eaF',
                 18,
                 true
+            ),
+            "VELO": new MoonwellMarketv2(
+                "Velodrome Finance",
+                "VELO",
+                "VELO",
+                '0x9560e827af36c94d2ac33a39bce1fe78631088db',
+                '0x866b838b97Ee43F2c818B3cb5Cc77A0dc22003Fc',
+                18,
             ),
             "DAI": new MoonwellMarketv2(
                 "DAI Stablecoin",
