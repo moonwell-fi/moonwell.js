@@ -186,7 +186,7 @@ export const environment: EnvironmentConfig = {
                 18,
             ),
             "weETH": new MoonwellMarketv2(
-                "EtherFi eETH (Restaked Ethereum)",
+                "EtherFi Restaked Ethereum",
                 "weETH",
                 "weETH",
                 '0x04c0599ae5a44757c0af6f9ec3b93da8976c150a',
