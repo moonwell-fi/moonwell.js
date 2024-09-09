@@ -200,7 +200,7 @@ export const environment: EnvironmentConfig = {
                 18,
             ),
             "cbBTC": new MoonwellMarketv2(
-                "Coinbase Staked Bitcoin",
+                "Coinbase Bitcoin",
                 "cbBTC",
                 "cbBTC",
                 '0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf',
