@@ -135,6 +135,11 @@ export const environment: EnvironmentConfig = {
             InterestRateModelv2,
         ),
 
+        INTEREST_RATE_MODEL_cbBTC: new MoonwellContract<types.InterestRateModelv2>(
+            '0x0738483Add6ab8620B731aEc0121d1d3A70BD6EA',
+            InterestRateModelv2,
+        ),
+
         MERC_20_IMPL: new MoonwellContract<types.MErc20Delegatorv2>(
             '0x1FADFF493529C3Fcc7EE04F1f15D19816ddA45B7',
             MErc20Delegatorv2,
@@ -193,6 +198,14 @@ export const environment: EnvironmentConfig = {
                 '0x04c0599ae5a44757c0af6f9ec3b93da8976c150a',
                 '0xb8051464C8c92209C92F3a4CD9C73746C4c3CFb3',
                 18,
+            ),
+            "cbBTC": new MoonwellMarketv2(
+                "Coinbase Staked Bitcoin",
+                "cbBTC",
+                "cbBTC",
+                '0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf',
+                '0xF877ACaFA28c19b96727966690b2f44d35aD5976',
+                8,
             ),
             "AERO": new MoonwellMarketv2(
                 "Aerodrome Finance",
