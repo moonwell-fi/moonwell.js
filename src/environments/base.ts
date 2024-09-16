@@ -125,6 +125,11 @@ export const environment: EnvironmentConfig = {
             InterestRateModelv2,
         ),
 
+        INTEREST_RATE_MODEL_EURC: new MoonwellContract<types.InterestRateModelv2>(
+            '0x7830f646E6cb7460eF1069E4Fec8CF5B10F7BBea',
+            InterestRateModelv2,
+        ),
+
         INTEREST_RATE_MODEL_AERO: new MoonwellContract<types.InterestRateModelv2>(
             '0x96e03a0F2DCAC38C86B5069d018341077f48Cb1c',
             InterestRateModelv2,
@@ -157,6 +162,14 @@ export const environment: EnvironmentConfig = {
                 "USDC",
                 '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',
                 '0xEdc817A28E8B93B03976FBd4a3dDBc9f7D176c22',
+                6,
+            ),
+            "EURC": new MoonwellMarketv2(
+                "Euro Coin",
+                "EURC",
+                "EURC",
+                '0x60a3E35Cc302bFA44Cb288Bc5a4F316Fdb1adb42',
+                '0xb682c840B5F4FC58B20769E691A6fa1305A501a2',
                 6,
             ),
             "ETH": new MoonwellMarketv2(
