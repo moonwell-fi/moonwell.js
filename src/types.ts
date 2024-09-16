@@ -137,6 +137,7 @@ export type ContractBundle = {
     INTEREST_RATE_MODEL_rETH?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_DAI?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_USDC?: MoonwellContract<InterestRateModel | InterestRateModelv2>
+    INTEREST_RATE_MODEL_EURC?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_AERO?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_VELOV1?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_VELO?: MoonwellContract<InterestRateModel | InterestRateModelv2>
