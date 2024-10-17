@@ -88,7 +88,7 @@ export type ContractBundle = {
     COMPTROLLER: MoonwellContract<Comptroller | Comptrollerv2>
 
     /** The environment's MoonwellViews contract address */
-    VIEWS:  MoonwellContractWithProxy<BaseMoonwellViews, TransparentProxy>
+    VIEWS: MoonwellContractWithProxy<BaseMoonwellViews, TransparentProxy>
 
     /** The environment's Vote Collector contract address */
     VOTE_COLLECTOR?: MoonwellContract<VoteCollector>
@@ -145,7 +145,7 @@ export type ContractBundle = {
     INTEREST_RATE_MODEL_OP?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_weETH?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     INTEREST_RATE_MODEL_cbBTC?: MoonwellContract<InterestRateModel | InterestRateModelv2>
-
+    INTEREST_RATE_MODEL_wrsETH?: MoonwellContract<InterestRateModel | InterestRateModelv2>
     /** The contract that is the implementation of MErc20s */
     MERC_20_IMPL: MoonwellContract<MErc20Delegator | MErc20Delegatorv2>
 

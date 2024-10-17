@@ -145,6 +145,11 @@ export const environment: EnvironmentConfig = {
             InterestRateModelv2,
         ),
 
+        INTEREST_RATE_MODEL_wrsETH: new MoonwellContract<types.InterestRateModelv2>(
+            '0x63f9f904CE2912853C2F7bb43dD1c1A6136F09b1',
+            InterestRateModelv2,
+        ),
+
         MERC_20_IMPL: new MoonwellContract<types.MErc20Delegatorv2>(
             '0x1FADFF493529C3Fcc7EE04F1f15D19816ddA45B7',
             MErc20Delegatorv2,
