@@ -32,7 +32,7 @@ export const environment: EnvironmentConfig = {
     wssNode: 'wss://optimism-mainnet.blastapi.io/745df601-de88-4079-8898-12f7e9688150',
     blockExplorerUrl: 'https://optimistic.etherscan.io/',
     contracts: {
-        
+
         VIEWS: new MoonwellContractWithProxy<types.BaseMoonwellViews, types.TransparentProxy>(
             '0xD6C66868f937f00604d0FB860241970D6CC2CBfE',
             BaseMoonwellViews,
@@ -245,6 +245,14 @@ export const environment: EnvironmentConfig = {
                 '0x9fc345a20541Bf8773988515c5950eD69aF01847',
                 18,
             ),
+            "wrsETH": new MoonwellMarketv2(
+                "Kelp DAO Restaked Ethereum",
+                "wrsETH",
+                "wrsETH",
+                '0x87eEE96D50Fb761AD85B1c982d28A042169d61b1',
+                '0x181bA797ccF779D8aB339721ED6ee827E758668e',
+                18,
+            )
         }
     }
 }

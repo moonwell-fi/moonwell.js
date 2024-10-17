@@ -252,6 +252,14 @@ export const environment: EnvironmentConfig = {
                 "0x703843C3379b52F9FF486c9f5892218d2a065cC8",
                 6,
             ),
+            "wrsETH": new MoonwellMarketv2(
+                "Kelp DAO Restaked Ethereum",
+                "wrsETH",
+                "wrsETH",
+                '0xEDfa23602D0EC14714057867A78d01e94176BEA0',
+                '0xfC41B49d064Ac646015b459C522820DB9472F4B5',
+                18,
+            )
         }
     }
 }
